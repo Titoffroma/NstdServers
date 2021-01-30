@@ -11,6 +11,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   background: #f5f6fb;
+  overflow-x: hidden;
 }
 footer {
   margin-top: auto;
@@ -38,9 +39,19 @@ main {
 .container {
   position: relative;
   width: 100%;
-  padding: 0 25px;
+  padding: 0 5px;
+  transform: scaleX(0.9);
+  opacity: 0;
+  transition: transform 1s ease-out, opacity $transition;
+  @media screen and (min-width: $tablet) {
+    padding: 0 25px;
+  }
+  &.present {
+    transform: scaleX(1);
+    opacity: 1;
+  }
 }
-.visually-hidden {
+%visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -49,6 +60,9 @@ main {
   overflow: hidden;
   border: 0;
   clip: rect(0 0 0 0);
+}
+.visually-hidden {
+  @extend %visually-hidden;
 }
 
 .backdrop {
@@ -79,7 +93,6 @@ main {
     font-style: normal;
     font-weight: 500;
     letter-spacing: 0.02em;
-
     transform: scale(0.8);
     transition: opacity $transition, transform $transition;
     &.opened {
@@ -97,6 +110,12 @@ main {
       width: 860px;
     }
   }
+  .backdrop.burger {
+    & .backdrop__modal {
+      padding: 0px;
+      width: 300px;
+    }
+  }
 }
 .scrollbar-measure {
   width: 100px;
@@ -106,7 +125,11 @@ main {
   top: -9999px;
 }
 #root {
-  background: #e5e5e5;
+  background-color: #e5e5e5;
+  background-image: linear-gradient($dim-bg, $main-purple), url('../img/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   height: 100%;
   width: 100%;
 }
@@ -118,7 +141,7 @@ main {
 %button {
   border: 1px solid $bg-grey;
   border-radius: 4px;
-  padding: 2px 6px;
+  padding: 4px 10px;
   color: $bg-grey;
 }
 %button-main {

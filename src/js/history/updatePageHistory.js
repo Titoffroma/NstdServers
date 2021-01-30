@@ -1,4 +1,6 @@
 import renderCard from '../../templates/card.hbs';
+import renderHome from '../../templates/Home.hbs';
+import { slider } from '../pages/home';
 import pages from '../pages/pages';
 
 const nav = {
@@ -8,7 +10,8 @@ const nav = {
 };
 
 function fun1() {
-  root.innerHTML = renderCard(pages[1]);
+  root.innerHTML = renderHome(pages[1]);
+  slider.start();
 }
 
 function fun2() {

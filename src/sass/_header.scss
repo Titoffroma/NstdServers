@@ -1,28 +1,54 @@
-.container.header {
-  background: $main-purple;
+.header {
+  @extend %flex-container;
+  align-items: flex-end;
+  background-color: $main-purple;
+  background-image: url('../img/header-bg.png');
+  background-size: cover;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.8);
+  height: 100px;
 }
 .page-header,
 .navigation,
 .logo,
 .navigation__list,
+.navigation__list-group,
 .authorization {
   @extend %flex-container;
 }
 .nav-wrapper {
   width: 100%;
 }
+.logo {
+  display: flex;
+  margin-left: 15px;
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+  &--tablet {
+    display: none;
+    @media screen and (min-width: $tablet) {
+      display: flex;
+    }
+  }
+}
 .logo__image {
   fill: #fff;
+  pointer-events: none;
 }
 .navigation {
   justify-content: space-between;
   &__list {
-    justify-content: space-around;
+    width: 100%;
+    justify-content: space-between;
+  }
+  &__list-group {
   }
   &__item {
     @extend %flex-container;
     padding: 10px;
-    height: 50px;
+    height: 40px;
     position: relative;
     & .accent {
       position: absolute;
@@ -39,6 +65,7 @@
     &--hover {
       @extend %anchor;
       position: absolute;
+      bottom: 2px;
       &[disabled] {
         cursor: text;
       }
@@ -62,5 +89,47 @@
     &:not(:last-child) {
       @extend %button-main;
     }
+    &:last-child {
+      color: $dim;
+    }
+  }
+}
+
+.burger {
+  margin-right: 15px;
+  &__menu {
+    .material-icons {
+      color: $white;
+      transition: color $transition;
+    }
+    &:hover .material-icons {
+      color: $accent;
+      pointer-events: none;
+    }
+    & .closed {
+      @extend %visually-hidden;
+    }
+  }
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}
+
+ul.navigation__list#id_nav {
+  @media screen and (max-width: $tablet - 1) {
+    // display: none;
+    flex-direction: column;
+    z-index: 0;
+    align-items: flex-end;
+    & > :nth-child(2) {
+      order: 2;
+      flex-direction: column;
+    }
+    height: 480px;
+    width: 90vw;
+    position: absolute;
+    top: 28px;
+    z-index: 0;
+    background: $overlay;
   }
 }

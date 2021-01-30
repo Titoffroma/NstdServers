@@ -1,0 +1,21 @@
+<div class="backdrop burger" data-close id="burger-modal">
+    <div class="authorization-modal backdrop__modal">
+        <button class="authorization-close-button icon-btn"><span data-close
+                class="material-icons">clear</span></button>
+        <ul class="">
+            {{#each this}}
+                {{#if @first}}
+                    <li class="nav-bar__item"><a class="nav-bar__link" data-close href="/" id="id_rout_000"><i
+                                class="material-icons">home</i>Home/</a>
+                    </li>
+                {{/if}}
+                <li class="nav-bar__item {{#if @last}}current{{/if}}" role="navigation" aria-labelledby="{{id}}00">
+                    <a href="{{href}}" class="nav-bar__link" {{className}} data-close id="{{id}}00">{{text}}</a>
+                </li>
+                {{#if @last}}
+                    <li></li>
+                {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+</div>

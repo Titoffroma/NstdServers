@@ -20,6 +20,25 @@
     "url": "https://github.com/Titoffroma/NstdServers/issues"
   },
   "homepage": "http://titoffroma.github.io/nstdservers/index.html",
+  "prettier": {
+    "printWidth": 80,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": true,
+    "overrides": [
+      {
+        "files": "*.hbs",
+        "options": {
+          "singleQuote": false
+        }
+      }
+    ],
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "arrowParens": "avoid",
+    "proseWrap": "always"
+  },
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
