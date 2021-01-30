@@ -21,6 +21,8 @@ function render(e) {
   if (e.target.hasAttribute('data-id')) clearAccent();
   const path = e.target.getAttribute('href');
   decideRout(path);
+  if (document.getElementById('id_nav').classList.contains('open'))
+    document.getElementById('burger-menu').click();
 }
 
 function makeAccent({ path }) {

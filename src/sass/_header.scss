@@ -5,7 +5,7 @@
   background-image: url('../img/header-bg.png');
   background-size: cover;
   position: relative;
-  z-index: 2;
+  z-index: 12;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.8);
   height: 100px;
 }
@@ -117,19 +117,25 @@
 
 ul.navigation__list#id_nav {
   @media screen and (max-width: $tablet - 1) {
-    // display: none;
     flex-direction: column;
-    z-index: 0;
     align-items: flex-end;
+    padding: 40px;
+    height: 300px;
+    width: 100vw;
+    position: absolute;
+    top: 28px;
+    background: $overlay;
+    z-index: 10;
+    opacity: 0;
+    transform: translateY(-150px) scaleY(0);
+    transition: opacity $transition, transform $transition;
+    &.open {
+      opacity: 1;
+      transform: translateY(0) scaleY(1);
+    }
     & > :nth-child(2) {
       order: 2;
       flex-direction: column;
     }
-    height: 480px;
-    width: 90vw;
-    position: absolute;
-    top: 28px;
-    z-index: 0;
-    background: $overlay;
   }
 }
