@@ -1,64 +1,57 @@
-class Slider {
-  constructor() {
-    this.active = 0;
-    this.timer = null;
-    this.left = document.getElementById('slider_left');
-    this.right = document.getElementById('slider_right');
-    this.set = false;
-  }
-  get slider() {
-    return document.getElementById('slider');
-  }
-  get slides() {
-    return document.querySelectorAll('.hero-slider__slide');
-  }
-  start() {
-    this.changeSlides();
-    this.timer = setInterval(() => {
-      if (this.slider && this.set) {
-        this.changeSlides();
-      }
-    }, 5000);
-  }
-  end() {
-    if (this.set) {
-      clearInterval(this.timer);
-    }
-    this.set = false;
-  }
-  changeSlides() {
-    if (!this.slider || this.slides.length <= 1) {
-      return this.end();
-    }
-    this.set = true;
-    this.slides.forEach((slide, index) => {
-      if (slide.classList.contains('active')) {
-        slide.classList.remove('active');
-        this.active = index + 1;
-        if (this.active === this.slides.length) this.active = 0;
-      }
-    });
-    this.slides[this.active].classList.add('active');
-  }
-  changeSlidesOnEvent(event) {
-    event.preventDefault();
-    if (!this.slides.length) return;
-    if (this.timer) {
-      if (event.target === this.left || event.detail.dir === 'left') {
-        if (this.active === 0) this.active = this.slides.length;
-        this.active--;
-      }
-      if (event.target === this.right || event.detail.dir === 'right') {
-        if (this.active === this.slides.length - 2) this.active = 0;
-        this.active++;
-      }
-      this.end();
-      this.start();
-    }
-  }
+import indicators from '../../templates/swipe-indicators.hbs';
+
+import img1 from '../../img/benefit1.svg';
+import img2 from '../../img/benefit2.svg';
+import img3 from '../../img/benefit3.svg';
+import img4 from '../../img/benefit4.svg';
+import img5 from '../../img/benefit5.svg';
+import img6 from '../../img/benefit6.svg';
+import img7 from '../../img/benefit7.svg';
+import img8 from '../../img/benefit8.svg';
+
+import png1 from '../../img/service1.png';
+import png2 from '../../img/service2.png';
+import png3 from '../../img/service3.png';
+import png4 from '../../img/service4.png';
+import png5 from '../../img/service5.png';
+import png6 from '../../img/service6.png';
+import png7 from '../../img/service7.png';
+import png8 from '../../img/service8.png';
+
+const imgs = [img1, img2, img3, img4, img5, img6, img7, img8];
+
+const pngs = [png1, png2, png3, png4, png5, png6, png7, png8];
+
+function drawBenefits() {
+  let images = document.querySelectorAll('#advantages .cardset__image');
+  images.forEach((image, index) => {
+    image.src = `${imgs[index]}`;
+  });
+  images = document.querySelectorAll('#services .cardset__pic');
+  images.forEach((image, index) => {
+    image.src = `${pngs[index]}`;
+  });
 }
 
-const slider = new Slider();
-export default slider;
+function renderIndicators() {
+  const slide1 = document.getElementById('slider');
+  const slide2 = document.getElementById('advantages');
+  const slide3 = document.getElementById('services');
+  let arr = Array.from(slide1.querySelectorAll('.hero-slider__slide'));
+  let markup = indicators(arr);
+  slide1.insertAdjacentHTML('beforeend', markup);
+  arr = Array.from(slide2.querySelectorAll('.cardset__list-item')).map(el => {
+    return { class: 'benefit' };
+  });
+  arr.length = Math.ceil(arr.length / 2);
+  markup = indicators(arr);
+  slide2.insertAdjacentHTML('beforeend', markup);
+  arr = Array.from(slide2.querySelectorAll('.cardset__list-item')).map(el => {
+    return { class: 'services' };
+  });
+  arr.length = Math.ceil(arr.length / 2);
+  markup = indicators(arr);
+  slide3.insertAdjacentHTML('beforeend', markup);
+}
 
-export { slider };
+export { drawBenefits, renderIndicators };

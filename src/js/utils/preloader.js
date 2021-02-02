@@ -1,18 +1,19 @@
 const measureAndFixScroll = function () {
-  const bodyOverflow = getComputedStyle(document.body).overflowY;
+  const cont = document.body;
+  const bodyOverflow = getComputedStyle(cont).overflowY;
   if (bodyOverflow === 'hidden') return;
   const scrollDiv = document.createElement('div');
   scrollDiv.className = 'scrollbar-measure';
-  document.body.appendChild(scrollDiv);
+  cont.appendChild(scrollDiv);
   const scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
-  document.body.removeChild(scrollDiv);
-  const cont = document.body;
-  const contRightPadRaw = getComputedStyle(cont).paddingRight;
-  const contRightPad = contRightPadRaw
-    .split('')
-    .filter(el => !el.search(/[0-9]/))
-    .join('');
-  cont.style.paddingRight = `${-(-contRightPad - scrollbarWidth)}px`;
+  cont.removeChild(scrollDiv);
+  const { newPad, contRightPadRaw } = fixPad(cont, scrollbarWidth);
+  cont.style.paddingRight = newPad
+  const header = document.querySelector('.header');
+  if (getComputedStyle(header).position === 'fixed') {
+    header.style.paddingRight = newPad;
+  }
+
   return contRightPadRaw;
 };
 
@@ -40,5 +41,16 @@ const delPreloader = option => {
     document.body.style.paddingRight = initialPad;
   }, 2000);
 };
+
+function fixPad(el, width) {
+  const contRightPadRaw = getComputedStyle(el).paddingRight;
+  const contRightPad = contRightPadRaw
+    .split('')
+    .filter(el => !el.search(/[0-9]/))
+    .join('');
+  const newPad = `${-(-contRightPad - width)}px`;
+    
+  return { contRightPadRaw, newPad };
+}
 
 export { measureAndFixScroll, addPreloader, delPreloader };

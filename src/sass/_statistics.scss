@@ -1,0 +1,131 @@
+#statistics {
+  background: $overlay;
+  padding: 100px 0;
+}
+.statistics {
+  @extend %flex-container;
+  flex-direction: column;
+  &__wrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+    & > :first-child {
+      margin-bottom: 10px;
+    }
+    @media screen and (min-width: $tablet) {
+      max-width: 840px;
+      padding: 0 25px;
+      & > :first-child {
+        margin-bottom: 0px;
+      }
+    }
+    @media screen and (min-width: $desktop) {
+      max-width: 1100px;
+    }
+    @extend %flex-container;
+    flex-direction: column;
+    justify-content: space-between;
+    @media screen and (min-width: $tablet) {
+      flex-direction: row;
+    }
+  }
+  &__list {
+    padding: 20px;
+    padding-right: 40px;
+    border-radius: 16px;
+    margin-right: 40px;
+  }
+  &__listitem {
+    height: 2em;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    transform: translateX(20px);
+    opacity: 0.6;
+    transition: transform 100ms ease-out, opacity 100ms ease-out;
+    font-size: 12px;
+    @media screen and (min-width: $tablet) {
+      font-size: 16px;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 24px;
+    }
+    &:nth-child(2) {
+      transition-delay: 100ms;
+    }
+    &:nth-child(3) {
+      transition-delay: 200ms;
+    }
+    &:nth-child(4) {
+      transition-delay: 300ms;
+    }
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+  &__value {
+    display: inline-block;
+    transition: border-color 100ms ease-out;
+    @extend %button;
+    margin-right: 10px;
+    width: 70px;
+    &:nth-child(2) {
+      transition-delay: 100ms;
+    }
+    &:nth-child(3) {
+      transition-delay: 200ms;
+    }
+    &:nth-child(4) {
+      transition-delay: 300ms;
+    }
+  }
+  &__name {
+    @extend %anchor;
+    transition: font-weight 100ms ease-out, text-shadow 100ms ease-out;
+    &:hover {
+      font-weight: $normal;
+    }
+  }
+  &__circle {
+    background-image: url('../img/speed.svg');
+    background-size: cover;
+    padding: 40px;
+  }
+}
+
+#statistics:hover {
+  cursor: url('../img/rocket.png') 4 2, auto;
+  .statistics__listitem {
+    transition: transform 1s ease-out, opacity 1s ease-out;
+    &:nth-child(2) {
+      transition-delay: 1s;
+    }
+    &:nth-child(3) {
+      transition-delay: 2s;
+    }
+    &:nth-child(4) {
+      transition-delay: 3s;
+    }
+    transform: translateX(0);
+    opacity: 1;
+    .statistics__value {
+      transition: border-color 1s ease-out;
+      border-color: $accent;
+    }
+    .statistics__name {
+      transition: font-weight 1s ease-out, text-shadow 1s ease-out;
+      font-weight: $bold;
+      text-shadow: 0 0 14px rgba(255, 255, 255, 0.8);
+      &:nth-child(2) {
+        transition-delay: 1s;
+      }
+      &:nth-child(3) {
+        transition-delay: 2s;
+      }
+      &:nth-child(4) {
+        transition-delay: 3s;
+      }
+    }
+  }
+}

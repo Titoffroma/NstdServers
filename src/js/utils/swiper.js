@@ -144,3 +144,102 @@
     return defaultValue;
   }
 })(window, document);
+
+class Swiper {
+  constructor(slider, slide, indicators) {
+    this.sliderName = slider;
+    this.slideName = slide;
+    this.indicatorsName = indicators;
+    this.interval = 4000;
+    this.timer = null;
+    this.index = 0;
+  }
+  get slider() {
+    return document.getElementById(this.sliderName);
+  }
+  get slide() {
+    return document.getElementById(this.slideName);
+  }
+  get indicators() {
+    return document.querySelectorAll(this.indicatorsName);
+  }
+  start() {
+    this.clear();
+  }
+  clear() {
+    this.end();
+    this.timer = setInterval(() => {
+      if (this.slider) {
+        this.slideLeft();
+      }
+    }, this.interval);
+  }
+  end() {
+    clearInterval(this.timer);
+    this.timer = null;
+  }
+  beforeSlide() {
+    const { x: X } = this.slider.getBoundingClientRect();
+    const { x } = this.slide.getBoundingClientRect();
+    const slidesTotal = Math.round(
+      this.slide.offsetWidth / this.slider.offsetWidth,
+    );
+    if (slidesTotal === 1)
+      return (this.slide.style.transform = 'translateX(0)');
+    const slided = Math.round((X - x) / this.slider.offsetWidth);
+    this.indicators.length &&
+      this.indicators.forEach(el => el.classList.remove('active'));
+    return { X, x, slidesTotal, slided };
+  }
+
+  slideLeft() {
+    const { slidesTotal, slided } = this.beforeSlide();
+    if (!slidesTotal) return;
+    if (slided + 1 === slidesTotal) {
+      this.slide.style.transform = 'translateX(0)';
+    } else
+      this.slide.style.transform = `translateX(-${
+        (slided + 1) * this.slider.offsetWidth
+      }px)`;
+    this.index = slided + 1;
+    if (this.indicators.length && this.index === this.indicators.length)
+      this.index = 0;
+    this.indicators.length &&
+      this.indicators[this.index].classList.add('active');
+  }
+
+  slideRight() {
+    const { x, X, slidesTotal, slided } = this.beforeSlide();
+    if (!slidesTotal) return;
+    if (-slided + 1 === slidesTotal) return;
+    if (x === X)
+      this.slide.style.transform = `translateX(-${
+        this.slide.offsetWidth - this.slider.offsetWidth
+      }px)`;
+    else
+      this.slide.style.transform = `translateX(${
+        (-slided + 1) * this.slider.offsetWidth
+      }px)`;
+    this.index = slided - 1;
+    if (this.index === -1) this.index = this.indicators.length - 1;
+    this.indicators[this.index].classList.add('active');
+  }
+
+  desideEvent(event) {
+    if (this.timer) {
+      this.clear();
+      if (event.detail.dir === 'left') {
+        this.slideLeft(true);
+      }
+      if (event.detail.dir === 'right') {
+        this.slideRight(true);
+      }
+    }
+  }
+}
+
+const swiper = new Swiper('advantages-slider', 'advantages-slide', '.benefit');
+
+const swiper1 = new Swiper('services-slider', 'services-slide', '.services');
+
+export { swiper, swiper1 };

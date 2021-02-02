@@ -9,4 +9,4 @@ import listenSwipes from './events/swipeListener';
 const root = document.getElementById('root');
 
 document.addEventListener('click', listenClicks);
-document.addEventListener('swipe', listenSwipes);
+document.addEventListener('swiped', listenSwipes);

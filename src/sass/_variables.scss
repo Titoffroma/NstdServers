@@ -7,9 +7,15 @@ $phone: 480px;
 /* colors*/
 
 $white: #fff;
-$main-purple: rgb(63, 14, 122);
-$main-purple-gr: rgba(63, 14, 122, 0.5);
-$main-purple-bg: rgba(63, 14, 122, 0.2);
+$header-gr: linear-gradient(
+  180deg,
+  rgba(45, 21, 70, 0.85),
+  rgba(29, 15, 67, 0.85) 45%,
+  rgba(19, 12, 65, 0.85)
+);
+$main-purple: rgba(0, 7, 52, 1);
+$main-purple-gr: rgba(0, 7, 52, 0.5);
+$main-purple-bg: rgba(0, 7, 52, 0.2);
 $black: #000000;
 $logo-black: #010002;
 $main-grey: #f5f6fb;
@@ -21,11 +27,12 @@ $main-red: red;
 
 $overlay: rgba(0, 0, 0, 0.7);
 $overlay-light: rgba(27, 69, 111, 0.4);
-$dim: rgba(225, 225, 225, 0.8); /* placeholder-text */
+$dim: rgba(225, 225, 225, 0.8);
 $dim-bg: rgba(202, 218, 255, 0.8);
 $dim-bg-light: rgba(202, 218, 255, 0.2);
-$slider-bg: linear-gradient($dim-bg, $dim-bg-light);
-
+$slider-bg: linear-gradient($dim-bg-light, $dim-bg);
+$root-bg: linear-gradient(rgba(0, 7, 52, 0.9), rgba(0, 7, 52, 1));
+$color: #000734;
 /* shadows */
 
 $shade: 0px 2px 4px rgba(0, 0, 0, 0.1);

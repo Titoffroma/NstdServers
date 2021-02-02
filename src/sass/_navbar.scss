@@ -1,6 +1,5 @@
 .nav {
-  padding-bottom: 40px;
-  position: relative;
+  position: fixed;
   z-index: 10;
 }
 .nav.container {
@@ -16,8 +15,9 @@
   border-top: none;
   border-radius: 0 0 16px 16px;
   overflow: hidden;
-  padding: 10px 0;
+  padding: 10px 20px;
   background-color: #fff;
+  width: fit-content;
   &__item {
     display: inline-block;
     padding-left: 10px;

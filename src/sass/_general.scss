@@ -10,7 +10,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background: #f5f6fb;
+  background: $main-purple;
   overflow-x: hidden;
 }
 footer {
@@ -41,7 +41,7 @@ main {
   width: 100%;
   padding: 0 5px;
   transform: scaleX(0.9);
-  opacity: 0;
+  opacity: 0.5;
   transition: transform 1s ease-out, opacity $transition;
   @media screen and (min-width: $tablet) {
     padding: 0 25px;
@@ -49,6 +49,15 @@ main {
   &.present {
     transform: scaleX(1);
     opacity: 1;
+  }
+}
+section.container {
+  padding-bottom: 20px;
+  @media screen and (min-width: $tablet) {
+    padding-bottom: 30px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding-bottom: 50px;
   }
 }
 %visually-hidden {
@@ -125,13 +134,45 @@ main {
   top: -9999px;
 }
 #root {
+  position: relative;
   background-color: #e5e5e5;
-  background-image: linear-gradient($dim-bg, $main-purple), url('../img/bg.jpg');
+  background-image: $root-bg;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  height: 100%;
+  padding-top: 40px;
   width: 100%;
+  @media screen and (min-width: $tablet) {
+    padding-top: 100px;
+  }
+}
+.main__home {
+  padding-top: 40px;
+  @media screen and (min-width: $tablet) {
+    padding-top: 100px;
+  }
+}
+.header__video {
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: auto;
+  min-width: 100;
+  height: auto;
+  min-height: 100vh;
+}
+.section__header {
+  background: $overlay;
+  display: inline-block;
+  border-radius: 8px;
+  color: $accent;
+  font-size: 16px;
+  padding: 15px;
+  margin-bottom: 15px;
+  @media screen and (min-width: $tablet) {
+    font-size: 24px;
+  }
 }
 %flex-container {
   display: flex;
@@ -139,6 +180,7 @@ main {
   align-items: center;
 }
 %button {
+  background: $main-purple;
   border: 1px solid $bg-grey;
   border-radius: 4px;
   padding: 4px 10px;
@@ -148,9 +190,18 @@ main {
   @extend %button;
   background: $accent;
   color: $white;
+  &:hover,
+  &:focus {
+    color: $white;
+    font-weight: bold;
+    border: 1px solid $accent;
+    outline: none;
+  }
+  &:active {
+    background: $overlay;
+  }
 }
 %anchor {
-  @extend %flex-container;
   font-weight: normal;
   color: $dim;
   transition: color $transition, transform $transition;

@@ -18,7 +18,7 @@ module.exports = env => ({
         use: ['babel-loader'],
       },
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
+        test: /\.(gif|png|jpe?g|svg|mp4|webm)$/i,
         use: [
           {
             loader: 'url-loader',

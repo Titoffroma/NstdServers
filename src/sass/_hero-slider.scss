@@ -2,20 +2,42 @@
   position: relative;
   max-width: 600px;
   overflow: hidden;
-  height: 610;
+  height: 570px;
   margin: 0 auto;
-  @media screen and (min-width: $tablet) {
-    max-width: 1100px;
-  }
   @media screen and (min-width: $phone) {
     height: 510px;
   }
+  @media screen and (min-width: $tablet) {
+    max-width: 1100px;
+    height: 530px;
+  }
   &__content {
     position: relative;
-    height: 560px;
+    height: 520px;
     border-radius: 16px;
     @media screen and (min-width: $phone) {
       height: 460px;
+    }
+    @media screen and (min-width: $tablet) {
+      height: 480px;
+    }
+  }
+  .order {
+    @extend %flex-container;
+    flex-direction: column;
+    align-items: flex-end;
+    width: fit-content;
+    margin-top: 20px;
+    position: static;
+    background: $dim;
+    font-size: 14px;
+    font-weight: $normal;
+    text-shadow: $text-shade-light;
+    opacity: 0;
+    transform: translateY(-100px) scale(0.5);
+    transition: transform $transition 750ms, opacity $transition 750ms;
+    @media screen and (min-width: $tablet) {
+      font-size: 16px;
     }
   }
   &__slide {
@@ -27,16 +49,21 @@
     height: 100%;
     background-size: contain;
     will-change: opacity, transform;
-    transition: transform $slider 200ms, opacity $slider;
-    transform: translateX(100%) scale(0.5);
+    transition: transform $slider, opacity $slider;
     opacity: 0;
-    &.active {
+    &.left {
+      transform: translateX(-100%) scale(0.5);
+    }
+    &.right {
+      transform: translateX(100%) scale(0.5);
+    }
+    &.left.active,
+    &.right.active {
       transform: translateX(0) scale(1);
       opacity: 1;
-      & .order {
+      .order {
         opacity: 1;
         transform: translateY(-10px);
-        transition: transform $transition, opacity $transition;
       }
     }
   }
@@ -79,34 +106,6 @@
     position: absolute;
     top: 20px;
     left: 20px;
-    background: $overlay;
-    display: inline-block;
-    border-radius: 8px;
-    color: $accent;
-    font-size: 16px;
-    padding: 15px;
-    margin-bottom: 15px;
-    @media screen and (min-width: $tablet) {
-      font-size: 24px;
-    }
-    &.order {
-      @extend %flex-container;
-      flex-direction: column;
-      align-items: flex-end;
-      width: fit-content;
-      margin-top: 20px;
-      position: static;
-      background: $dim;
-      font-size: 14px;
-      font-weight: $normal;
-      text-shadow: $text-shade-light;
-      opacity: 0;
-      transform: translateY(-20px);
-      transition: transform $transition, opacity $transition;
-      @media screen and (min-width: $tablet) {
-        font-size: 16px;
-      }
-    }
   }
   &__order-btn {
     margin-top: 15px;
@@ -165,8 +164,11 @@
     right: 0px;
     padding: 6px;
     border-radius: 28px;
-    background: $dim-bg-light;
+    background: $overlay-light;
     @extend %flex-container;
+    @media screen and (max-width: $tablet - 1) {
+      display: none;
+    }
     &-button {
       @extend %flex-container;
       position: relative;
@@ -220,5 +222,44 @@
         }
       }
     }
+  }
+  &__indicators {
+    position: absolute;
+    bottom: 0px;
+    right: 50%;
+    transform: translateX(50%);
+    padding: 6px;
+    border-radius: 11px;
+    background: $overlay-light;
+    @extend %flex-container;
+  }
+  &__indicator {
+    background: $main-purple;
+    height: 10px;
+    width: 10px;
+    border-radius: 5px;
+    will-change: height;
+    transition: height $transition, background $transition;
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+    &.active {
+      background: $accent;
+      height: 20px;
+    }
+  }
+}
+.wave {
+  height: 240px;
+  width: 100%;
+  background-image: url('../img/bg-wave.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  @media screen and (min-width: $desktop) {
+    height: 340px;
+  }
+  @media screen and (min-width: $desktop) {
+    height: 440px;
   }
 }

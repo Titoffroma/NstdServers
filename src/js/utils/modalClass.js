@@ -1,8 +1,7 @@
 import { measureAndFixScroll } from './preloader';
-import openMenu from '../pages/burger';
 import authorize from '../../templates/login-modal.hbs';
 
-const hbsFunctions = [authorize, , openMenu];
+const hbsFunctions = [authorize];
 
 class Modal {
   constructor(functions) {
@@ -45,6 +44,10 @@ class Modal {
       if (this.isScrolled) return;
       document.body.style.overflowY = 'auto';
       document.body.style.paddingRight = this.scroll;
+      const header = document.querySelector('.header');
+      if (getComputedStyle(header).position === 'fixed') {
+        header.style.paddingRight = this.scroll;
+      }
     }, 500);
   }
   onEscapeCloseModal(event) {

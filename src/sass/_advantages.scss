@@ -1,0 +1,114 @@
+.cardset {
+  position: relative;
+  height: 200px;
+  width: 300px;
+  margin: 0 auto;
+  overflow: hidden;
+  @media screen and (min-width: $tablet) {
+    position: static;
+    overflow: visible;
+    height: auto;
+    width: 100%;
+    max-width: 1000px;
+  }
+  @media screen and (min-width: $desktop) {
+    max-width: 1500px;
+  }
+  @media screen and (max-width: $tablet - 1) {
+    height: 200px;
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    position: absolute;
+    transform: translateX(0);
+    transition: transform $slider;
+    @include Cardset-Responsive($phone, 15px, 30px, 2);
+    @include Cardset-Responsive($tablet, 20px, 40px, 3);
+    @include Cardset-Responsive($desktop, 30px, 50px, 4);
+    @media screen and (min-width: $tablet) {
+      flex-wrap: wrap;
+      position: static;
+      padding: 0 15px;
+    }
+  }
+  &__list-item {
+    @extend %flex-container;
+    flex-direction: column;
+  }
+  &__image {
+    border: 4px solid $accent;
+    box-sizing: content-box;
+    object-fit: scale-down;
+    object-position: center;
+    background: $overlay;
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    overflow: hidden;
+    box-shadow: $text-shade;
+    @media screen and (max-width: $tablet - 1) {
+      margin-right: 0;
+      width: 80px;
+      height: 80px;
+    }
+  }
+  &__header {
+    @extend .hero-slider__header;
+    font-size: 12px;
+    height: 5em;
+    @media screen and (min-width: $tablet) {
+      font-size: 16px;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 18px;
+    }
+  }
+}
+.main-header {
+  @extend .hero-slider__header;
+  margin-bottom: 20px;
+}
+#advantages {
+  background: $overlay-light;
+  padding: 40px 0;
+}
+#services {
+  padding-top: 40px;
+  background: $overlay;
+  .cardset__pic {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    object-position: center center;
+    filter: grayscale(100%);
+    transform: scale(0.8);
+  }
+}
+.cardset__list > .cardset__list-item:nth-child(n) {
+  @media screen and (max-width: $tablet - 1) {
+    margin-right: 0;
+    width: 150px;
+    height: 200px;
+  }
+}
+#advantages,
+#services {
+  padding-bottom: 80px;
+  .hero-slider__indicators {
+    bottom: 20px;
+    @media screen and (min-width: $tablet) {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      border: 0;
+      clip: rect(0 0 0 0);
+    }
+  }
+}

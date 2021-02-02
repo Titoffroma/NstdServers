@@ -1,4 +1,4 @@
-import slider from '../pages/home';
+import slider from '../utils/slider';
 
 function preload({ path }) {
   if (path !== '/') slider.end();
