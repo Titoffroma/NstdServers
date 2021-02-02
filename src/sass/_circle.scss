@@ -57,8 +57,12 @@
 }
 #circle {
   position: relative;
-  height: 220px;
-  width: 220px;
+  height: 180px;
+  width: 180px;
+  @media screen and (min-width: $tablet) {
+    height: 220px;
+    width: 220px;
+  }
   padding: 10px;
   background: conic-gradient($main-purple, $accent, $main-purple);
   transform: rotate(225deg);

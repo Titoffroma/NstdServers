@@ -94,6 +94,13 @@
   &__list {
     width: 100%;
     justify-content: space-between;
+    font-size: 14px;
+    @media screen and (min-width: 960px) {
+      font-size: 18px;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 22px;
+    }
   }
   &__item {
     @extend %flex-container;
@@ -135,15 +142,19 @@
   }
   &__item {
     @extend %flex-container;
+    position: relative;
     height: fit-content;
     padding: 10px 0;
+    &:nth-child(2) {
+      padding: 10px 20px;
+    }
     #id_login {
       @extend %button-main;
     }
     #id_register {
       @extend %anchor;
       @extend %flex-container;
-      width: 80px;
+      position: absolute;
     }
   }
 }

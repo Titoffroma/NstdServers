@@ -44,7 +44,10 @@
     transform: translateX(20px);
     opacity: 0.6;
     transition: transform 100ms ease-out, opacity 100ms ease-out;
-    font-size: 12px;
+    font-size: 10px;
+    @media screen and (min-width: $phone) {
+      font-size: 12px;
+    }
     @media screen and (min-width: $tablet) {
       font-size: 16px;
     }
@@ -88,9 +91,9 @@
     }
   }
   &__circle {
-    background-image: url('../img/speed.svg');
+    background-image: url('../img/speed2.svg');
     background-size: cover;
-    padding: 40px;
+    padding: 50px;
   }
 }
 
