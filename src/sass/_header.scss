@@ -89,15 +89,15 @@
   pointer-events: none;
   height: 30px;
   object-fit: contain;
-  transform: translateX(-200px);
+  transform: translate(-200px, -200px);
   transition: transform 250ms ease-in;
   @media screen and (min-width: $tablet) {
     height: 40px;
   }
 }
 .present .logo__image {
-  transform: translateX(0);
-  transition: transform 1s ease-out 500ms;
+  transform: translate(0, 0);
+  transition: transform 1s ease-out 2s;
 }
 .navigation {
   justify-content: space-between;

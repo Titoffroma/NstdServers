@@ -8,7 +8,7 @@ const measureAndFixScroll = function () {
   const scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
   cont.removeChild(scrollDiv);
   const { newPad, contRightPadRaw } = fixPad(cont, scrollbarWidth);
-  cont.style.paddingRight = newPad
+  cont.style.paddingRight = newPad;
   const header = document.querySelector('.header');
   if (getComputedStyle(header).position === 'fixed') {
     header.style.paddingRight = newPad;
@@ -39,7 +39,7 @@ const delPreloader = option => {
     if (option) return;
     document.body.style.overflowY = 'auto';
     document.body.style.paddingRight = initialPad;
-  }, 2000);
+  }, 3000);
 };
 
 function fixPad(el, width) {
@@ -49,7 +49,7 @@ function fixPad(el, width) {
     .filter(el => !el.search(/[0-9]/))
     .join('');
   const newPad = `${-(-contRightPad - width)}px`;
-    
+
   return { contRightPadRaw, newPad };
 }
 
