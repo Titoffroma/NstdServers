@@ -196,6 +196,7 @@ section.container {
     font-weight: bold;
     border: 1px solid $accent;
     outline: none;
+    padding: 4px 10px;
   }
   &:active {
     background: $overlay;

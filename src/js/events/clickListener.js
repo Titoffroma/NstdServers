@@ -42,28 +42,12 @@ function render(e) {
 
 function makeAccent({ path }) {
   clearAccent();
-  // const cardItems = document.querySelectorAll('.nav-bar__item');
-  // setTimeout(
-  //   () => cardItems[cardItems.length - 1].classList.add('current'),
-  //   100,
-  // );
-  // cardItems.forEach(el => {
-  //   el.classList.remove('current');
-  // });
   if (path.split('/').reverse()[0] === lang.name) path = '/';
   const target = document.querySelector(`[href='${path}']`);
-  // target
-  //   .closest('ul')
-  //   .querySelectorAll('a')
-  //   .forEach(el => el.removeAttribute('disabled'));
   if (target) {
     target.classList.add('coloured');
     target.setAttribute('disabled', '');
   }
-  // if (target.getAttribute('id') === 'id_rout_1') {
-  //   document.querySelector('#id_rout_00').click();
-  //   return;
-  // }
 }
 
 function clearAccent() {

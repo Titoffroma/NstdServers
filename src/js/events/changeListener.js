@@ -23,28 +23,4 @@ function changeLangPath(previousLang, newLang) {
   return url.pathname + url.search;
 }
 
-// function changeLangPath(previousLang, newLang) {
-//   const loc = location.pathname + location.search;
-//   let path = loc;
-//   if (newLang === previousLang) {
-//     return path;
-//   }
-//   path = loc
-//     .trim()
-//     .split('?lang=')
-//     .reduce((acc, el) => {
-//       if (el === previousLang) {
-//         acc += newLang;
-//         return acc;
-//       }
-//       if (el === newLang) {
-//         acc += newLang;
-//         return acc;
-//       }
-//       acc += el + '?lang=';
-//       return acc;
-//     }, '');
-//   return path;
-// }
-
 export { changeLangPath };

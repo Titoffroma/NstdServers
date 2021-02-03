@@ -147,6 +147,7 @@
 
 .authorization {
   justify-content: space-between;
+  padding-right: 20px;
   &__list {
     justify-content: space-around;
   }
@@ -173,7 +174,7 @@
   @extend %flex-container;
   &__select {
     appearance: none;
-    @extend %button-main;
+    padding: 0;
     background: transparent;
     option {
       display: block;
@@ -188,6 +189,11 @@
       &:hover {
         background: $main-purple;
       }
+    }
+    span {
+      @extend %button-main;
+      background: transparent;
+      cursor: pointer;
     }
   }
 }
