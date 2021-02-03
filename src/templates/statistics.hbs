@@ -1,33 +1,22 @@
-<section class="container" id="statistics">
-    <h2 class="main-header">СТАТИСТИКА</h2>
-    <article class="statistics" id="id_statistics">
-        <h3 class="section__header">Лучшие показатели производительности и быстродействия</h3>
-        <div class="statistics__wrapper">
-            <ul class="statistics__list">
-                <li class="statistics__listitem">
-                    <span class="statistics__value">1000</span>
-                    <span class="statistics__name">Какая-то способность предвигать предметы силой мысли</span>
-                    <span class="statistics__line"></span>
-                </li>
-                <li class="statistics__listitem">
-                    <span class="statistics__value">6666</span>
-                    <span class="statistics__name">Еще одна способность становиться невидимым</span>
-                    <span class="statistics__line"></span>
-                </li>
-                <li class="statistics__listitem">
-                    <span class="statistics__value">24/7</span>
-                    <span class="statistics__name">Суперспособность быть программистом и успевать высыпаться</span>
-                    <span class="statistics__line"></span>
-                </li>
-                <li class="statistics__listitem">
-                    <span class="statistics__value">2+2</span>
-                    <span class="statistics__name">Так себе способность уметь то, что все могут</span>
-                    <span class="statistics__line"></span>
-                </li>
-            </ul>
-            <div class="statistics__circle" id="id_circle">
-                {{> ./circle}}
+{{#each statistics}}
+    <section class="container" id="statistics">
+        <h2 class="main-header">{{title}}</h2>
+        <article class="statistics" id="id_statistics">
+            <h3 class="section__header">{{subTitle}}</h3>
+            <div class="statistics__wrapper">
+                <ul class="statistics__list">
+                    {{#each stats}}
+                        <li class="statistics__listitem">
+                            <span class="statistics__value">{{value}}</span>
+                            <span class="statistics__name">{{name}}</span>
+                            <span class="statistics__line"></span>
+                        </li>
+                    {{/each}}
+                </ul>
+                <div class="statistics__circle" id="id_circle">
+                    {{> ./circle}}
+                </div>
             </div>
-        </div>
-    </article>
-</section>
+        </article>
+    </section>
+{{/each}}

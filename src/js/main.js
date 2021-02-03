@@ -5,8 +5,8 @@ import renderCard from '../templates/card.hbs';
 import { render } from './pages/pages';
 import listenClicks from './events/clickListener';
 import listenSwipes from './events/swipeListener';
-
-const root = document.getElementById('root');
+import listenChange from './events/changeListener';
 
 document.addEventListener('click', listenClicks);
 document.addEventListener('swiped', listenSwipes);
+document.addEventListener('change', listenChange);

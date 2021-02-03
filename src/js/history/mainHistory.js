@@ -1,3 +1,4 @@
+import { load, save, remove } from '../utils/storage';
 import routers from './routers';
 import { makeAccent } from '../events/clickListener';
 import preload from '../utils/preload';
@@ -6,9 +7,17 @@ import {
   addPreloader,
   delPreloader,
 } from '../utils/preloader';
+import { changeLangPath } from '../events/changeListener';
 
 let auth = true;
 let startState = true;
+
+const lang = {
+  get name() {
+    const lang = load('Lang');
+    return lang || 'ru';
+  },
+};
 
 window.onload = () => {
   addPreloader(document.body, true);
@@ -16,23 +25,26 @@ window.onload = () => {
 };
 
 window.onpopstate = () => {
-  const state = decideRout(location.pathname, true);
+  const previousLang = lang.name;
+  const pathNew = location.pathname.split('&lang=');
+  pathNew[1] = previousLang;
+  const path = pathNew.join('&lang=');
+  decideRout(path, true);
 };
 
 function decideRout(path, replace = false) {
-  if (path.includes('server')) path = '/';
+  if (path.includes('server') || path === '/') path = `/&lang=${lang.name}`;
   let rout = routers.find(el => el.path === path);
-  if (rout && !startState) {
-    replace
-      ? history.replaceState({ page: rout.page }, rout.title, path)
-      : history.pushState({ page: rout.page }, rout.title, path);
-  }
   if (!rout) rout = routers[0];
+  replace
+    ? history.replaceState({ page: rout.page }, rout.title, path)
+    : history.pushState({ page: rout.page }, rout.title, path);
   rout.component();
   preload(rout);
   rout && makeAccent(rout);
   startState = false;
+
   return rout;
 }
 
-export { decideRout };
+export { lang, decideRout };

@@ -1,5 +1,6 @@
-<div class="hero-slider__order-container">
-    <h3 class="hero-slider__section-header order section__header" role="header">Оставьте заявку на бесплатный тестовый
-        период!<a class="hero-slider__order-btn" href="" data-modal="0">Получить консультацию</a></h3>
-
-</div>
+{{#each order}}
+    <div class="hero-slider__order-container">
+        <h3 class="hero-slider__section-header order section__header" role="header">{{buttonTitle}}<a
+                class="hero-slider__order-btn" href="" data-modal="0">{{buttonText}}</a></h3>
+    </div>
+{{/each}}

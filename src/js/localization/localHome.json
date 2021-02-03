@@ -1,0 +1,198 @@
+{
+  "ru": {
+    "heroSlider": [
+      {
+        "class": "one",
+        "title": "Почему облако МТС?",
+        "subTitle": "С MTC Cloud Вы сможете:",
+        "list": [
+          { "listitem": "снизить затраты на ИТ-инфраструктуру до 60%" },
+          {
+            "listitem": "платить только за то, чем пользуетесь, по модели pay-as-you-go"
+          },
+          {
+            "listitem": "больше не беспокоиться об уязвимостях ваших серверов"
+          },
+          { "listitem": "получить комплексное решение: IaaS и каналы связи" },
+          { "listitem": "бесплатно протестировать возможности МТС Cloud" }
+        ],
+        "order": [
+          {
+            "buttonTitle": "Оставьте заявку на бесплатный тестовый период!",
+            "buttonText": "Получить консультацию"
+          }
+        ]
+      },
+      {
+        "class": "two",
+        "title": "Индивидуальный подход",
+        "subTitle": "Не подходит стандартное решение?",
+        "list": [
+          {
+            "listitem": "Команда экспертов МТС Cloud разработает и реализует проект специально для вашей компании."
+          }
+        ],
+        "order": [
+          {
+            "buttonTitle": "Оставьте заявку на бесплатный тестовый период!",
+            "buttonText": "Получить консультацию"
+          }
+        ]
+      },
+      {
+        "class": "three",
+        "title": "Почему облако МТС?",
+        "subTitle": "С MTC Cloud Вы сможете:",
+        "list": [
+          { "listitem": "" },
+          {
+            "listitem": ""
+          },
+          {
+            "listitem": ""
+          },
+          { "listitem": "" },
+          { "listitem": "" }
+        ]
+      }
+    ],
+    "statistics": [
+      {
+        "title": "СТАТИСТКА",
+        "subTitle": "Лучшие показатели производительности и быстродействия",
+        "stats": [
+          {
+            "value": 1000,
+            "name": "Какая-то способность предвигать предметы силой мысли"
+          },
+          {
+            "value": 6666,
+            "name": "Еще одна способность становиться невидимым"
+          },
+          {
+            "value": "24/7",
+            "name": "Суперспособность быть программистом и успевать высыпаться"
+          },
+          {
+            "value": "2+2",
+            "name": "Так себе способность уметь то, что все могум"
+          }
+        ]
+      }
+    ],
+    "advantages": [
+      {
+        "title": "Преимущества МТС Cloud",
+        "list": [
+          { "benefit": "Гарантированный уровень доступности 99,9%" },
+          { "benefit": "Подбор индивидуальных решений" },
+          { "benefit": "Три платформы виртуализации Huawei, VMware, RedHat" },
+          { "benefit": "Возможность оплаты по факту потребления" },
+          { "benefit": "Размещение ресурсов в ЦОДе класса Tier3" },
+          { "benefit": "Организация каналов связи" },
+          { "benefit": "Комплексное решение: VPN, SIP, Fttx" },
+          { "benefit": "Круглосуточная техподдержка" }
+        ]
+      }
+    ]
+  },
+  "en": {
+    "heroSlider": [
+      {
+        "class": "one",
+        "title": "Why MTS Cloud?",
+        "subTitle": "With MTS Cloud you will manage to:",
+        "list": [
+          { "listitem": "reduce expances on IT-structure up to 60%" },
+          {
+            "listitem": "pay only for that you use, according to pay-as-you-go model"
+          },
+          {
+            "listitem": "not to warry anymore about vulnerabilities of your servers"
+          },
+          {
+            "listitem": "obtain a complex solution: IaaS and conection channels"
+          },
+          { "listitem": "test  МТS Cloud facilities for free" }
+        ],
+        "order": [
+          {
+            "buttonTitle": "leave your order for a free test period!",
+            "buttonText": "Get consultation"
+          }
+        ]
+      },
+      {
+        "class": "two",
+        "title": "Individual treatment",
+        "subTitle": "Are you not enough with a standart solution?",
+        "list": [
+          {
+            "listitem": "МТS Cloud experts team will develope and release your Companie's own project."
+          }
+        ],
+        "order": [
+          {
+            "buttonTitle": "leave your order for a free test period!",
+            "buttonText": "Get consultation"
+          }
+        ]
+      },
+      {
+        "class": "three",
+        "title": "Why MTS Cloud?",
+        "subTitle": "With MTS Cloud you will manage to:",
+        "list": [
+          { "listitem": "" },
+          {
+            "listitem": ""
+          },
+          {
+            "listitem": ""
+          },
+          { "listitem": "" },
+          { "listitem": "" }
+        ]
+      }
+    ],
+    "statistics": [
+      {
+        "title": "STATISTICS",
+        "subTitle": "Best performance and speed marks",
+        "stats": [
+          {
+            "value": 1000,
+            "name": "Some ability to move thingth with a power of mind"
+          },
+          {
+            "value": 6666,
+            "name": "One more ability to become invisible"
+          },
+          {
+            "value": "24/7",
+            "name": "A superpower to be a programmer and get anough with sleaping"
+          },
+          {
+            "value": "2+2",
+            "name": "An ordinary ability to do what all can"
+          }
+        ]
+      }
+    ],
+    "advantages": [
+      {
+        "title": "МТS Cloud advantages",
+        "list": [
+          { "benefit": "Guaranteed availability level 99,9%" },
+          { "benefit": "Individual solutions" },
+          { "benefit": "Three virualization platfoms Huawei, VMware, RedHat" },
+          { "benefit": "Possibility of payment upon consumption" },
+          { "benefit": "Resources are placed on Tier3 DPC" },
+          { "benefit": "Communication channels management" },
+          { "benefit": "Complex solutions: VPN, SIP, Fttx" },
+          { "benefit": "24/7 technical support" }
+        ]
+      }
+    ]
+  }
+}

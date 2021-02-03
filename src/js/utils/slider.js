@@ -22,9 +22,9 @@ class Slider {
   get indicators() {
     return document.querySelector('.hero-slider__indicators').children;
   }
-  start(evt) {
+  start() {
     if (this.timer) return;
-    this.changeSlides(evt);
+    this.changeSlides();
     this.timer = setInterval(() => {
       if (this.slider && this.set) {
         this.changeSlides();
@@ -38,13 +38,14 @@ class Slider {
     }
     this.set = false;
   }
-  changeSlides(evt) {
+  changeSlides() {
     if (!this.slider || this.slides.length <= 1) {
       return this.end();
     }
     this.set = true;
     const direction = this.forward ? 'right' : 'left';
     const other = this.forward ? 'left' : 'right';
+    if (!this.indicators || !this.slides.length) return;
     this.slides.forEach((slide, index) => {
       slide.classList.remove('active', 'left', 'right');
       slide.classList.add(direction);

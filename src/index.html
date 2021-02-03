@@ -7,7 +7,7 @@
   </head>
   <body>
     <div class="header">
-      <div class="container">
+      <div class="container" id="header">
         <header class="page-header">
           <div class="nav-wrapper">
             <nav class="navigation">
@@ -21,129 +21,14 @@
               </div>
               <ul class="navigation__list" id="id_nav">
                 <li class="logo--tablet">
-                  <a href="/" class="logo__home" id="id_rout_1"
+                  <a href="/" class="logo__home" id="id_rout_1_1"
                     ><img
                       src="./img/Logo.svg"
                       alt="Cloud logo"
                       class="logo__image"
                   /></a>
                 </li>
-                <li>
-                  <ul class="navigation__list-group" id="id_nav-group">
-                    <li
-                      class="navigation__item"
-                      role="navigation"
-                      aria-labelledby="id_rout_2"
-                    >
-                      <a
-                        href="/about-us"
-                        class="navigation__rout--hover"
-                        id="id_rout_2"
-                        >About Us</a
-                      ><span class="navigation__rout">About Us</span>
-                      <div class="accent"></div>
-                    </li>
-                    <li
-                      class="navigation__item"
-                      role="navigation"
-                      aria-labelledby="id_rout_3"
-                    >
-                      <a
-                        href="/online-calc"
-                        class="navigation__rout--hover"
-                        id="id_rout_3"
-                        >Online Calculator</a
-                      ><span class="navigation__rout">Online Calculator</span>
-                      <div class="accent"></div>
-                    </li>
-                    <li
-                      class="navigation__item"
-                      role="navigation"
-                      aria-labelledby="id_rout_4"
-                    >
-                      <a
-                        href="/for-partners"
-                        class="navigation__rout--hover"
-                        id="id_rout_4"
-                        >For Partners</a
-                      ><span class="navigation__rout">For Partners</span>
-                      <div class="accent"></div>
-                    </li>
-                    <li
-                      class="navigation__item"
-                      role="navigation"
-                      aria-labelledby="id_rout_5"
-                    >
-                      <a
-                        href="/contacts"
-                        class="navigation__rout--hover"
-                        id="id_rout_5"
-                        >Contacts</a
-                      ><span class="navigation__rout">Contacts</span>
-                      <div class="accent"></div>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <ul class="navigation__list-group">
-                    <li
-                      class="visually-hidden"
-                      role="navigation"
-                      aria-labelledby="id_rout_6"
-                    >
-                      <a href="/cabinet" class="navigation__rout" id="id_rout_6"
-                        >My Cabinet</a
-                      >
-                    </li>
-                    <li>
-                      <ul class="authorization">
-                        <li
-                          class="authorization__item"
-                          role="navigation"
-                          aria-labelledby="id_login"
-                        >
-                          <a
-                            href=""
-                            role="button"
-                            aria-label="login button"
-                            class="authorization__rout"
-                            id="id_login"
-                            data-modal="0"
-                            >Login</a
-                          >
-                        </li>
-                        <li
-                          class="authorization__item"
-                          role="navigation"
-                          aria-labelledby="id_register"
-                        >
-                          <a
-                            href=""
-                            role="button"
-                            aria-label="register button"
-                            class="authorization__rout"
-                            id="id_register"
-                            data-modal="0"
-                            >Register</a
-                          ><span class="navigation__rout">Register</span>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="language" label="Language">
-                      <select
-                        class="language__select"
-                        name="language"
-                        id="id_language"
-                        class="language-select"
-                      >
-                        <option value="ru" aria-label="Russian" selected>
-                          RU
-                        </option>
-                        <option value="en" aria-label="English">EN</option>
-                      </select>
-                    </li>
-                  </ul>
-                </li>
+                <li id="id_nav_list"></li>
               </ul>
               <div class="burger">
                 <a
@@ -162,7 +47,6 @@
         </header>
       </div>
     </div>
-
     <div id="root">
       <video
         loop=""
@@ -170,12 +54,13 @@
         autoplay=""
         preload="auto"
         id="bgvid"
-        poster="img/bg-header.jpg"
+        poster="./img/bg-header.jpg"
         class="header__video"
       >
         <source src="./img/bg-header.webm" type="video/webm" />
         <source src="./img/bg-header.mp4" type="video/mp4" />
       </video>
+      <div id="root-content"></div>
     </div>
     <footer class="footer">
       <div class="copyright">
