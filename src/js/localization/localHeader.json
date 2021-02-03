@@ -11,6 +11,12 @@
         "text": "О нас"
       },
       {
+        "href": "",
+        "hash": "#services",
+        "id": 12,
+        "text": "Услуги"
+      },
+      {
         "href": "online-calc",
         "id": 3,
         "text": "Онлайн-калькулятор"
@@ -40,6 +46,12 @@
         "href": "about-us",
         "id": 2,
         "text": "About us"
+      },
+      {
+        "href": "",
+        "hash": "#services",
+        "id": 6,
+        "text": "Services"
       },
       {
         "href": "online-calc",

@@ -89,16 +89,40 @@
   pointer-events: none;
   height: 30px;
   object-fit: contain;
-  transform: translate(-200px, -200px);
-  transition: transform 250ms ease-in;
+  transform: translate(-200px, -200px) rotate(45deg);
+  // transition: transform 500ms ease-out;
+  animation: flyOut 1s ease-in;
   @media screen and (min-width: $tablet) {
     height: 40px;
   }
 }
-.present .logo__image {
-  transform: translate(0, 0);
-  transition: transform 1s ease-out 2s;
+@keyframes flyOut {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scaleX(-1);
+  }
+  10% {
+    transform: rotate(45deg) scaleX(-1);
+  }
+  90% {
+    transform: translate(-200px, -200px) scaleX(-1);
+  }
 }
+
+@keyframes flyIn {
+  0% {
+    transform: translate(-200px, -200px) scaleX(1);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+.logo__image.in {
+  // transform: translate(0, 0) rotate(0deg);
+  // transition: transform 1s ease-out 1ms;
+  animation: flyIn 1s ease-in 1s forwards;
+}
+
 .navigation {
   justify-content: space-between;
   &__list {
@@ -161,6 +185,16 @@
     }
     #id_login {
       @extend %button-main;
+      background: $main-red;
+      border-color: $main-red;
+      &:hover,
+      &:focus {
+        border-color: #918dd1;
+        background: #918dd1;
+      }
+      &:active {
+        background: #43406e;
+      }
     }
     #id_register {
       @extend %anchor;
