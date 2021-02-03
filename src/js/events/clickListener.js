@@ -25,7 +25,7 @@ export default function listenClicks(event) {
   if (event.target.hasAttribute('data-lang')) {
     const previousLang = lang.name;
     save('Lang', event.target.dataset.lang);
-    const newLang = load('Lang') || 'ru';
+    const newLang = event.target.dataset.lang;
     const path = changeLangPath(previousLang, newLang);
     decideRout(path, true);
   }

@@ -55,13 +55,13 @@
       font-size: 24px;
     }
     &:nth-child(2) {
-      transition-delay: 100ms;
+      transition-delay: 100ms, 100ms;
     }
     &:nth-child(3) {
-      transition-delay: 200ms;
+      transition-delay: 200ms, 200ms;
     }
     &:nth-child(4) {
-      transition-delay: 300ms;
+      transition-delay: 300ms, 300ms;
     }
     &:not(:last-child) {
       margin-bottom: 30px;
@@ -69,8 +69,8 @@
   }
   &__value {
     display: inline-block;
-    transition: border-color 100ms ease-out;
     @extend %button;
+    transition: border-color 100ms ease-out;
     margin-right: 10px;
     width: 70px;
     &:nth-child(2) {
@@ -86,6 +86,15 @@
   &__name {
     @extend %anchor;
     transition: font-weight 100ms ease-out, text-shadow 100ms ease-out;
+    &:nth-child(2) {
+      transition-delay: 100ms, 100ms;
+    }
+    &:nth-child(3) {
+      transition-delay: 200ms, 100ms;
+    }
+    &:nth-child(4) {
+      transition-delay: 300ms, 300ms;
+    }
     &:hover {
       font-weight: $normal;
     }
@@ -100,34 +109,43 @@
 #statistics:hover {
   cursor: url('../img/rocket.png') 4 2, auto;
   .statistics__listitem {
-    transition: transform 1s ease-out, opacity 1s ease-out;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
     &:nth-child(2) {
-      transition-delay: 1s;
+      transition-delay: 0.5s, 0.5s;
     }
     &:nth-child(3) {
-      transition-delay: 2s;
+      transition-delay: 1s, 1s;
     }
     &:nth-child(4) {
-      transition-delay: 3s;
+      transition-delay: 1.5s, 1.5s;
     }
     transform: translateX(0);
     opacity: 1;
     .statistics__value {
-      transition: border-color 1s ease-out;
       border-color: $accent;
+      transition: border-color 0.5s ease-out;
+      &:nth-child(2) {
+        transition-delay: 0.5s;
+      }
+      &:nth-child(3) {
+        transition-delay: 1s;
+      }
+      &:nth-child(4) {
+        transition-delay: 1.5s;
+      }
     }
     .statistics__name {
-      transition: font-weight 1s ease-out, text-shadow 1s ease-out;
+      transition: font-weight 0.5s ease-out, text-shadow 0.5s ease-out;
       font-weight: $bold;
       text-shadow: 0 0 14px rgba(255, 255, 255, 0.8);
       &:nth-child(2) {
-        transition-delay: 1s;
+        transition-delay: 0.5s, 0.5s;
       }
       &:nth-child(3) {
-        transition-delay: 2s;
+        transition-delay: 1s, 1s;
       }
       &:nth-child(4) {
-        transition-delay: 3s;
+        transition-delay: 1.5s, 1.5s;
       }
     }
   }

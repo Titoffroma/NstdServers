@@ -1,7 +1,7 @@
 <ul class="navigation__list-group" id="id_nav-group">
     {{#each navLinks}}
         <li class="navigation__item" role="navigation" aria-labelledby="id_rout_{{id}}">
-            <a href="/{{href}}&lang={{../lang}}" class="navigation__rout--hover" id="id_rout_{{id}}">{{text}}</a><span
+            <a href="/{{href}}?lang={{../lang}}" class="navigation__rout--hover" id="id_rout_{{id}}">{{text}}</a><span
                 class="navigation__rout">{{text}}</span>
             <div class="accent"></div>
         </li>
@@ -9,7 +9,7 @@
 </ul>
 <ul class="navigation__list-group">
     <li class="visually-hidden" role="navigation" aria-labelledby="id_rout_6">
-        <a href="/cabinet&lang={{lang}}" class="navigation__rout" id="id_rout_6">{{Cab}}</a>
+        <a href="/cabinet?lang={{lang}}" class="navigation__rout" id="id_rout_6">{{Cab}}</a>
     </li>
     <li>
         <ul class="authorization">

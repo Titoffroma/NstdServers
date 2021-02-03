@@ -16,27 +16,35 @@ export default function listenChange(event) {
 }
 
 function changeLangPath(previousLang, newLang) {
-  const loc = location.pathname;
-  let path = loc;
-  if (newLang === previousLang) {
-    return path;
+  const url = new URL(location.href);
+  if (newLang !== previousLang) {
+    url.searchParams.set('lang', newLang);
   }
-  path = loc
-    .trim()
-    .split('&lang=')
-    .reduce((acc, el) => {
-      if (el === previousLang) {
-        acc += newLang;
-        return acc;
-      }
-      if (el === newLang) {
-        acc += newLang;
-        return acc;
-      }
-      acc += el + '&lang=';
-      return acc;
-    }, '');
-  return path;
+  return url.pathname + url.search;
 }
+
+// function changeLangPath(previousLang, newLang) {
+//   const loc = location.pathname + location.search;
+//   let path = loc;
+//   if (newLang === previousLang) {
+//     return path;
+//   }
+//   path = loc
+//     .trim()
+//     .split('?lang=')
+//     .reduce((acc, el) => {
+//       if (el === previousLang) {
+//         acc += newLang;
+//         return acc;
+//       }
+//       if (el === newLang) {
+//         acc += newLang;
+//         return acc;
+//       }
+//       acc += el + '?lang=';
+//       return acc;
+//     }, '');
+//   return path;
+// }
 
 export { changeLangPath };

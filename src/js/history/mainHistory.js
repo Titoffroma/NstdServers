@@ -21,19 +21,23 @@ const lang = {
 
 window.onload = () => {
   addPreloader(document.body, true);
-  decideRout(location.pathname, true);
+  const path = location.pathname + location.search;
+  decideRout(path, true);
 };
 
 window.onpopstate = () => {
   const previousLang = lang.name;
-  const pathNew = location.pathname.split('&lang=');
-  pathNew[1] = previousLang;
-  const path = pathNew.join('&lang=');
+  // const pathNew = location.pathname.split('?lang=');
+  // pathNew[1] = previousLang;
+  // const path = pathNew.join('?lang=');
+  const url = new URL(location.href);
+  url.searchParams.set('lang', previousLang);
+  const path = url.pathname + url.search;
   decideRout(path, true);
 };
 
 function decideRout(path, replace = false) {
-  if (path.includes('server') || path === '/') path = `/&lang=${lang.name}`;
+  if (path.includes('server') || path === '/') path = `/?lang=${lang.name}`;
   let rout = routers.find(el => el.path === path);
   if (!rout) rout = routers[0];
   replace

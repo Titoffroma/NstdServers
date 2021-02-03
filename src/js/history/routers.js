@@ -4,7 +4,7 @@ import { lang } from './mainHistory';
 const routers = [
   {
     get path() {
-      return `/&lang=${lang.name}`;
+      return `/?lang=${lang.name}`;
     },
     page: 1,
     title: 'Home',
@@ -13,7 +13,7 @@ const routers = [
   },
   {
     get path() {
-      return `/about-us&lang=${lang.name}`;
+      return `/about-us?lang=${lang.name}`;
     },
     page: 2,
     title: 'About Us',
@@ -22,7 +22,7 @@ const routers = [
   },
   {
     get path() {
-      return `/online-calc&lang=${lang.name}`;
+      return `/online-calc?lang=${lang.name}`;
     },
     page: 3,
     title: 'Online Calculator',
@@ -31,7 +31,7 @@ const routers = [
   },
   {
     get path() {
-      return `/for-partners&lang=${lang.name}`;
+      return `/for-partners?lang=${lang.name}`;
     },
     page: 4,
     title: 'For Partners',
@@ -40,7 +40,7 @@ const routers = [
   },
   {
     get path() {
-      return `/contacts&lang=${lang.name}`;
+      return `/contacts?lang=${lang.name}`;
     },
     page: 5,
     title: 'Contacts',
@@ -49,7 +49,7 @@ const routers = [
   },
   {
     get path() {
-      return `/cabinet&lang=${lang.name}`;
+      return `/cabinet?lang=${lang.name}`;
     },
     page: 3,
     title: 'My Cabinet',

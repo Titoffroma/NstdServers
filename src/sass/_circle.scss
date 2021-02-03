@@ -71,18 +71,18 @@
 
 #statistics:hover {
   .inner.down {
-    transition: transform 2s ease-in;
+    transition: transform 1s ease-in;
     transform: rotate(180deg);
   }
   .inner.up {
-    transition: transform 2s ease-out 2s;
+    transition: transform 1s ease-out 1s;
     transform: rotate(178deg);
   }
   .circle__arrow {
-    transition: transform 2s ease-in;
+    transition: transform 1s ease-in;
     transform: rotate(180deg);
     &-wrapper {
-      transition: transform 2s ease-out 2s;
+      transition: transform 1s ease-out 1s;
       transform: rotate(178deg);
     }
   }
