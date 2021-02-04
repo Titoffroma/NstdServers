@@ -1,3 +1,5 @@
+import preloader from '../../templates/preloader.hbs';
+
 const measureAndFixScroll = function () {
   const cont = document.body;
   const bodyOverflow = getComputedStyle(cont).overflowY;
@@ -18,8 +20,7 @@ const measureAndFixScroll = function () {
 };
 
 const addPreloader = (parent, option) => {
-  const markup =
-    '<div class="preloader-backdrop" id="id_preloader-bacdrop"><div class="preloader"></div></div>';
+  const markup = preloader();
   if (parent) {
     parent.insertAdjacentHTML('afterbegin', markup);
   }
@@ -27,7 +28,7 @@ const addPreloader = (parent, option) => {
 };
 
 const delPreloader = option => {
-  const preloader = document.getElementById('id_preloader-bacdrop');
+  const preloader = document.getElementById('id_preloader_backdrop');
   preloader.classList.add('faiding');
   const initialPad = !option ? measureAndFixScroll() : option;
   if (!option) {

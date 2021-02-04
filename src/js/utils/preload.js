@@ -1,6 +1,5 @@
 import slider from '../utils/slider';
 import routers from '../history/routers';
-import { each } from 'jquery';
 
 const observer = new IntersectionObserver(startCircle, {
   threshold: 0.1,
@@ -17,7 +16,6 @@ function preload({ path }) {
   circle ? observer.observe(circle) : observer.disconnect();
   if (location.hash) {
     const target = document.querySelector(location.hash);
-    console.log(location.hash, target);
     setTimeout(() => {
       target &&
         target.scrollIntoView({
@@ -40,7 +38,6 @@ function preload({ path }) {
 }
 
 function startCircle(entries, observer) {
-  console.log(entries);
   const circle = document.querySelector('#statistics');
   const speed = document.querySelector('#speed');
   let timer = null;
