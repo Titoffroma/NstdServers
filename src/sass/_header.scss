@@ -161,12 +161,13 @@
       &[disabled] {
         cursor: text;
       }
-      &.coloured ~ .accent {
-        background: $accent;
-        width: 100%;
-      }
     }
   }
+}
+.present .coloured ~ .accent {
+  background: $accent;
+  width: 100%;
+  transition: width $transition;
 }
 
 .authorization {
