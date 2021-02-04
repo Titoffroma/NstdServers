@@ -1,4 +1,5 @@
 import preloader from '../../templates/preloader.hbs';
+import { stars } from './stars';
 
 const measureAndFixScroll = function () {
   const cont = document.body;
@@ -23,6 +24,7 @@ const addPreloader = (parent, option) => {
   const markup = preloader();
   if (parent) {
     parent.insertAdjacentHTML('afterbegin', markup);
+    stars.setup();
   }
   delPreloader(option);
 };
@@ -36,6 +38,7 @@ const delPreloader = option => {
     preloader.style.position = 'absolute';
   }
   setTimeout(() => {
+    stars.clearStars();
     preloader.remove();
     if (option) return;
     document.body.style.overflowY = 'auto';
