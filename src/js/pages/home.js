@@ -36,7 +36,6 @@ function drawBenefits() {
 function renderIndicators() {
   const slide1 = document.getElementById('slider');
   const slide2 = document.getElementById('advantages');
-  const slide3 = document.getElementById('services');
   let arr = Array.from(slide1.querySelectorAll('.hero-slider__slide'));
   let markup = indicators(arr);
   slide1.insertAdjacentHTML('beforeend', markup);
@@ -46,12 +45,6 @@ function renderIndicators() {
   arr.length = Math.ceil(arr.length / 2);
   markup = indicators(arr);
   slide2.insertAdjacentHTML('beforeend', markup);
-  arr = Array.from(slide2.querySelectorAll('.cardset__list-item')).map(el => {
-    return { class: 'services' };
-  });
-  arr.length = Math.ceil(arr.length / 2);
-  markup = indicators(arr);
-  slide3.insertAdjacentHTML('beforeend', markup);
 }
 
 export { drawBenefits, renderIndicators };

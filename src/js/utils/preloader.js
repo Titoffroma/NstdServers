@@ -35,7 +35,7 @@ const delPreloader = option => {
   const initialPad = !option ? measureAndFixScroll() : option;
   if (!option) {
     document.body.style.overflow = 'hidden';
-    preloader.style.position = 'absolute';
+    preloader.style.position = 'fixed';
   }
   setTimeout(() => {
     stars.clearStars();

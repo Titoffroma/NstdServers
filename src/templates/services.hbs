@@ -1,47 +1,31 @@
-<section class="container" id="services">
-    <h2 class="main-header" id="advantages-header">Услуги МТС Cloud</h2>
-    <div class="cardset" id="services-slider">
-        <ul class="cardset__list" id="services-slide">
-            <li class="cardset__list-item" data-adv="adv">
-                <picture class="cardset__image"><img src="../img/benefit1.svg" alt="services" class="cardset__pic">
-                </picture>
-                <h3 class="cardset__header">Виртуальная инфраструктура Huawei</h3>
-            </li>
-            <li class="cardset__list-item" data-adv="adv">
-                <picture class="cardset__image"><img src="../img/benefit1.svg" alt="services" class="cardset__pic">
-                </picture>
-                <h3 class="cardset__header">Виртуальная инфраструктура VMware</h3>
-            </li>
-            <li class="cardset__list-item" data-adv="adv">
-                <picture class="cardset__image"><img src="../img/benefit1.svg" alt="services" class="cardset__pic">
-                </picture>
-                <h3 class="cardset__header">Виртуальная инфраструктура RedHat</h3>
-            </li>
-            <li class="cardset__list-item" data-adv="adv">
-                <picture class="cardset__image"><img src="../img/benefit1.svg" alt="services" class="cardset__pic">
-                </picture>
-                <h3 class="cardset__header">Аварийное восстановление в облаке</h3>
-            </li>
-            <li class="cardset__list-item" data-adv="adv">
-                <picture class="cardset__image"><img src="../img/benefit1.svg" alt="services" class="cardset__pic">
-                </picture>
-                <h3 class="cardset__header">Backup как сервис</h3>
-            </li>
-            <li class="cardset__list-item" data-adv="adv">
-                <picture class="cardset__image"><img src="../img/benefit1.svg" alt="services" class="cardset__pic">
-                </picture>
-                <h3 class="cardset__header">Резервное копирование Veeam Cloud Connect</h3>
-            </li>
-            <li class="cardset__list-item" data-adv="adv">
-                <picture class="cardset__image"><img src="../img/benefit1.svg" alt="services" class="cardset__pic">
-                </picture>
-                <h3 class="cardset__header">Дополнительные услуги связи</h3>
-            </li>
-            <li class="cardset__list-item" data-adv="adv">
-                <picture class="cardset__image"><img src="../img/benefit1.svg" alt="services" class="cardset__pic">
-                </picture>
-                <h3 class="cardset__header">Лицензионная программа Microsoft</h3>
-            </li>
-        </ul>
-    </div>
-</section>
+{{#each services}}
+    <section class="container services" id="services">
+        <h2 class="main-header" id="services__header">{{title}}</h2>
+        <div class="services__table">
+            <div class="services__aside">
+                <ul class="services__tabs">
+                    {{#each tabs}}
+                        <li class="services__tab-item {{#if @first}}current{{/if}}"><span
+                                class="tab-accent"></span><span class="tab-title">{{tab-item}}</span></li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="services__main">
+                {{#each tabs}}
+                    <ul class="services__tab-list {{#if @first}}active{{/if}}">
+                        {{#each serviceList}}
+                            <li class="services__card">
+                                <div class="services__image"></div>
+                                <article class="servises__story">
+                                    <h2 class="services__title">{{title}}</h2>
+                                    <p class="service__description">{{description}}</p>
+                                    <a href="" class="services__button">{{@root.services.[0].button}}</a>
+                                </article>
+                            </li>
+                        {{/each}}
+                    </ul>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+{{/each}}

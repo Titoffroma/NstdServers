@@ -18,7 +18,7 @@ const lang = {
     return lang || 'ru';
   },
 };
-addPreloader(document.body, true);
+addPreloader(document.body);
 window.onload = () => {
   const path = location.pathname + location.search;
   decideRout(path, true);
