@@ -45,7 +45,6 @@ const delPreloader = option => {
     rootEl.style.overflowY = 'hidden';
     preloader.style.position = 'fixed';
     rootEl.style.paddingRight = initialPad;
-    console.log(initialPad);
   }
   setTimeout(() => {
     stars.clearStars();
@@ -64,7 +63,6 @@ function fixPad(el, width) {
     .filter(el => !el.search(/[0-9]/))
     .join('');
   const newPad = `${-(-contRightPad - width)}px`;
-  console.log(contRightPadRaw, width, newPad);
   return { contRightPadRaw, newPad };
 }
 

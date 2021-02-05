@@ -29,8 +29,50 @@ export default function listenClicks(event) {
     const path = changeLangPath(previousLang, newLang);
     decideRout(path, true);
   }
-}
+  if (event.target.hasAttribute('data-service')) {
+    let timer = null;
+    let ind = 0;
+    const serviceLists = Array.from(
+      document.querySelector('.services__main').children,
+    );
+    const services = Array.from(
+      document.querySelector('.services__tabs').children,
+    );
+    const index = Number(event.target.dataset.service);
+    services.forEach((el, i) => {
+      if (el.classList.contains('current')) ind = i;
+      el.classList.remove('current');
+      if (i === index) el.classList.add('current');
+    });
+    if (index === ind) return;
 
+    serviceLists.forEach((el, i) => {
+      el.classList.remove('active');
+      if (i === index) {
+        el.classList.add('active');
+      }
+    });
+
+    clearInterval(timer);
+    const service = document.querySelector('.services__main');
+    const active = document.querySelector('.services__tab-list.active');
+    const { height } = window.getComputedStyle(service);
+    const oldHeight = Number(Array.from(height.matchAll(/[0-9]/g)).join(''));
+    const newHeight = active.scrollHeight;
+    if (oldHeight === newHeight) return;
+    const step = (oldHeight - newHeight) / 10;
+    let acc = oldHeight;
+    let count = 0;
+    setTimeout(() => {
+      timer = setInterval(() => {
+        acc -= step;
+        service.style.height = acc + 'px';
+        count++;
+        if (count === 10) clearInterval(timer);
+      }, 100);
+    }, 500);
+  }
+}
 function render(e) {
   if (e.target.hasAttribute('disabled')) return;
   if (e.target.hasAttribute('data-id')) clearAccent();

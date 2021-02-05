@@ -5,6 +5,10 @@ const observer = new IntersectionObserver(startCircle, {
   threshold: 0.1,
 });
 
+const serviceObserver = new IntersectionObserver(getHeight, {
+  threshold: 0.1,
+});
+
 function preload({ path }) {
   slider.end();
   if (path === routers[0].path) slider.start();
@@ -14,6 +18,8 @@ function preload({ path }) {
 
   const circle = document.querySelector('#statistics');
   circle ? observer.observe(circle) : observer.disconnect();
+  const services = document.querySelector('.services__main');
+  services ? serviceObserver.observe(services) : serviceObserver.disconnect();
   if (location.hash) {
     const target = document.querySelector(location.hash);
     setTimeout(() => {
@@ -46,7 +52,7 @@ function startCircle(entries, observer) {
     if (entry.isIntersecting) {
       circle.classList.add('hover');
       clearInterval(timer);
-      const timer = setInterval(() => {
+      timer = setInterval(() => {
         count += 5.5;
         if (count === 100) {
           count = 99.9;
@@ -58,6 +64,16 @@ function startCircle(entries, observer) {
       circle.classList.remove('hover');
       speed.textContent = '0 %';
     }
+  });
+}
+
+function getHeight(entries, observer) {
+  const services = document.querySelector('.services__main');
+  const active = document.querySelector('.services__tab-list.active');
+  entries.forEach(entry => {
+    setTimeout(() => {
+      services.style.height = active.scrollHeight + 'px';
+    }, 2000);
   });
 }
 
