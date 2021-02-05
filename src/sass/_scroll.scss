@@ -1,0 +1,19 @@
+.scroll-rail {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: $overlay-light;
+  opacity: 0;
+  transition: opacity $transition;
+  z-index: 9;
+  padding: 0 6px;
+}
+.scroll-pad {
+  position: absolute;
+  width: 100%;
+  height: 0px;
+  transition: height $transition;
+  border-radius: 4px;
+  background: $accent;
+}

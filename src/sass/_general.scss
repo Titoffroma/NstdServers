@@ -12,7 +12,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   background: $main-purple;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 footer {
   margin-top: auto;
@@ -143,6 +143,8 @@ section.container {
   background-attachment: fixed;
   padding-top: 40px;
   width: 100%;
+  height: fit-content;
+  overflow-x: hidden;
   @media screen and (min-width: $tablet) {
     padding-top: 100px;
   }
