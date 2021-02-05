@@ -1,6 +1,5 @@
 .hero-slider {
   position: relative;
-  max-width: 600px;
   overflow: hidden;
   height: 570px;
   margin: 0 auto;
@@ -8,7 +7,6 @@
     height: 510px;
   }
   @media screen and (min-width: $tablet) {
-    max-width: 1100px;
     height: 530px;
   }
   &__content {
@@ -182,8 +180,8 @@
       &::before {
         content: '';
         position: absolute;
-        height: 40px;
-        width: 40px;
+        height: 42px;
+        width: 42px;
         border-radius: 50%;
         will-change: opacity, transform;
         opacity: 1;

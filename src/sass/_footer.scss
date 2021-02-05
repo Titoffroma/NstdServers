@@ -6,7 +6,8 @@
   width: 100%;
   position: relative;
   background: black;
-  min-height: 100px;
+  min-height: 150px;
+  padding: 40px 0;
   color: $dim;
   @media screen and (min-width: $phone) {
     flex-direction: row;
@@ -15,10 +16,14 @@
 .copyright {
   @extend %flex-container;
   flex-direction: column;
+  order: 1;
+  @media screen and (min-width: $phone) {
+    order: 0;
+  }
 }
 .social {
-  order: 1;
   @extend %flex-container;
+  padding-bottom: 10px;
   &__item {
     width: 40px;
     height: 40px;
@@ -66,11 +71,10 @@
   }
 }
 .contacts {
-  background: black;
-  border-radius: 10px 10px 0 0;
+  background: $overlay-light;
+  border-radius: 0 0 10px 10px;
   position: absolute;
   top: 0;
-  transform: translateY(-100%);
   z-index: 13;
   width: 300px;
   height: 30px;

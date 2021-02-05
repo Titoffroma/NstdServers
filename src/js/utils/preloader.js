@@ -17,7 +17,7 @@ const measureAndFixScroll = function () {
   rail.style.width = newPad;
   setTimeout(() => {
     document.body.style.marginRight = `-${newPad}`;
-  }, 3000);
+  }, 2000);
 
   // const header = document.querySelector('.header');
   // if (getComputedStyle(header).position === 'fixed') {
@@ -52,7 +52,7 @@ const delPreloader = option => {
     if (option) return;
     rootEl.style.overflowY = 'auto';
     rootEl.style.paddingRight = initialPad;
-  }, 3000);
+  }, 2000);
 };
 
 function fixPad(el, width) {

@@ -40,12 +40,21 @@ main {
 .container {
   position: relative;
   width: 100%;
-  padding: 0 5px;
+  padding: 5px;
+  margin: 0 auto;
   transform: scaleX(0.9);
   opacity: 0.5;
   transition: transform 1s ease-out, opacity $transition;
+  @media screen and (min-width: $phone) {
+    max-width: 600px;
+  }
   @media screen and (min-width: $tablet) {
-    padding: 0 25px;
+    padding: 25px;
+    max-width: 1100px;
+  }
+  @media screen and (min-width: $desktop) {
+    max-width: 1200px;
+    padding: 40px;
   }
   &.present {
     transform: scaleX(1);

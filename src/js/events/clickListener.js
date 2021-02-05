@@ -60,7 +60,7 @@ export default function listenClicks(event) {
     const oldHeight = Number(Array.from(height.matchAll(/[0-9]/g)).join(''));
     const newHeight = active.scrollHeight;
     if (oldHeight === newHeight) return;
-    const step = (oldHeight - newHeight) / 10;
+    const step = (oldHeight - newHeight) / 5;
     let acc = oldHeight;
     let count = 0;
     setTimeout(() => {
@@ -68,9 +68,9 @@ export default function listenClicks(event) {
         acc -= step;
         service.style.height = acc + 'px';
         count++;
-        if (count === 10) clearInterval(timer);
-      }, 100);
-    }, 500);
+        if (count === 5) clearInterval(timer);
+      }, 50);
+    }, 50);
   }
 }
 function render(e) {

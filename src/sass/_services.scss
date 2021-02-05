@@ -1,11 +1,11 @@
 #services {
   color: #fff;
+  background: $overlay;
 }
 .services {
   &__table {
     @extend %flex-container;
     align-items: flex-start;
-    max-width: 1200px;
     overflow: hidden;
     margin: 0 auto;
     background: $overlay-light;
@@ -50,6 +50,7 @@
     position: relative;
     overflow: hidden;
     transition: height $transition;
+    background: $stroke-grey;
   }
   &__tab-list {
     position: absolute;
@@ -67,17 +68,14 @@
     @include Cardset-Responsive(0, 10px, 10px, 1);
     @include Cardset-Responsive($tablet, 10px, 10px, 2);
     transform: translateX(-1000px);
-    transition: opacity 2s, transform 2s;
+    transition: opacity $transition, transform $transition;
     &.active {
       width: 100%;
       opacity: 1;
       transform: translateX(0);
+      transition: opacity $transition, transform $transition;
     }
   }
-  // &__tab-list:not(.active) {
-  //   position: absolute;
-  //   opacity: 0;
-  // }
   &__card {
     position: relative;
     overflow: hidden;

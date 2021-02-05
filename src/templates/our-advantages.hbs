@@ -1,15 +1,17 @@
 {{#each advantages}}
-    <section class="container" id="advantages">
-        <h2 class="main-header" id="advantages-header">{{title}}</h2>
-        <div class="cardset" id="advantages-slider">
-            <ul class="cardset__list" id="advantages-slide">
-                {{#each list}}
-                    <li class="cardset__list-item" data-adv="adv"><img src="../img/benefit1.svg" alt="benefits"
-                            class="cardset__image">
-                        <h3 class="cardset__header">{{benefit}}</h3>
-                    </li>
-                {{/each}}
-            </ul>
-        </div>
-    </section>
+    <div id="advantages">
+        <section class="container">
+            <h2 class="main-header" id="advantages-header">{{title}}</h2>
+            <div class="cardset" id="advantages-slider">
+                <ul class="cardset__list" id="advantages-slide">
+                    {{#each list}}
+                        <li class="cardset__list-item" data-adv="adv"><img src="../img/benefit1.svg" alt="benefits"
+                                class="cardset__image">
+                            <h3 class="cardset__header">{{benefit}}</h3>
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </section>
+    </div>
 {{/each}}

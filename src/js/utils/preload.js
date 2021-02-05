@@ -73,7 +73,7 @@ function getHeight(entries, observer) {
   entries.forEach(entry => {
     setTimeout(() => {
       services.style.height = active.scrollHeight + 'px';
-    }, 2000);
+    }, 250);
   });
 }
 

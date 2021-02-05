@@ -9,10 +9,6 @@
     overflow: visible;
     height: auto;
     width: 100%;
-    max-width: 1000px;
-  }
-  @media screen and (min-width: $desktop) {
-    max-width: 1500px;
   }
   @media screen and (max-width: $tablet - 1) {
     height: 200px;
@@ -74,7 +70,6 @@
 }
 #advantages {
   background: $overlay-light;
-  padding: 40px 0;
 }
 #services {
   padding-top: 40px;
@@ -97,7 +92,6 @@
 }
 #advantages,
 #services {
-  padding-bottom: 80px;
   .hero-slider__indicators {
     bottom: 20px;
     @media screen and (min-width: $tablet) {
