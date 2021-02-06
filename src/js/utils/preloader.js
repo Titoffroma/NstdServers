@@ -38,7 +38,7 @@ const addPreloader = (parent, option) => {
 
 const delPreloader = option => {
   const preloader = document.getElementById('id_preloader_backdrop');
-  preloader.classList.add('faiding');
+  // preloader.classList.add('faiding');
   const initialPad = !option ? measureAndFixScroll() : option;
   const rootEl = document.getElementById('root');
   if (!option) {
@@ -46,13 +46,13 @@ const delPreloader = option => {
     preloader.style.position = 'fixed';
     rootEl.style.paddingRight = initialPad;
   }
-  setTimeout(() => {
-    stars.clearStars();
-    preloader.remove();
-    if (option) return;
-    rootEl.style.overflowY = 'auto';
-    rootEl.style.paddingRight = initialPad;
-  }, 2000);
+  // setTimeout(() => {
+  //   stars.clearStars();
+  //   preloader.remove();
+  //   if (option) return;
+  //   rootEl.style.overflowY = 'auto';
+  //   rootEl.style.paddingRight = initialPad;
+  // }, 2000);
 };
 
 function fixPad(el, width) {

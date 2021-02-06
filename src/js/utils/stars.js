@@ -109,6 +109,8 @@ class Stars {
   clearStars() {
     clearTimeout(check);
     clearInterval(animations);
+    ctx.clearRect(0, 0, w, h);
+    this.arr = [];
   }
 }
 
