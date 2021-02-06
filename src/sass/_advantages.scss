@@ -71,18 +71,6 @@
 #advantages {
   background: $overlay-light;
 }
-#services {
-  padding-top: 40px;
-  background: $overlay;
-  .cardset__pic {
-    width: 100%;
-    height: 100%;
-    object-fit: scale-down;
-    object-position: center center;
-    filter: grayscale(100%);
-    transform: scale(0.8);
-  }
-}
 .cardset__list > .cardset__list-item:nth-child(n) {
   @media screen and (max-width: $tablet - 1) {
     margin-right: 0;

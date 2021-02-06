@@ -22,14 +22,13 @@ function preload({ path }) {
   services ? serviceObserver.observe(services) : serviceObserver.disconnect();
   if (location.hash) {
     const target = document.querySelector(location.hash);
+    const { y: alt } = target.getBoundingClientRect();
     setTimeout(() => {
       target &&
         target.scrollIntoView({
-          block: 'nearest',
-          inline: 'nearest',
           behavior: 'smooth',
         });
-    }, 250);
+    }, 750);
   }
   let index = 100;
   container.length &&
