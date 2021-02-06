@@ -13,8 +13,8 @@ const measureAndFixScroll = function () {
   cont.removeChild(scrollDiv);
   const { newPad, contRightPadRaw } = fixPad(cont, scrollbarWidth);
   cont.style.paddingRight = newPad;
-  const rail = document.getElementById('scroll-rail');
-  rail.style.width = newPad;
+  // const rail = document.getElementById('scroll-rail');
+  // rail.style.width = newPad;
   setTimeout(() => {
     document.body.style.marginRight = `-${newPad}`;
   }, 2000);

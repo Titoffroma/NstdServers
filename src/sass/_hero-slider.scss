@@ -9,6 +9,9 @@
   @media screen and (min-width: $tablet) {
     height: 530px;
   }
+  @media screen and (min-width: $desktop) {
+    max-width: 1100px;
+  }
   &__content {
     position: relative;
     height: 520px;

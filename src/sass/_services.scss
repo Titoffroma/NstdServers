@@ -11,21 +11,34 @@
     background: $overlay-light;
   }
   &__aside {
-    flex-basis: 25%;
+    flex-basis: 30%;
   }
   &__tabs {
     height: 100%;
   }
   &__tab-item {
     height: 50px;
-    font-size: 20px;
+    font-size: 12px;
+    @media screen and (min-width: $tablet) {
+      font-size: 14px;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 20px;
+    }
     @extend %flex-container;
     justify-content: flex-start;
     .tab-title {
       @extend %anchor;
       display: inline-block;
-      padding-left: 30px;
-      line-height: 50px;
+      padding-left: 10px;
+      @media screen and (min-width: $tablet) {
+        padding-left: 20px;
+      }
+      @media screen and (min-width: $desktop) {
+        padding-left: 30px;
+      }
+      padding-right: 5px;
+      height: auto;
       cursor: pointer;
     }
     .tab-accent {
@@ -44,7 +57,7 @@
   }
   &__main {
     @extend %flex-container;
-    flex-basis: 75%;
+    flex-basis: 70%;
     width: 100%;
     height: 300px;
     position: relative;
@@ -58,7 +71,10 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px;
+    padding: 10px;
+    @media screen and (min-width: $tablet) {
+      padding: 20px;
+    }
     min-height: 340px;
     background: $stroke-grey;
     color: $overlay;
@@ -66,8 +82,9 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     @include Cardset-Responsive(0, 10px, 10px, 1);
-    @include Cardset-Responsive($tablet, 10px, 10px, 2);
-    transform: translateX(-1000px);
+    @include Cardset-Responsive($tablet, 10px, 10px, 1);
+    @include Cardset-Responsive($desktop, 10px, 10px, 2);
+    transform: translateX(-1100px);
     transition: opacity $transition, transform $transition;
     &.active {
       width: 100%;
@@ -84,7 +101,12 @@
     background: $white;
     box-shadow: $text-shade;
     @extend %flex-container;
-    height: 200px;
+    flex-direction: column;
+    height: 360px;
+    @media screen and (min-width: 600px) {
+      flex-direction: row;
+      height: 200px;
+    }
     &:before {
       border-radius: 50% 0 0 50%/75% 0 0 75%;
       right: 0;
@@ -111,22 +133,34 @@
       }
       .services__image {
         transform: translateY(-10px);
+        filter: drop-shadow(2px 14px 4px $main-purple);
+      }
+      .services__description {
+        color: #fff;
       }
     }
   }
   &__image {
-    width: 40%;
+    width: 100%;
+    max-height: 200px;
+    @media screen and (min-width: 600px) {
+      width: 40%;
+    }
     position: relative;
     z-index: 1;
     height: 100%;
     background-size: contain;
-    transition: transform $transition;
+    transition: transform $transition, filter $transition;
     background-repeat: no-repeat;
+    filter: drop-shadow(2px 2px 4px $main-purple);
   }
   &__story {
     position: relative;
     z-index: 1;
-    width: 60%;
+    width: 100%;
+    @media screen and (min-width: 600px) {
+      width: 60%;
+    }
     display: flex;
     height: 100%;
     padding: 10px;
@@ -137,55 +171,15 @@
   &__title {
     font-size: 18px;
     margin-bottom: 10px;
+    cursor: default;
   }
   &__description {
     color: $dark-grey;
     margin-bottom: auto;
+    font-size: 12px;
     cursor: default;
   }
   &__button {
     @extend %button-main;
-  }
-}
-.services__card {
-  &:nth-child(1) {
-    .services__image {
-      background-image: url('../img/service1.svg');
-    }
-  }
-  &:nth-child(2) {
-    .services__image {
-      background-image: url('../img/service2.svg');
-    }
-  }
-  &:nth-child(3) {
-    .services__image {
-      background-image: url('../img/service3.svg');
-    }
-  }
-  &:nth-child(4) {
-    .services__image {
-      background-image: url('../img/service4.svg');
-    }
-  }
-  &:nth-child(5) {
-    .services__image {
-      background-image: url('../img/service5.svg');
-    }
-  }
-  &:nth-child(6) {
-    .services__image {
-      background-image: url('../img/service6.svg');
-    }
-  }
-  &:nth-child(7) {
-    .services__image {
-      background-image: url('../img/service7.svg');
-    }
-  }
-  &:nth-child(8) {
-    .services__image {
-      background-image: url('../img/service8.svg');
-    }
   }
 }

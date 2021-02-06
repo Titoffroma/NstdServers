@@ -84,14 +84,38 @@
       {
         "title": "Преимущества МТС Cloud",
         "list": [
-          { "benefit": "Гарантированный уровень доступности 99,9%" },
-          { "benefit": "Подбор индивидуальных решений" },
-          { "benefit": "Три платформы виртуализации Huawei, VMware, RedHat" },
-          { "benefit": "Возможность оплаты по факту потребления" },
-          { "benefit": "Размещение ресурсов в ЦОДе класса Tier3" },
-          { "benefit": "Организация каналов связи" },
-          { "benefit": "Комплексное решение: VPN, SIP, Fttx" },
-          { "benefit": "Круглосуточная техподдержка" }
+          {
+            "benefit": "Гарантированный уровень доступности 99,9%",
+            "image": "/img/advantage1.svg"
+          },
+          {
+            "benefit": "Подбор индивидуальных решений",
+            "image": "/img/advantage2.svg"
+          },
+          {
+            "benefit": "Три платформы виртуализации Huawei, VMware, RedHat",
+            "image": "/img/advantage3.svg"
+          },
+          {
+            "benefit": "Возможность оплаты по факту потребления",
+            "image": "/img/advantage4.svg"
+          },
+          {
+            "benefit": "Размещение ресурсов в ЦОДе класса Tier3",
+            "image": "/img/advantage5.svg"
+          },
+          {
+            "benefit": "Организация каналов связи",
+            "image": "/img/advantage6.svg"
+          },
+          {
+            "benefit": "Комплексное решение: VPN, SIP, Fttx",
+            "image": "/img/advantage7.svg"
+          },
+          {
+            "benefit": "Круглосуточная техподдержка",
+            "image": "/img/advantage8.svg"
+          }
         ]
       }
     ],
@@ -105,42 +129,42 @@
             "serviceList": [
               {
                 "title": "Облачный хостинг",
-                "image": "/img/some.jpg",
+                "image": "/img/service1.svg",
                 "description": "Самый гибкий и современный способ размещения сайтов"
               },
               {
                 "title": "Облачный VPS",
-                "image": "/img/some.jpg",
+                "image": "/img/service2.svg",
                 "description": "Ваш собственный облачный сервер без капитальных затрат"
               },
               {
                 "title": "1С:Бухгалтерия в облаке",
-                "image": "/img/some.jpg",
+                "image": "/img/service3.svg",
                 "description": "Лучший способ оптимизировать бухгалтерию и повысить безопасность данных"
               },
               {
                 "title": "Битрикс в облаке",
-                "image": "/img/some.jpg",
+                "image": "/img/service4.svg",
                 "description": "Оптимизированный хостинг для работы «1С-Битрикс: Управление сайтом»"
               },
               {
                 "title": "Битрикс24 в облаке",
-                "image": "/img/some.jpg",
+                "image": "/img/service5.svg",
                 "description": "На наш взгляд, одна из лучших CRM-систем. Все для управления бизнес-процессами и продажами в одном окне"
               },
               {
                 "title": "Облачный диск",
-                "image": "/img/some.jpg",
+                "image": "/img/service6.svg",
                 "description": "Хранение важных файлов и совместная работа над документами уровня «Pro». Безопаснее, чем Dropbox и Google Drive. Надежнее, чем собственный сервер"
               },
               {
                 "title": "Почта в облаке",
-                "image": "/img/some.jpg",
+                "image": "/img/service7.svg",
                 "description": "Почта, которая летает бизнес-классом. Полный контроль над почтовым сервером в вашем собственном облаке"
               },
               {
                 "title": "Облачный офис",
-                "image": "/img/some.jpg",
+                "image": "/img/service8.svg",
                 "description": "Где ты — там твой офис. Все для совместной работы с документами. Безопаснее, чем Google.Docs. Дешевле, чем Microsoft Office"
               }
             ]
@@ -150,7 +174,7 @@
             "serviceList": [
               {
                 "title": "Облачный хостинг",
-                "image": "/img/some.jpg",
+                "image": "/img/service1.svg",
                 "description": "Самый гибкий и современный способ размещения сайтов"
               }
             ]
@@ -160,7 +184,7 @@
             "serviceList": [
               {
                 "title": "Облачный хостинг",
-                "image": "/img/some.jpg",
+                "image": "/img/service1.svg",
                 "description": "Самый гибкий и современный способ размещения сайтов"
               }
             ]
@@ -170,7 +194,7 @@
             "serviceList": [
               {
                 "title": "Облачный хостинг",
-                "image": "/img/some.jpg",
+                "image": "/img/service1.svg",
                 "description": "Самый гибкий и современный способ размещения сайтов"
               }
             ]
@@ -180,7 +204,7 @@
             "serviceList": [
               {
                 "title": "Облачный хостинг",
-                "image": "/img/some.jpg",
+                "image": "/img/service1.svg",
                 "description": "Самый гибкий и современный способ размещения сайтов"
               }
             ]
@@ -190,7 +214,7 @@
             "serviceList": [
               {
                 "title": "Облачный хостинг",
-                "image": "/img/some.jpg",
+                "image": "/img/service1.svg",
                 "description": "Самый гибкий и современный способ размещения сайтов"
               }
             ]
@@ -286,14 +310,35 @@
       {
         "title": "МТS Cloud advantages",
         "list": [
-          { "benefit": "Guaranteed availability level 99,9%" },
-          { "benefit": "Individual solutions" },
-          { "benefit": "Three virualization platfoms Huawei, VMware, RedHat" },
-          { "benefit": "Possibility of payment upon consumption" },
-          { "benefit": "Resources are placed on Tier3 DPC" },
-          { "benefit": "Communication channels management" },
-          { "benefit": "Complex solutions: VPN, SIP, Fttx" },
-          { "benefit": "24/7 technical support" }
+          {
+            "benefit": "Guaranteed availability level 99,9%",
+            "image": "/img/advantage1.svg"
+          },
+          { "benefit": "Individual solutions", "image": "/img/advantage2.svg" },
+          {
+            "benefit": "Three virualization platfoms Huawei, VMware, RedHat",
+            "image": "/img/advantage3.svg"
+          },
+          {
+            "benefit": "Possibility of payment upon consumption",
+            "image": "/img/advantage4.svg"
+          },
+          {
+            "benefit": "Resources are placed on Tier3 DPC",
+            "image": "/img/advantage5.svg"
+          },
+          {
+            "benefit": "Communication channels management",
+            "image": "/img/advantage6.svg"
+          },
+          {
+            "benefit": "Complex solutions: VPN, SIP, Fttx",
+            "image": "/img/advantage7.svg"
+          },
+          {
+            "benefit": "24/7 technical support",
+            "image": "/img/advantage8.svg"
+          }
         ]
       }
     ],
@@ -307,42 +352,42 @@
             "serviceList": [
               {
                 "title": "Облачный хостинг",
-                "image": "/img/some.jpg",
+                "image": "/img/service1.svg",
                 "description": "Самый гибкий и современный способ размещения сайтов"
               },
               {
                 "title": "Облачный VPS",
-                "image": "/img/some.jpg",
+                "image": "/img/service2.svg",
                 "description": "Ваш собственный облачный сервер без капитальных затрат"
               },
               {
                 "title": "1С:Бухгалтерия в облаке",
-                "image": "/img/some.jpg",
+                "image": "/img/service3.svg",
                 "description": "Лучший способ оптимизировать бухгалтерию и повысить безопасность данных"
               },
               {
                 "title": "Битрикс в облаке",
-                "image": "/img/some.jpg",
+                "image": "/img/service4.svg",
                 "description": "Оптимизированный хостинг для работы «1С-Битрикс: Управление сайтом»"
               },
               {
                 "title": "Битрикс24 в облаке",
-                "image": "/img/some.jpg",
+                "image": "/img/service5.svg",
                 "description": "На наш взгляд, одна из лучших CRM-систем. Все для управления бизнес-процессами и продажами в одном окне"
               },
               {
                 "title": "Облачный диск",
-                "image": "/img/some.jpg",
+                "image": "/img/service6.svg",
                 "description": "Хранение важных файлов и совместная работа над документами уровня «Pro». Безопаснее, чем Dropbox и Google Drive. Надежнее, чем собственный сервер"
               },
               {
                 "title": "Почта в облаке",
-                "image": "/img/some.jpg",
+                "image": "/img/service7.svg",
                 "description": "Почта, которая летает бизнес-классом. Полный контроль над почтовым сервером в вашем собственном облаке"
               },
               {
                 "title": "Облачный офис",
-                "image": "/img/some.jpg",
+                "image": "/img/service8.svg",
                 "description": "Где ты — там твой офис. Все для совместной работы с документами. Безопаснее, чем Google.Docs. Дешевле, чем Microsoft Office"
               }
             ]
@@ -352,7 +397,7 @@
             "serviceList": [
               {
                 "title": "Облачный хостинг",
-                "image": "/img/some.jpg",
+                "image": "/img/service1.svg",
                 "description": "Самый гибкий и современный способ размещения сайтов"
               }
             ]
@@ -362,7 +407,7 @@
             "serviceList": [
               {
                 "title": "Облачный хостинг",
-                "image": "/img/some.jpg",
+                "image": "/img/service1.svg",
                 "description": "Самый гибкий и современный способ размещения сайтов"
               }
             ]
@@ -372,7 +417,7 @@
             "serviceList": [
               {
                 "title": "Облачный хостинг",
-                "image": "/img/some.jpg",
+                "image": "/img/service1.svg",
                 "description": "Самый гибкий и современный способ размещения сайтов"
               }
             ]
@@ -382,7 +427,7 @@
             "serviceList": [
               {
                 "title": "Облачный хостинг",
-                "image": "/img/some.jpg",
+                "image": "/img/service1.svg",
                 "description": "Самый гибкий и современный способ размещения сайтов"
               }
             ]
@@ -392,7 +437,7 @@
             "serviceList": [
               {
                 "title": "Облачный хостинг",
-                "image": "/img/some.jpg",
+                "image": "/img/service1.svg",
                 "description": "Самый гибкий и современный способ размещения сайтов"
               }
             ]

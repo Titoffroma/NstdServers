@@ -5,7 +5,7 @@ import { lang } from './mainHistory';
 import renderHome from '../../templates/Home.hbs';
 import { slider } from '../utils/slider';
 import { swiper, swiper1 } from '../utils/swiper';
-import { drawBenefits, renderIndicators } from '../pages/home';
+import { drawImages, renderIndicators } from '../pages/home';
 
 function updateHeader() {
   document.getElementById('id_nav_list').innerHTML = renderHeader(
@@ -19,8 +19,7 @@ function fun1() {
   updateHeader();
   rootRef.innerHTML = renderHome(localDataHome[lang.name]);
   renderIndicators();
-  drawBenefits();
-
+  drawImages();
   slider.start();
   swiper.start();
   swiper1.start();
