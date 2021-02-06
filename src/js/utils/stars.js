@@ -29,12 +29,7 @@ function resizeCanvas() {
   h = opts.canvas.height = window.innerHeight;
 }
 
-window.addEventListener('resize', function () {
-  windowResize();
-});
-
-function windowResize() {
-  if (!opts.canvas) return;
+function starsResize() {
   check = setTimeout(function () {
     clearInterval(animations);
     stars.clearStars();
@@ -118,4 +113,4 @@ class Stars {
 }
 
 const stars = new Stars();
-export { stars };
+export { stars, opts, starsResize };

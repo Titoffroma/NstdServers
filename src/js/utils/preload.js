@@ -67,13 +67,17 @@ function startCircle(entries, observer) {
 }
 
 function getHeight(entries, observer) {
-  const services = document.querySelector('.services__main');
-  const active = document.querySelector('.services__tab-list.active');
   entries.forEach(entry => {
-    setTimeout(() => {
-      services.style.height = active.scrollHeight + 'px';
-    }, 250);
+    resizeServices();
   });
 }
 
+function resizeServices() {
+  const services = document.querySelector('.services__main');
+  const active = document.querySelector('.services__tab-list.active');
+  setTimeout(() => {
+    services.style.height = active.scrollHeight + 'px';
+  }, 250);
+}
+export { resizeServices };
 export default preload;
