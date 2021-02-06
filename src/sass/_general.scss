@@ -57,6 +57,7 @@ main {
     padding: 40px;
   }
   &.present {
+    transition: transform 1s ease-out, opacity $transition;
     transform: scaleX(1);
     opacity: 1;
   }

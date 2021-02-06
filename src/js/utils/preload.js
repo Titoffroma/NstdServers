@@ -33,9 +33,11 @@ function preload({ path }) {
   let index = 100;
   container.length &&
     container.forEach(el => {
-      el.classList.remove('present');
-      setTimeout(() => el.classList.add('present'), (index += 100));
-    });
+      setTimeout(() => {
+        el.classList.remove('present');
+        setTimeout(() => el.classList.add('present'), (index += 100));
+      });
+    }, 100);
   setTimeout(
     () => logo.length && logo.forEach(el => el.classList.add('in')),
     1000,
