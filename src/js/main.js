@@ -1,14 +1,11 @@
-import { addPreloader } from './utils/preloader.js';
-import { load, save } from './utils/storage';
-import routers from './history/routers';
-import renderCard from '../templates/card.hbs';
-import { render } from './pages/pages';
+import { addPreloader, delPreloader } from './utils/preloader.js';
 import listenClicks from './events/clickListener';
 import listenSwipes from './events/swipeListener';
 import listenChange from './events/changeListener';
 import listenResize from './events/resizeListener';
 import { movePad } from './events/scrollListener';
-
+const { newPad, initialPad } = addPreloader(null);
+window.addEventListener('load', delPreloader.bind(null, newPad, initialPad));
 var debounce = require('debounce');
 
 const rootRel = document.getElementById('root');
