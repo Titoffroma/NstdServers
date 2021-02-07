@@ -17,7 +17,7 @@
                         <ul class="services__tab-list {{#if @first}}active{{/if}}" data-service="{{@index}}">
                             {{#each serviceList}}
                                 <li class="services__card" style="position: relative;">
-                                    <img class="services__image" src="" alt={{title}} />
+                                    <img class="services__image" src="" alt={{title}} loading="lazy" />
                                     <article class="services__story">
                                         <h2 class="services__title">{{title}}</h2>
                                         <p class="services__description">{{description}}</p>

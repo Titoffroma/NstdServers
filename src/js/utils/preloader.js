@@ -38,7 +38,6 @@ function addPreloader(parent, option) {
   stars.setup();
   return { newPad, initialPad };
 }
-
 function delPreloader(newPad, initialPad) {
   const preloader = document.getElementById('id_preloader_backdrop');
   preloader.classList.add('faiding');

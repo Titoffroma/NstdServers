@@ -229,17 +229,19 @@ class Swiper {
     if (this.timer) {
       this.clear();
       if (event.detail.dir === 'left') {
-        this.slideLeft(true);
+        this.slideLeft();
       }
       if (event.detail.dir === 'right') {
-        this.slideRight(true);
+        this.slideRight();
       }
     }
   }
 }
 
-const swiper = new Swiper('advantages-slider', 'advantages-slide', '.benefit');
+const swiper = new Swiper(
+  'advantages-slider',
+  'advantages-slide',
+  '.advantage',
+);
 
-const swiper1 = new Swiper('services-slider', 'services-slide', '.services');
-
-export { swiper, swiper1 };
+export { swiper };

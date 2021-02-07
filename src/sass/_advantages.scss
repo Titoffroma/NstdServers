@@ -70,6 +70,7 @@
 }
 #advantages {
   background: $overlay-light;
+  position: relative;
 }
 .cardset__list > .cardset__list-item:nth-child(n) {
   @media screen and (max-width: $tablet - 1) {
@@ -81,7 +82,7 @@
 #advantages,
 #services {
   .hero-slider__indicators {
-    bottom: 20px;
+    bottom: 5px;
     @media screen and (min-width: $tablet) {
       position: absolute;
       width: 1px;

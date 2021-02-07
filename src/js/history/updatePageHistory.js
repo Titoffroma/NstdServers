@@ -4,7 +4,7 @@ import localDataHome from '../localization/localHome.json';
 import { lang } from './mainHistory';
 import renderHome from '../../templates/Home.hbs';
 import { slider } from '../utils/slider';
-import { swiper, swiper1 } from '../utils/swiper';
+import { swiper } from '../utils/swiper';
 import { drawImages, renderIndicators } from '../pages/home';
 
 function updateHeader() {
@@ -22,7 +22,6 @@ function fun1() {
   drawImages();
   slider.start();
   swiper.start();
-  swiper1.start();
 }
 
 function fun2() {
