@@ -58,6 +58,18 @@ module.exports = env => ({
         ],
       },
       {
+        test: /\.(pdf)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+              outputPath: 'files/',
+            },
+          },
+        ],
+      },
+      {
         test: /\.html$/,
         use: 'html-loader',
       },

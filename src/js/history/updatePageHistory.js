@@ -1,8 +1,10 @@
 import renderHeader from '../../templates/header.hbs';
 import localDataHeader from '../localization/localHeader.json';
 import localDataHome from '../localization/localHome.json';
+import localDataAboutUs from '../localization/localAboutUs.json';
 import { lang } from './mainHistory';
 import renderHome from '../../templates/Home.hbs';
+import renderAboutUs from '../../templates/about-us.hbs';
 import { slider } from '../utils/slider';
 import { swiper } from '../utils/swiper';
 import { drawImages, renderIndicators } from '../pages/home';
@@ -26,7 +28,7 @@ function fun1() {
 
 function fun2() {
   updateHeader();
-  rootRef.innerHTML = '';
+  rootRef.innerHTML = renderAboutUs(localDataAboutUs[lang.name]);
 }
 
 function fun3() {
