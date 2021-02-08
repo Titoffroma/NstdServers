@@ -44,7 +44,7 @@ main {
   margin: 0 auto;
   transform: scaleX(0.9);
   opacity: 0.5;
-  transition: transform 1s ease-out, opacity $transition;
+  transition: transform 1s ease-out, opacity $slider;
   @media screen and (min-width: $phone) {
     max-width: 600px;
   }
@@ -57,7 +57,7 @@ main {
     padding: 40px;
   }
   &.present {
-    transition: transform 1s ease-out, opacity $transition;
+    transition: transform 1s ease-out, opacity $slider;
     transform: scaleX(1);
     opacity: 1;
   }
@@ -94,7 +94,7 @@ section.container {
   overflow-y: auto;
   background: $overlay;
   opacity: 0;
-  transition: opacity $transition;
+  transition: opacity $slider;
   &.opened {
     opacity: 1;
     & .backdrop__modal {
@@ -105,6 +105,7 @@ section.container {
 
   &__modal {
     position: relative;
+    border-radius: 12px;
     padding: 55px 20px 60px;
     width: 290px;
     margin: auto;
@@ -114,7 +115,7 @@ section.container {
     font-weight: 500;
     letter-spacing: 0.02em;
     transform: scale(0.8);
-    transition: opacity $transition, transform $transition;
+    transition: opacity $slider, transform $slider;
     &.opened {
       opacity: 1;
       transform: scale(1);
@@ -122,12 +123,12 @@ section.container {
 
     @media screen and (min-width: $tablet) {
       padding: 55px 55px 60px;
-      width: 725px;
+      width: 500px;
     }
 
     @media screen and (min-width: $desktop) {
       padding: 55px 105px 60px;
-      width: 860px;
+      width: 600px;
     }
   }
   .backdrop.burger {
@@ -135,6 +136,22 @@ section.container {
       padding: 0px;
       width: 300px;
     }
+  }
+}
+.close-button {
+  position: absolute;
+  z-index: 1;
+  top: -30px;
+  right: 0;
+  border-radius: 50%;
+  background-color: transparent;
+  color: $white;
+  line-height: 1em;
+  transition: transform $transition, background-color $transition;
+  &:hover,
+  &:focus {
+    background-color: $accent;
+    transform: scale(1.1);
   }
 }
 .scrollbar-measure {
@@ -218,7 +235,7 @@ section.container {
 %anchor {
   font-weight: normal;
   color: $dim;
-  transition: color $transition 750ms, transform $transition 750ms;
+  transition: color $slider 750ms, transform $slider 750ms;
   height: 100%;
   width: 100%;
   &:hover,
@@ -235,6 +252,32 @@ section.container {
   &:active:not([disabled]) {
     color: $accent;
     transform: translate(1px, 2px);
-    transition: color $transition, transform $transition;
+    transition: color $slider, transform $slider;
+  }
+}
+%input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid $main-purple-bg;
+  border-bottom-color: $main-purple-gr;
+  border-bottom-width: 2px;
+  border-radius: 10px 10px 0 0;
+  padding-left: 15px;
+  &:hover {
+    border-bottom-color: $main-purple;
+  }
+  &:focus {
+    border-color: $main-purple-gr;
+    border-bottom-color: $main-purple;
+    background: $main-purple-bg;
+    outline: none;
+  }
+  &.valid {
+    background: rgb(232, 240, 254);
+    border-bottom-color: aquamarine;
+  }
+  &.invalid {
+    background: $main-red-light;
+    border-bottom-color: $main-red;
   }
 }

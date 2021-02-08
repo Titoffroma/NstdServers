@@ -1,0 +1,25 @@
+{
+  "ru": {
+    "email": [
+      "Введите адрес электронной почты",
+      "Адрес электронной почты был введен неправильно"
+    ],
+    "password": [
+      "Введите Ваш пароль",
+      "Пароль должен быть длинной не менее 8 символов",
+      "Пароль должен включать хотя бы одну загалавную букву",
+      "Пароль должен включать хотя бы одну цифру",
+      "Пароль должен включать хотя бы один спецсимвол"
+    ]
+  },
+  "en": {
+    "email": ["Enter your e-mail address", "E-mail address is invalid"],
+    "password": [
+      "Enter your password",
+      "Password must be not less than 8 characters",
+      "Password must have at least one Capital letter",
+      "Password must have at least one digit",
+      "Password must have at least one special symbol"
+    ]
+  }
+}

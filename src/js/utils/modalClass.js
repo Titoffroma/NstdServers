@@ -1,7 +1,7 @@
 import { measureAndFixScroll } from './preloader';
-import authorize from '../../templates/login-modal.hbs';
+import renderModal from '../pages/loginModal';
 
-const hbsFunctions = [authorize];
+const hbsFunctions = [renderModal];
 
 class Modal {
   constructor(functions) {

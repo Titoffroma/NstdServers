@@ -75,6 +75,16 @@ export default function listenClicks(event) {
     //   }, 50);
     // }, 50);
   }
+  if (event.target.hasAttribute('data-form')) {
+    event.preventDefault();
+    const tabs = document.querySelectorAll('.modal__tab');
+    const forms = document.querySelectorAll('.modal__form');
+    const index = Number(event.target.dataset.form);
+    tabs.forEach((el, i) => {
+      el.classList.toggle('active');
+      forms[i].classList.toggle('active');
+    });
+  }
 }
 function render(e) {
   if (e.target.hasAttribute('disabled')) return;
