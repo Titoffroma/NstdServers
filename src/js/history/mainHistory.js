@@ -18,17 +18,19 @@ const lang = {
     return lang || 'ru';
   },
 };
+const { newPad, initialPad } = addPreloader(null);
 
-window.onload = () => {
+window.addEventListener('DOMContentLoaded', () => {
   const path = location.pathname + location.search;
   decideRout(path, true);
+});
+
+window.onload = () => {
+  delPreloader(newPad, initialPad);
 };
 
 window.onpopstate = () => {
   const previousLang = lang.name;
-  // const pathNew = location.pathname.split('?lang=');
-  // pathNew[1] = previousLang;
-  // const path = pathNew.join('?lang=');
   const url = new URL(location.href);
   url.searchParams.set('lang', previousLang);
   const path = url.pathname + url.search;

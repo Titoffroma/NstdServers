@@ -7,16 +7,8 @@ import listenFocusout from './events/focusoutListener';
 import listenFocusin from './events/focusinListener';
 import listenSubmit from './events/submitListener';
 import { movePad } from './events/scrollListener';
-const { newPad, initialPad } = addPreloader(null);
-window.addEventListener('load', delPreloader.bind(null, newPad, initialPad));
-var debounce = require('debounce');
 
-const a = 'w_.@f.f';
-console.log(
-  /,|;|\s/.test(a) ||
-    !/\w+[^\s]+\@\w+\.\w+$/.test(a) ||
-    a.match(/\@/g).length > 1,
-);
+var debounce = require('debounce');
 
 const rootRel = document.getElementById('root');
 

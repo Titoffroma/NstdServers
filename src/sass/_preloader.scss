@@ -4,7 +4,6 @@
   z-index: 20;
   width: 100%;
   height: 100%;
-  // background-color: $main-purple;
   @extend %flex-container;
 }
 .cardset__overlay .preloader-backdrop {
@@ -19,62 +18,73 @@
   @extend %flex-container;
   width: 50%;
   height: 50%;
-  // background-image: url('../img/planetEarth1.png');
-  // background-size: contain;
-  // background-repeat: no-repeat;
-  // background-position: center;
 }
 .preloader {
   position: absolute;
   z-index: 1;
   top: 50%;
   right: 50%;
-  width: 50px;
-  height: 50px;
-  @media screen and (min-width: $tablet) {
-    width: 80px;
-    height: 80px;
-  }
-  @media screen and (min-width: $desktop) {
-    width: 100px;
-    height: 100px;
-  }
-  border-radius: 4px;
+  width: 60px;
+  height: 60px;
   background-image: url('../img/rocket logo.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  transition: all 0.7s;
-  transform: rotate(180deg);
-
-  animation: preLoader 1.5s ease-in forwards;
+  animation: preLoaderMob 3s ease-in infinite;
+  @media screen and (min-width: $tablet) {
+    width: 110px;
+    height: 110px;
+    animation: preLoader 3s ease-in infinite;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 160px;
+    height: 160px;
+  }
 }
 @keyframes preLoader {
   0% {
-    transform: scale(0.4) translateX(1000px) rotate(180deg);
+    opacity: (0);
+    transform: scale(-1) translate(-1000px, -300px) rotate(30deg);
   }
   30% {
-    transform: scale(2) translateX(100px) rotate(180deg);
+    opacity: (1);
   }
   70% {
-    transform: scale(2) translateX(-100px) rotate(200deg);
+    opacity: (1);
   }
   100% {
-    transform: scale(2) translate(-1000px, -400px) rotate(200deg);
+    opacity: (0);
+    transform: scale(-1) translate(1000px, 300px) rotate(30deg);
+  }
+}
+@keyframes preLoaderMob {
+  0% {
+    opacity: (0);
+    transform: scale(-1) translate(-300px, -100px) rotate(30deg);
+  }
+  30% {
+    opacity: (1);
+  }
+  70% {
+    opacity: (1);
+  }
+  100% {
+    opacity: (0);
+    transform: scale(-1) translate(300px, 100px) rotate(30deg);
   }
 }
 @keyframes Faiding {
   0% {
     opacity: 1;
   }
-  70% {
+  30% {
     opacity: 1;
     transform: scale(1);
   }
 
   100% {
     opacity: 0;
-    transform: scale(2) translateY(-20px);
+    transform: scale(2) translate(-100px, -100px);
   }
 }
 
@@ -116,6 +126,7 @@
   left: 0;
   box-shadow: 0px 0px 60px rgba(33, 150, 243, 0.5);
   border-radius: 50%;
+  overflow: hidden;
   transform: rotate(21deg);
 }
 .globe-worldmap,
@@ -138,16 +149,13 @@
   background-position: 0 0;
   background-repeat: no-repeat;
 }
-// .globe-sphere {
-//   background-image: url('../img/sphere-4.svg');
-// }
 .globe-worldmap {
   left: 0;
   top: 0;
   width: 200px;
   height: 200px;
-  overflow: hidden;
   border-radius: 50%;
+  overflow: hidden;
 }
 .globe-worldmap-front,
 .globe-worldmap-back {
@@ -155,7 +163,7 @@
   top: 0;
   width: 1000px;
   height: 200px;
-  overflow: visible;
+  // overflow: visible;
   background-image: url('../img/worldmap-4.svg');
   background-repeat: no-repeat;
 }

@@ -45,7 +45,6 @@ function delPreloader(newPad, initialPad) {
   setTimeout(() => {
     stars.clearStars();
     preloader.remove();
-    console.log(newPad, initialPad);
     document.body.style.marginRight = `-${newPad}`;
     rootEl.style.overflowY = 'auto';
     rootEl.style.paddingRight = initialPad;

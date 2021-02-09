@@ -9,22 +9,34 @@
     <title>Cloud</title>
   </head>
   <body>
-    <div class="preloader-backdrop" id="id_preloader_backdrop" style="position: fixed; top: 0; z-index: 20; width: 100%; height: 100%;" >
-  <canvas class="bdCanvas" id="bdCanvas"></canvas>
-  <div class="preloader"></div>
-  <div class="preloader-planet">
-    <div class="globe-container">
-      <div class="globe">
-        <div class="globe-sphere"></div>
-        <div class="globe-worldmap">
-          <div class="globe-worldmap-back"></div>
-          <div class="globe-worldmap-front"></div>
+    <div
+      class="preloader-backdrop"
+      id="id_preloader_backdrop"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 20;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 7, 52, 1);
+      "
+    >
+      <canvas class="bdCanvas" id="bdCanvas"></canvas>
+      <div class="preloader"></div>
+      <div class="preloader-planet">
+        <div class="globe-container">
+          <div class="globe">
+            <div class="globe-sphere"></div>
+            <div class="globe-worldmap">
+              <div class="globe-worldmap-back"></div>
+              <div class="globe-worldmap-front"></div>
+            </div>
+            <div class="globe-inner-shadow"></div>
+          </div>
         </div>
-        <div class="globe-inner-shadow"></div>
       </div>
     </div>
-  </div>
-</div>
     <div class="header">
       <div class="container present" id="header">
         <header class="page-header">
@@ -142,24 +154,9 @@
           <span class="copyright__text">УНП 800013732</span>
         </div>
       </footer>
-      
-      </div>
     </div>
     <div class="scroll-rail" id="scroll-rail">
-        <div class="scroll-pad" id="scroll-pad"></div>
-        <div class="about-us__file-list">
-                    <a href="/files/terms-clouds.pdf" download="/files/terms-clouds.pdf" class="about-us__file-link">
-                        Порядок предоставления услуг по тарифному плану «МТС Cloud»
-                        <span class="about-us__file">334.2 КБ</span>
-                    </a>
-                    <a href="/files/terms-veeam.pdf" download="/files/terms-veeam.pdf" class="about-us__file-link">
-                        Порядок предоставления услуг Veeam
-                        <span class="about-us__file">319.7 КБ</span>
-                    </a>
-                    <a href="/files/terms-SPLA.pdf" download="/files/terms-SPLA.pdf" class="about-us__file-link">
-                        Порядок предоставления услуг Microsoft SPLA
-                        <span class="about-us__file">529.0 КБ</span>
-                    </a>
-            </div>
+      <div class="scroll-pad" id="scroll-pad"></div>
+    </div>
   </body>
 </html>
