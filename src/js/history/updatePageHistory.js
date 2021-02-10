@@ -8,6 +8,7 @@ import renderAboutUs from '../../templates/about-us.hbs';
 import { slider } from '../utils/slider';
 import { swiper } from '../utils/swiper';
 import { drawImages, renderIndicators } from '../pages/home';
+import { drawAboutUsImages, makeLinks } from '../pages/aboutUs';
 
 function updateHeader() {
   document.getElementById('id_nav_list').innerHTML = renderHeader(
@@ -29,6 +30,8 @@ function fun1() {
 function fun2() {
   updateHeader();
   rootRef.innerHTML = renderAboutUs(localDataAboutUs[lang.name]);
+  drawAboutUsImages();
+  makeLinks();
 }
 
 function fun3() {

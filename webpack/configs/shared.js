@@ -61,9 +61,10 @@ module.exports = env => ({
         test: /\.(pdf)?$/,
         use: [
           {
-            loader: 'file-loader',
+            loader: 'url-loader',
             options: {
               name: '[path][name].[ext]',
+              mimetype: 'application/pdf',
               outputPath: 'files/',
             },
           },

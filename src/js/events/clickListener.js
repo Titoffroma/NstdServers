@@ -79,11 +79,11 @@ export default function listenClicks(event) {
     event.preventDefault();
     const tabs = document.querySelectorAll('.modal__tab');
     const forms = document.querySelectorAll('.modal__form');
-    const index = Number(event.target.dataset.form);
-    tabs.forEach((el, i) => {
-      el.classList.toggle('active');
-      forms[i].classList.toggle('active');
-    });
+    if (!event.target.closest('.modal__tab').classList.contains('active'))
+      tabs.forEach((el, i) => {
+        el.classList.toggle('active');
+        forms[i].classList.toggle('active');
+      });
   }
 }
 function render(e) {
@@ -98,7 +98,8 @@ function render(e) {
 function makeAccent({ path }) {
   clearAccent();
   if (path.split('/').reverse()[0] === lang.name) path = '/';
-  const target = document.querySelector(`[href='${path}']`);
+  let target = document.querySelector(`[href='${path}']`);
+  if (location.hash) target = document.querySelector(`[href*='${path}']`);
   if (target) {
     target.classList.add('coloured');
     target.setAttribute('disabled', '');

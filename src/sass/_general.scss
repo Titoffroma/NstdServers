@@ -42,9 +42,11 @@ main {
   width: 100%;
   padding: 5px;
   margin: 0 auto;
-  transform: scaleX(0.9);
-  opacity: 0.5;
-  transition: transform 1s ease-out, opacity $slider;
+  &:not(#header) {
+    transform: scaleX(0.9) translateY(100px);
+    opacity: 0.5;
+  }
+  transition: transform $transition, opacity $transition;
   @media screen and (min-width: $phone) {
     max-width: 600px;
   }
@@ -56,19 +58,19 @@ main {
     max-width: 1600px;
     padding: 40px;
   }
-  &.present {
-    transition: transform 1s ease-out, opacity $slider;
-    transform: scaleX(1);
-    opacity: 1;
-  }
 }
 section.container {
-  padding-bottom: 20px;
+  padding: 10px;
   @media screen and (min-width: $tablet) {
-    padding-bottom: 30px;
+    padding: 30px;
   }
   @media screen and (min-width: $desktop) {
-    padding-bottom: 50px;
+    padding: 50px;
+  }
+  &:not(#header).present {
+    transition: transform $transition, opacity $transition;
+    transform: scaleX(1) translateY(0);
+    opacity: 1;
   }
 }
 %visually-hidden {
@@ -177,9 +179,27 @@ section.container {
   }
 }
 .main__home {
-  padding-top: 40px;
+  padding-top: 10px;
   @media screen and (min-width: $tablet) {
-    padding-top: 100px;
+    padding-top: 30px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding-top: 50px;
+  }
+}
+.main-header {
+  font-family: $Montserrat;
+  text-align: center;
+  color: $white;
+  text-shadow: $text-shade;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-size: 22px;
+  @media screen and (min-width: $tablet) {
+    font-size: 32px;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: 42px;
   }
 }
 .header__video {
@@ -235,7 +255,7 @@ section.container {
 %anchor {
   font-weight: normal;
   color: $dim;
-  transition: color $slider 750ms, transform $slider 750ms;
+  transition: color $slider, transform $slider;
   height: 100%;
   width: 100%;
   &:hover,
@@ -252,7 +272,7 @@ section.container {
   &:active:not([disabled]) {
     color: $accent;
     transform: translate(1px, 2px);
-    transition: color $slider, transform $slider;
+    transition: none;
   }
 }
 %input {

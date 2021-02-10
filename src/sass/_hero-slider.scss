@@ -91,17 +91,6 @@
       background-position: center;
     }
   }
-  &__header {
-    font-family: $Montserrat;
-    font-size: 28px;
-    text-align: center;
-    color: $white;
-    text-shadow: $text-shade;
-    padding: 15px;
-    @media screen and (min-width: $tablet) {
-      font-size: 42px;
-    }
-  }
   &__section-header {
     position: absolute;
     top: 20px;

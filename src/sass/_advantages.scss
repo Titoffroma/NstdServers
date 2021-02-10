@@ -53,7 +53,7 @@
     }
   }
   &__header {
-    @extend .hero-slider__header;
+    @extend .main-header;
     font-size: 12px;
     height: 5em;
     @media screen and (min-width: $tablet) {
@@ -64,10 +64,7 @@
     }
   }
 }
-.main-header {
-  @extend .hero-slider__header;
-  margin-bottom: 20px;
-}
+
 #advantages {
   background: $overlay-light;
   position: relative;

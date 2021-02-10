@@ -121,7 +121,7 @@
     }
   }
 }
-.present .coloured ~ .accent {
+.coloured ~ .accent {
   background: $accent;
   width: 100%;
   transition: width $transition;
