@@ -37,26 +37,43 @@
     animation: preLoader 3s ease-in infinite;
   }
   @media screen and (min-width: $desktop) {
-    width: 160px;
-    height: 160px;
+    transform: rotate(180deg);
+    width: 60px;
+    height: 60px;
   }
 }
+
 @keyframes preLoader {
   0% {
-    opacity: (0);
-    transform: scale(-1) translate(-1000px, -300px) rotate(30deg);
+    transform: scale(0.4) translateX(1000px) rotate(180deg);
   }
   30% {
-    opacity: (1);
+    transform: scale(2) translateX(100px) rotate(180deg);
   }
-  70% {
-    opacity: (1);
+  60% {
+    transform: scale(2) translateX(-100px) rotate(200deg);
   }
   100% {
-    opacity: (0);
-    transform: scale(-1) translate(1000px, 300px) rotate(30deg);
+    transform: scale(2) translate(-1000px, -400px) rotate(200deg);
   }
 }
+
+// @keyframes preLoader {
+//   0% {
+//     opacity: (0);
+//     transform: scale(-1) translate(-1000px, -300px) rotate(30deg);
+//   }
+//   30% {
+//     opacity: (1);
+//   }
+//   70% {
+//     opacity: (1);
+//   }
+//   100% {
+//     opacity: (0);
+//     transform: scale(-1) translate(1000px, 300px) rotate(30deg);
+//   }
+// }
 @keyframes preLoaderMob {
   0% {
     opacity: (0);
