@@ -2,14 +2,14 @@
   "ru": {
     "email": [
       "Введите адрес электронной почты",
-      "Адрес электронной почты был введен неправильно"
+      "Адрес электронной почты был введен неверно"
     ],
     "password": [
       "Введите Ваш пароль",
-      "Пароль должен быть длинной не менее 8 символов",
-      "Пароль должен включать хотя бы одну загалавную букву",
-      "Пароль должен включать хотя бы одну цифру",
-      "Пароль должен включать хотя бы один спецсимвол"
+      "Пароль должен содержать не менее 8 символов",
+      "Пароль должен содержать хотя бы одну заглавную букву",
+      "Пароль должен содержать хотя бы одну цифру",
+      "Пароль должен содержать хотя бы один спецсимвол: !@#$%,^&*()._-+`~=|;:/?"
     ]
   },
   "en": {
@@ -17,9 +17,9 @@
     "password": [
       "Enter your password",
       "Password must be not less than 8 characters",
-      "Password must have at least one Capital letter",
-      "Password must have at least one digit",
-      "Password must have at least one special symbol"
+      "Password must have at least 1 Capital letter",
+      "Password must have at least 1 digit",
+      "Password must have at least 1 special symbol"
     ]
   }
 }

@@ -3,86 +3,46 @@ import localModal from '../localization/localLoginModal.json';
 import { lang } from '../history/mainHistory';
 import errorsLocal from '../localization/errors.json';
 
-let errors = [];
-let emailErrors = [];
-let passwordErrors = [];
-
-export default function renderModal() {
+function renderModal() {
   const markup = loginModal(localModal[lang.name]);
-  errors = [];
-  emailErrors = [];
-  passwordErrors = [];
   return markup;
 }
 
-function validate(evt) {
-  if (evt.target === loginInput) {
-    loginInput.addEventListener('blur', checkMail, { once: true });
-  }
-  if (evt.target === passwordInput) {
-    passwordInput.addEventListener('blur', validatePassword, { once: true });
-  }
-  if (evt.target === loginBtn) return validateLogin(evt);
-  if (evt.target === registerBtn) return validateRegistration(evt);
+let message = '';
+let index = 0;
 
-  function renderErrors(target) {
-    target.nextElementSibling.textContent = emailErrors[0];
+function checkIfValid(event) {
+  const input = event.target;
+  const value = event.target.value;
+  const errorType = event.target.type;
+  const error = event.target.nextElementSibling.children[0];
+  error.textContent = '';
+  input.classList.remove('valid', 'invalid');
+  if (!value.length) return addError();
+  if (errorType === 'email') {
+    if (
+      /,|;|\s/.test(value) ||
+      !/\w+[^\s]+\@\w+\.\w+$/.test(value) ||
+      value.match(/\@/g).length > 1
+    )
+      index = 1;
+  }
+  if (errorType === 'password') {
+    if (value.length < 8) index = 1;
+    else if (!/\p{Lu}/u.test(value)) index = 2;
+    else if (!/\d/.test(value)) index = 3;
+    else if (!/[!@#\$%\^&\*)(.,_\-+"`~=\\\|;:'"/\?]/.test(value)) index = 4;
+  }
+  if (index) addError();
+  else input.classList.add('valid');
+
+  function addError() {
+    message = errorsLocal[lang.name][errorType][index];
+    error.classList.add('iserror');
+    input.classList.add('invalid');
+    error.textContent = message;
+    index = 0;
   }
 }
 
-function checkMail() {
-  emailErrors = [];
-  if (loginInput.value.length === 0) {
-    errors.push('Введите адрес электронной почты');
-    emailErrors.push('Введите адрес электронной почты');
-  }
-
-  if (
-    /,|;|\s/.test(a) ||
-    !/\w+[^\s]+\@\w+\.\w+$/.test(a) ||
-    a.match(/\@/g).length > 1
-  ) {
-    errors.push('Адрес электронной почты был введен неправильно.');
-    emailErrors.push('Адрес электронной почты был введен неправильно.');
-  }
-
-  const dog = loginInput.value.indexOf('@');
-  if (dog == -1) {
-    errors.push('Нет символа"@".');
-    emailErrors.push('Нет символа"@".');
-  }
-  if (loginInput.value.indexOf('.') == -1) {
-    errors.push('Нет символа"."');
-    emailErrors.push('Нет символа"."');
-  }
-  if (dog < 1 || dog > loginInput.value.length - 5) {
-    errors.push('Адрес электронной почты был введен неправильно.');
-    emailErrors.push('Адрес электронной почты был введен неправильно.');
-  }
-  if (
-    loginInput.value.charAt(dog - 1) == '.' ||
-    loginInput.value.charAt(dog + 1) == '.'
-  ) {
-    errors.push('Адрес электронной почты был введен неправильно.');
-    emailErrors.push('Адрес электронной почты был введен неправильно.');
-  }
-  renderErrors();
-}
-
-function validatePassword() {
-  passwordErrors = [];
-  const p = passwordInput.value;
-  if (p.length <= 8) {
-    errors.push('Ваш пароль должен состоять хотя бы из 8-ми символов');
-    passwordErrors.push('Ваш пароль должен состоять хотя бы из 8-ми символов');
-  }
-  if (p.search(/[a-z]/i) < 0) {
-    errors.push('Ваш пароль должен иметь хотя бы одну букву');
-    passwordErrors.push('Ваш пароль должен иметь хотя бы одну букву');
-  }
-  if (p.search(/[0-9]/) < 0) {
-    errors.push('Ваш пароль должен иметь хотя бы одну цифру');
-    passwordErrors.push('Ваш пароль должен иметь хотя бы одну цифру');
-  }
-  renderErrors();
-}
+export { renderModal, checkIfValid };

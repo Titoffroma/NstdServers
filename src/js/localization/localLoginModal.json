@@ -8,8 +8,9 @@
     "password-label": "Пароль:",
     "form": [
       {
-        "message": "Войдите в личный кабинет",
-        "button": "Войти"
+        "message": "Вход в личный кабинет",
+        "button": "Войти",
+        "forgot": "Забыли пароль?"
       },
       {
         "message": "Вы с нами впервые?",
@@ -28,7 +29,8 @@
     "form": [
       {
         "message": "Log in to your Office",
-        "button": "Login"
+        "button": "Login",
+        "forgot": "Forgot your password?"
       },
       {
         "message": "Are you new with us?",

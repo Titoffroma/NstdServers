@@ -1,5 +1,5 @@
 import { measureAndFixScroll } from './preloader';
-import renderModal from '../pages/loginModal';
+import { renderModal } from '../pages/loginModal';
 
 const hbsFunctions = [renderModal];
 

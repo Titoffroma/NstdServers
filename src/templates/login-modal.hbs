@@ -1,5 +1,5 @@
 <div class="backdrop" data-close>
-    <div class="authorization-modal backdrop__modal">
+    <div class="authorization-modal">
         <button class="close-button icon-btn"><span data-close class="material-icons">clear</span></button>
         <div class="modal">
             <div class="modal__tabs">
@@ -17,11 +17,12 @@
                         <label for="modal-email-{{@index}}" class="modal__label">{{../mail-label}}</label>
                         <input type="email" name="email" class="modal__input" id="modal-email-{{@index}}"
                             placeholder="{{../loginPlaceholder}}">
-                        <p class="modal__message email-error"></p>
+                        <div class="error-wrapper"><span class="modal__message password-error"></span></div>
                         <label for="modal-password-{{@index}}" class="modal__label">{{../password-label}}</label>
                         <input type="password" name="password" class="modal__input" id="modal-password-{{@index}}"
                             placeholder="{{../emailPlaceholder}}">
-                        <p class="modal__message password-error"></p>
+                        <div class="error-wrapper"><span class="modal__message password-error"></span></div>
+                        {{#if @first}}<span class="modal__forgot-password">{{forgot}}</span>{{/if}}
                         <button type="submit" class="modal__button">{{button}}</button>
                     </form>
                 {{/each}}

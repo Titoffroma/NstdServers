@@ -99,7 +99,8 @@ section.container {
   transition: opacity $slider;
   &.opened {
     opacity: 1;
-    & .backdrop__modal {
+    & .backdrop__modal,
+    & .authorization-modal {
       opacity: 1;
       transform: scale(1);
     }
@@ -118,11 +119,6 @@ section.container {
     letter-spacing: 0.02em;
     transform: scale(0.8);
     transition: opacity $slider, transform $slider;
-    &.opened {
-      opacity: 1;
-      transform: scale(1);
-    }
-
     @media screen and (min-width: $tablet) {
       padding: 55px 55px 60px;
       width: 500px;
