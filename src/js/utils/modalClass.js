@@ -1,7 +1,8 @@
 import { measureAndFixScroll } from './preloader';
 import { renderModal } from '../pages/loginModal';
+import { renderFeedback } from '../pages/feedbackModal';
 
-const hbsFunctions = [renderModal];
+const hbsFunctions = [renderModal, renderFeedback];
 
 class Modal {
   constructor(functions) {

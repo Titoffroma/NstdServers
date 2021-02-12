@@ -10,7 +10,18 @@
       "Пароль должен содержать хотя бы одну заглавную букву",
       "Пароль должен содержать хотя бы одну цифру",
       "Пароль должен содержать хотя бы один спецсимвол: !@#$%,^&*()._-+`~=|;:/?"
-    ]
+    ],
+    "text": [
+      "Поле обязательно к заполнению",
+      "Введите, пожалуйста, Ваше имя (фамилию) с заглавной буквы"
+    ],
+    "textarea": ["Введите Ваше сообщение", "Ваше сообщение слишком короткое"],
+    "tel": [
+      "Введите номер телефона",
+      "Введите цифры номера без пробелов и иных знаков",
+      "В указанном номере не хватает цифр"
+    ],
+    "checkbox": ["Пожалуйста, выберите этот пункт для того чтоб продолжить"]
   },
   "en": {
     "email": ["Enter your e-mail address", "E-mail address is invalid"],
@@ -20,6 +31,17 @@
       "Password must have at least 1 Capital letter",
       "Password must have at least 1 digit",
       "Password must have at least 1 special symbol"
-    ]
+    ],
+    "text": [
+      "This field is required",
+      "Enter, please, your name with a capital letter"
+    ],
+    "textarea": ["Wright your message", "Your message is too short"],
+    "tel": [
+      "Wright your phone number",
+      "Enter digits of the number without spaces or other characters",
+      "There are not enough digits in the number"
+    ],
+    "checkbox": ["Please, check to proceed"]
   }
 }
