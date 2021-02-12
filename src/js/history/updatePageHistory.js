@@ -4,11 +4,13 @@ import localDataHome from '../localization/localHome.json';
 import localDataAboutUs from '../localization/localAboutUs.json';
 import localDataPartners from '../localization/localPartners.json';
 import localDataContacts from '../localization/localContacts.json';
+import localDataCalc from '../localization/localCalc.json';
 import { lang } from './mainHistory';
 import renderHome from '../../templates/Home.hbs';
 import renderAboutUs from '../../templates/about-us.hbs';
 import renderPartners from '../../templates/for-partners.hbs';
 import renderContacts from '../../templates/contacts.hbs';
+import renderCalc from '../../templates/calc.hbs';
 import { slider } from '../utils/slider';
 import { swiper } from '../utils/swiper';
 import { drawImages, renderIndicators } from '../pages/home';
@@ -42,7 +44,7 @@ function fun2() {
 
 function fun3() {
   updateHeader();
-  rootRef.innerHTML = '';
+  rootRef.innerHTML = renderCalc(localDataCalc[lang.name]);
 }
 
 function fun4() {

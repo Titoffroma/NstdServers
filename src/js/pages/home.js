@@ -31,12 +31,12 @@ const svgs = [
   [svg1],
 ];
 
-let fix =
-  location.href.includes('github') && !location.href.includes('NstdServers')
-    ? 'NstdServers/'
-    : '';
-
 function drawImages() {
+  let fix =
+    location.href.includes('github') && !location.href.includes('NstdServers')
+      ? 'NstdServers/'
+      : '';
+
   let images = document.querySelectorAll('#advantages .cardset__image');
   images.forEach((image, index) => {
     image.src = `${imgs[index]}`;
