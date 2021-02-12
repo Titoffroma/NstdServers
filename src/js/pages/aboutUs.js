@@ -10,9 +10,11 @@ const imgs = [img1, img2, img3];
 const links = [file1, file2, file3];
 
 function drawAboutUsImages() {
+  let fix = location.href.includes('github') ? 'NstdServers/' : '';
+
   const images = document.querySelectorAll('.about-us__goods-image');
   images.forEach((image, index) => {
-    image.src = `${imgs[index]}`;
+    image.src = `${fix + imgs[index]}`;
   });
 }
 

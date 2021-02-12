@@ -7,7 +7,8 @@ const svgs = [svg1, svg2, svg3];
 
 function drawContactsImages() {
   const image = document.querySelector('.contacts__image');
-  image.src = img1;
+  let fix = location.href.includes('github') ? 'NstdServers/' : '';
+  image.src = fix + img1;
   const images = document.querySelectorAll('.contacts__center-image');
   images.forEach((svg, i) => {
     svg.src = svgs[i];

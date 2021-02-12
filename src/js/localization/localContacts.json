@@ -38,7 +38,7 @@
       }
     ],
     "button": "Написать",
-    "image": "/img/contacts-img.png",
+    "image": "",
     "contacts": [
       {
         "icon": "location_on",
@@ -52,7 +52,7 @@
       {
         "icon": "mail",
         "title": "www.cloud.mts.by",
-        "mail": "www.cloud.mts.by"
+        "link": "www.cloud.mts.by"
       }
     ]
   },
@@ -95,19 +95,21 @@
       }
     ],
     "button": "Wright",
-    "image": "/img/contacts-img.png",
+    "image": "",
     "contacts": [
       {
-        "icon": "location",
-        "title": "Minsk, Independence Av., 95-4"
-      },
-      {
-        "icon": "post",
-        "title": "220043, Republic of Belarus, Minsk, Independence Avenue, 95-4"
+        "icon": "location_on",
+        "title": "Minsk, Independence Av., 95-4",
+        "link": "https://goo.gl/maps/FRnaQ5PEyCut2sh38"
       },
       {
         "icon": "mail",
-        "title": "www.cloud.mts.by"
+        "title": "220043, Republic of Belarus, Minsk, Independence Avenue, 95-4"
+      },
+      {
+        "icon": "email",
+        "title": "www.cloud.mts.by",
+        "link": "www.cloud.mts.by"
       }
     ]
   }
