@@ -1,0 +1,136 @@
+#contacts {
+  padding-bottom: 40px;
+}
+.contacts {
+  @extend %flex-container;
+  align-items: stretch;
+  flex-wrap: wrap;
+  background: $overlay;
+  border-radius: 16px;
+  padding: 20px;
+  color: #fff;
+  &__wrapper {
+    width: 100%;
+    @extend %flex-container;
+    flex-direction: column;
+    align-items: stretch;
+    @media screen and (min-width: $phone) {
+      flex-direction: row;
+    }
+    @media screen and (min-width: $tablet) {
+      width: calc(70% - 20px);
+      margin-right: 40px;
+    }
+  }
+  &__center {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: stretch;
+    margin-bottom: 40px;
+    @media screen and (min-width: $phone) {
+      width: calc((100% - 40px) / 3);
+    }
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+    & > :not(:last-child) {
+      margin-bottom: 20px;
+    }
+    & > :nth-last-child(2) {
+      margin-top: auto;
+    }
+    &-title {
+      text-align: center;
+      font-size: 12px;
+      @media screen and (min-width: $tablet) {
+        font-size: 16px;
+      }
+      @media screen and (min-width: $desktop) {
+        font-size: 20px;
+      }
+    }
+    &-contact {
+      @extend %anchor;
+      height: fit-content;
+      width: fit-content;
+    }
+    &-accent {
+      width: 50%;
+      height: 1px;
+      border-top: 4px dotted $accent;
+    }
+  }
+  &__questions {
+    width: 100%;
+    @extend %flex-container;
+    flex-direction: column;
+    @media screen and (min-width: $tablet) {
+      width: calc(30% - 20px);
+    }
+  }
+  &__answer {
+    margin-bottom: 20px;
+    &-mail {
+      @extend %anchor;
+      margin-top: 10px;
+    }
+  }
+  &__question-button {
+    @extend %button-purple;
+    font-size: 18px;
+    @media screen and (min-width: $tablet) {
+      font-size: 20px;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 22px;
+    }
+  }
+  &__contacts {
+    margin-bottom: 40px;
+    @extend %flex-container;
+    flex-direction: column;
+    @media screen and (min-width: $tablet) {
+      flex-direction: row;
+    }
+  }
+  &__image-wrapper {
+    padding: 20px;
+    width: 100%;
+    margin-right: 40px;
+    @media screen and (min-width: $tablet) {
+      width: calc((100% - 20px) / 2);
+      max-width: 400px;
+    }
+  }
+  &__image {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: invert(1) drop-shadow(0px 0px 1px #ff6b09);
+  }
+  &__list {
+    margin-right: auto;
+  }
+  &__list-item {
+    color: #fff;
+    font-size: 18px;
+    @media screen and (min-width: $tablet) {
+      font-size: 20px;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 22px;
+    }
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    .material-icons {
+      margin-right: 20px;
+    }
+  }
+  &__link {
+    @extend %anchor;
+  }
+}

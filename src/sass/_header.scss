@@ -141,23 +141,11 @@
     &:nth-child(2) {
       padding: 10px 20px;
     }
-    #id_login {
-      @extend %button-main;
-      background: $main-red;
-      border-color: $main-red;
-      &:hover,
-      &:focus {
-        border-color: #918dd1;
-        background: #918dd1;
-      }
-      &:active {
-        background: #43406e;
-      }
-    }
-    #id_register {
-      @extend %anchor;
-      @extend %flex-container;
-      position: absolute;
+  }
+  &__rout {
+    @extend %button-purple;
+    img {
+      pointer-events: none;
     }
   }
 }

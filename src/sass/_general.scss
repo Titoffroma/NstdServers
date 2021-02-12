@@ -43,7 +43,7 @@ main {
   padding: 5px;
   margin: 0 auto;
   &:not(#header) {
-    transform: scaleX(0.9) translateY(100px);
+    transform: scale(0.9) translateY(20px);
     opacity: 0.5;
   }
   transition: transform $transition, opacity $transition;
@@ -68,9 +68,13 @@ section.container {
     padding: 50px;
   }
   &:not(#header).present {
-    transition: transform $transition, opacity $transition;
+    transition: transform $transition, opacity $transition 50ms;
     transform: scaleX(1) translateY(0);
     opacity: 1;
+    .main-header {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 }
 %visually-hidden {
@@ -191,6 +195,9 @@ section.container {
   padding: 15px;
   margin-bottom: 20px;
   font-size: 22px;
+  opacity: 0.5;
+  transform: translateX(100px);
+  transition: transform $transition 500ms, opacity $transition 500ms;
   @media screen and (min-width: $tablet) {
     font-size: 32px;
   }
@@ -246,6 +253,20 @@ section.container {
   }
   &:active {
     background: $overlay;
+  }
+}
+%button-purple {
+  @extend %button;
+  border-color: $purple-accent;
+  background: $purple-btn;
+  color: $white;
+  &:hover,
+  &:focus {
+    border-color: $purple-btn;
+    background: $purple-accent;
+  }
+  &:active {
+    background: $main-purple;
   }
 }
 %anchor {

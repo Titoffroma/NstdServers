@@ -128,18 +128,8 @@
     padding-bottom: 20px;
   }
   &__button {
-    @extend %button-main;
-    border-color: $purple-accent;
-    background: $purple-btn;
+    @extend %button-purple;
     font-size: 22px;
-    &:hover,
-    &:focus {
-      border-color: $purple-btn;
-      background: $purple-accent;
-    }
-    &:active {
-      background: $main-purple;
-    }
   }
 }
 .error-wrapper {

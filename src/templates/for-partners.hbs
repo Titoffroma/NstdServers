@@ -1,0 +1,19 @@
+<div id="partners">
+    <section class="container present">
+        <h1 class="main-header">{{title}}</h1>
+        <div class="partners-flex">
+            <div class="partners__image-wrapper">
+                <img src="{{image}}" alt="{{title}}" class="partners__image" />
+            </div>
+            <div class="partners__story">
+                {{#each story}}
+                    <p class="partners__text">{{text}} {{#if href}}
+                            <a href="mailto:{{href}}" class="partners__mail">{{href}}</a>
+                        {{/if}}
+                    </p>
+                {{/each}}
+                <a href="" class="partners__button" data-modal="0">{{button}}</a>
+            </div>
+        </div>
+    </section>
+</div>

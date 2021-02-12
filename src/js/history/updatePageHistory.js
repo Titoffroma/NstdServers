@@ -2,13 +2,19 @@ import renderHeader from '../../templates/header.hbs';
 import localDataHeader from '../localization/localHeader.json';
 import localDataHome from '../localization/localHome.json';
 import localDataAboutUs from '../localization/localAboutUs.json';
+import localDataPartners from '../localization/localPartners.json';
+import localDataContacts from '../localization/localContacts.json';
 import { lang } from './mainHistory';
 import renderHome from '../../templates/Home.hbs';
 import renderAboutUs from '../../templates/about-us.hbs';
+import renderPartners from '../../templates/for-partners.hbs';
+import renderContacts from '../../templates/contacts.hbs';
 import { slider } from '../utils/slider';
 import { swiper } from '../utils/swiper';
 import { drawImages, renderIndicators } from '../pages/home';
 import { drawAboutUsImages, makeLinks } from '../pages/aboutUs';
+import { drawPartnersImages } from '../pages/forPartners';
+import { drawContactsImages } from '../pages/contacts';
 
 function updateHeader() {
   document.getElementById('id_nav_list').innerHTML = renderHeader(
@@ -41,12 +47,14 @@ function fun3() {
 
 function fun4() {
   updateHeader();
-  rootRef.innerHTML = '';
+  rootRef.innerHTML = renderPartners(localDataPartners[lang.name]);
+  drawPartnersImages();
 }
 
 function fun5() {
   updateHeader();
-  rootRef.innerHTML = '';
+  rootRef.innerHTML = renderContacts(localDataContacts[lang.name]);
+  drawContactsImages();
 }
 
 function fun6() {

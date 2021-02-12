@@ -76,7 +76,14 @@ module.exports = env => ({
       },
       {
         test: /\.hbs$/,
-        use: 'handlebars-loader',
+        use: [
+          {
+            loader: 'handlebars-loader',
+            options: {
+              inlineRequires: /img/,
+            },
+          },
+        ],
       },
     ],
   },
