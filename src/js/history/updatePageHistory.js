@@ -14,7 +14,7 @@ import renderCalc from '../../templates/calc.hbs';
 import { slider } from '../utils/slider';
 import { swiper } from '../utils/swiper';
 import { drawImages, renderIndicators } from '../pages/home';
-import { drawAboutUsImages, makeLinks } from '../pages/aboutUs';
+const makeLinks = () => import('../pages/aboutUs');
 import { drawPartnersImages } from '../pages/forPartners';
 import { drawContactsImages } from '../pages/contacts';
 
@@ -35,11 +35,12 @@ function fun1() {
   swiper.start();
 }
 
-function fun2() {
+async function fun2() {
   updateHeader();
   rootRef.innerHTML = renderAboutUs(localDataAboutUs[lang.name]);
-  drawAboutUsImages();
-  makeLinks();
+  const module = await makeLinks();
+  module.default();
+  module.drawAboutUsImages();
 }
 
 function fun3() {

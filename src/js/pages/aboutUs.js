@@ -25,4 +25,5 @@ function makeLinks() {
     link.setAttribute('download', `${links[index]}`);
   });
 }
-export { drawAboutUsImages, makeLinks };
+export default makeLinks;
+export { drawAboutUsImages };
