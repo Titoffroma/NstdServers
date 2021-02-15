@@ -13,6 +13,7 @@
         "forgot": "Забыли пароль?"
       },
       {
+        "timer": "Регистрация будет доступна через:",
         "message": "Вы с нами впервые?",
         "postMessage": "Присоединяйтесь",
         "button": "Зарегистрироваться"
@@ -33,6 +34,7 @@
         "forgot": "Forgot your password?"
       },
       {
+        "timer": "Registration will be available in:",
         "message": "Are you new with us?",
         "postMessage": "Join",
         "button": "Register"

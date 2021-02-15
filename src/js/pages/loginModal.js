@@ -2,9 +2,16 @@ import loginModal from '../../templates/login-modal.hbs';
 import localModal from '../localization/localLoginModal.json';
 import { lang } from '../history/mainHistory';
 import errorsLocal from '../localization/errors.json';
+import CountdownTimer from '../utils/timer';
 
 function renderModal() {
   const markup = loginModal(localModal[lang.name]);
+  setTimeout(() => {
+    const superTimer = new CountdownTimer({
+      selector: '#timer',
+      targetDate: new Date('Mar 1, 2021'),
+    });
+  }, 1000);
   return markup;
 }
 

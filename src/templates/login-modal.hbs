@@ -8,23 +8,33 @@
             </div>
             <div class="modal__form-wrapper">
                 {{#each form}}
+
                     <form action="authorization" class="modal__form {{#if @first}}active{{/if}}">
-                        <h3 class="modal__header">{{message}}
-                        </h3>
-                        {{#if postMessage}}
-                            <h4 class="modal__header--sub">{{postMessage}}</h4>
+                        {{#unless timer}}
+                            <h3 class="modal__header">{{message}}
+                            </h3>
+                            {{#if postMessage}}
+                                <h4 class="modal__header--sub">{{postMessage}}</h4>
+                            {{/if}}
+                            <label for="modal-email-{{@index}}" class="modal__label">{{../mail-label}}</label>
+                            <input type="email" name="email" class="modal__input" id="modal-email-{{@index}}"
+                                placeholder="{{../loginPlaceholder}}">
+                            <div class="error-wrapper"><span class="modal__message password-error"></span></div>
+                            <label for="modal-password-{{@index}}" class="modal__label">{{../password-label}}</label>
+                            <input type="password" name="password" class="modal__input" id="modal-password-{{@index}}"
+                                placeholder="{{../emailPlaceholder}}">
+                            <div class="error-wrapper"><span class="modal__message password-error"></span></div>
+                            {{#if @first}}<span class="modal__forgot-password">{{forgot}}</span>{{/if}}
+                            <button type="submit" class="modal__button">{{button}}</button>
+                        {{/unless}}
+                        {{#if timer}}
+                            <article class="new-year-timer">
+                                <h2>{{timer}}</h2>
+                                <div class="timer" id="timer"></div>
+                            </article>
                         {{/if}}
-                        <label for="modal-email-{{@index}}" class="modal__label">{{../mail-label}}</label>
-                        <input type="email" name="email" class="modal__input" id="modal-email-{{@index}}"
-                            placeholder="{{../loginPlaceholder}}">
-                        <div class="error-wrapper"><span class="modal__message password-error"></span></div>
-                        <label for="modal-password-{{@index}}" class="modal__label">{{../password-label}}</label>
-                        <input type="password" name="password" class="modal__input" id="modal-password-{{@index}}"
-                            placeholder="{{../emailPlaceholder}}">
-                        <div class="error-wrapper"><span class="modal__message password-error"></span></div>
-                        {{#if @first}}<span class="modal__forgot-password">{{forgot}}</span>{{/if}}
-                        <button type="submit" class="modal__button">{{button}}</button>
                     </form>
+
                 {{/each}}
             </div>
         </div>

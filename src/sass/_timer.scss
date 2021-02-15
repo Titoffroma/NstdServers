@@ -1,0 +1,59 @@
+.new-year-timer {
+  text-align: center;
+  background: rgba(70, 93, 175, 1);
+  padding: 20px;
+  color: aliceblue;
+  transform: scale(0.8);
+}
+.timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  width: 300px;
+  margin: 0px auto;
+  background: linear-gradient(
+    to top,
+    rgba(35, 47, 88, 0.2) 0%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  padding: 10px;
+  .field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 6px;
+    width: calc((100% - 3 * 10px) / 4);
+    height: 100%;
+    background: rgb(48, 17, 41);
+    position: relative;
+    overflow: hidden;
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+    .value {
+      font-size: 40px;
+      color: rgb(255, 133, 229);
+      text-shadow: 0 0 14px rgba(253, 6, 121, 1);
+      padding: 5px;
+    }
+  }
+  .label {
+    border-radius: 0 0 6px 6px;
+    background: #fff;
+    font-size: 12px;
+    color: rgba(26, 10, 22, 0.4);
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+  }
+}
+.after {
+  position: absolute;
+  transition: all 900ms ease-in-out;
+}
+.trans {
+  transform: translateY(-10px) scale(2);
+  opacity: 0;
+}
