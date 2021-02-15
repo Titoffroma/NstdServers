@@ -97,13 +97,13 @@
     font-size: 14px;
     margin-bottom: 5px;
     align-self: flex-start;
-    & + .material-icons {
+    & + .star {
       display: none;
     }
-    &.required + .material-icons {
+    &.required + .star {
       display: inline-block;
       color: $main-red;
-      font-size: 12px;
+      font-size: 16px;
     }
   }
   &__message {

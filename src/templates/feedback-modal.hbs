@@ -9,8 +9,8 @@
                         {{#each fields}}
                             <div class="feedback__formfield">
                                 {{#each field}}
-                                    <label for="{{id}}" class="modal__label {{required}}">{{label}}</label><i
-                                        class="material-icons">new_releases</i>
+                                    <label for="{{id}}" class="modal__label {{required}}">{{label}}</label><span
+                                        class="star"> *</span>
                                     {{#if options}}
                                         <select name="{{id}}" id="{{id}}"
                                             class="modal__input feedback__select {{required}}">
