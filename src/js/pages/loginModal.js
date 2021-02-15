@@ -21,7 +21,7 @@ let index = 0;
 function checkIfValid(event) {
   const input = event.target;
   const value = event.target.value;
-  const errorType = event.target.type;
+  const errorType = event.target.dataset.type || event.target.type;
   console.log(event.target.checked);
   if (!errorType || !input.classList.contains('required')) return;
   const error = event.target.nextElementSibling.children[0];
@@ -31,6 +31,9 @@ function checkIfValid(event) {
     return addError();
   if (errorType === 'text') {
     if (!/^\p{Lu}/gu.test(value)) index = 1;
+  }
+  if (errorType === 'UNP') {
+    if (value.length !== 9 || !/^\b[\d\w]+\b$/.test(value)) index = 1;
   }
   if (errorType === 'textarea') {
     if (value.length < 3) index = 1;

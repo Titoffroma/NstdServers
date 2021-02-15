@@ -64,6 +64,7 @@
           },
           {
             "label": "УНП",
+            "data": "UNP",
             "id": "feedback-UNP",
             "input": "input",
             "type": "text",
@@ -140,6 +141,7 @@
           },
           {
             "label": "UNP",
+            "data": "UNP",
             "id": "feedback-UNP",
             "input": "input",
             "type": "text",

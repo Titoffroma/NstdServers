@@ -21,7 +21,11 @@
       "Введите цифры номера без пробелов и иных знаков",
       "В указанном номере не хватает цифр"
     ],
-    "checkbox": ["Пожалуйста, выберите этот пункт для того чтоб продолжить"]
+    "checkbox": ["Пожалуйста, выберите этот пункт для того чтоб продолжить"],
+    "UNP": [
+      "Пожалуйста, введите УНП",
+      "Пожалуйста, введите УНП: 9 символов без пробелов"
+    ]
   },
   "en": {
     "email": ["Enter your e-mail address", "E-mail address is invalid"],
@@ -42,6 +46,10 @@
       "Enter digits of the number without spaces or other characters",
       "There are not enough digits in the number"
     ],
-    "checkbox": ["Please, check to proceed"]
+    "checkbox": ["Please, check to proceed"],
+    "UNP": [
+      "Please, enter your UNP",
+      "Please, enter your UNP: 9 characters without spaces"
+    ]
   }
 }

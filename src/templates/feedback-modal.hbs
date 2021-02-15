@@ -26,8 +26,8 @@
                                             class="modal__input feedback__textarea {{required}}"></textarea>
                                     {{/if}}
                                     {{#if input}}
-                                        <input type="{{type}}" name="{{id}}" class="modal__input {{required}}"
-                                            id="{{id}}">
+                                        <input type="{{type}}" name="{{id}}" {{#if data}}data-type={{data}}{{/if}}
+                                            class="modal__input {{required}}" id="{{id}}">
                                     {{/if}}
                                     <div class="error-wrapper"><span class="modal__message"></span>
                                     </div>
