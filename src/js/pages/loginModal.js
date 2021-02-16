@@ -11,7 +11,7 @@ function renderModal() {
       selector: '#timer',
       targetDate: new Date('Mar 1, 2021'),
     });
-  }, 1000);
+  }, 0);
   return markup;
 }
 
@@ -22,7 +22,6 @@ function checkIfValid(event) {
   const input = event.target;
   const value = event.target.value;
   const errorType = event.target.dataset.type || event.target.type;
-  console.log(event.target.checked);
   if (!errorType || !input.classList.contains('required')) return;
   const error = event.target.nextElementSibling.children[0];
   error.textContent = '';
