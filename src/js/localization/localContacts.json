@@ -5,7 +5,7 @@
       {
         "image": "/img/contacts1.svg",
         "title": "Контактный центр",
-        "tel": "+3750999999",
+        "tel": "0000",
         "time": "Круглосуточно"
       },
       {
@@ -17,7 +17,7 @@
       {
         "image": "/img/contacts3.svg",
         "title": "Служба технической поддержки",
-        "tel": "+3750999999",
+        "tel": "0000",
         "mail": "support@mts.by",
         "time": "Круглосуточно"
       }
@@ -62,7 +62,7 @@
       {
         "image": "/img/contacts1.svg",
         "title": "Contact Center",
-        "tel": "+3750999999",
+        "tel": "0000",
         "time": "24/7"
       },
       {
@@ -74,7 +74,7 @@
       {
         "image": "/img/contacts3.svg",
         "title": "Technical support service",
-        "tel": "+3750999999",
+        "tel": "0000",
         "mail": "support@mts.by",
         "time": "24/7"
       }
