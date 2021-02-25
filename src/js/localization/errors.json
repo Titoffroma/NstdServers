@@ -25,7 +25,8 @@
     "UNP": [
       "Пожалуйста, введите УНП",
       "Пожалуйста, введите УНП: 9 символов без пробелов"
-    ]
+    ],
+    "submit": "По указанному логину пользователей не найдено"
   },
   "en": {
     "email": ["Enter your e-mail address", "E-mail address is invalid"],
@@ -50,6 +51,7 @@
     "UNP": [
       "Please, enter your UNP",
       "Please, enter your UNP: 9 characters without spaces"
-    ]
+    ],
+    "submit": "there is no registered user with given username"
   }
 }
