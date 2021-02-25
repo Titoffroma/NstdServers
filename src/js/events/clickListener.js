@@ -8,6 +8,8 @@ import { load, save, remove } from '../utils/storage';
 import { resizeServices } from '../utils/preload';
 
 export default function listenClicks(event) {
+  if (event.target.classList.contains('social__link'))
+    return event.preventDefault();
   if (event.target.id.includes('id_rout')) {
     event.preventDefault();
     render(event);

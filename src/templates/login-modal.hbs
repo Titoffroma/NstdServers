@@ -8,7 +8,6 @@
             </div>
             <div class="modal__form-wrapper">
                 {{#each form}}
-
                     <form action="authorization" class="modal__form {{#if @first}}active{{/if}}">
                         {{#unless timer}}
                             <h3 class="modal__header">{{message}}
@@ -16,26 +15,44 @@
                             {{#if postMessage}}
                                 <h4 class="modal__header--sub">{{postMessage}}</h4>
                             {{/if}}
-                            <label for="modal-email-{{@index}}" class="modal__label">{{../mail-label}}</label><span
-                                class="star"> *</span>
+                            <label for="modal-email-{{@index}}" class="modal__label required">{{../mail-label}}<span
+                                    class="star"> *</span></label>
                             <input type="email" name="email" class="modal__input required" id="modal-email-{{@index}}"
                                 placeholder="{{../loginPlaceholder}}">
                             <div class="error-wrapper"><span class="modal__message password-error"></span></div>
-                            <label for="modal-password-{{@index}}" class="modal__label">{{../password-label}}</label>
-                            <input type="password" name="password" class="modal__input required"
-                                id="modal-password-{{@index}}" placeholder="{{../emailPlaceholder}}">
+                            <label for="modal-password-{{@index}}"
+                                class="modal__label required">{{../password-label}}<span class="star"> *</span></label>
+                            <input type="password" name="password" {{#if @first}}data-nocheck{{/if}}
+                                class="modal__input required" id="modal-password-{{@index}}"
+                                placeholder="{{../emailPlaceholder}}">
                             <div class="error-wrapper"><span class="modal__message password-error"></span></div>
                             {{#if @first}}<span class="modal__forgot-password">{{forgot}}</span>{{/if}}
                             <button type="submit" class="modal__button">{{button}}</button>
                         {{/unless}}
                         {{#if timer}}
                             <article class="new-year-timer">
-                                <h2>{{timer}}</h2>
-                                <div class="timer" id="timer"></div>
+                                <h2>{{timer.title}}</h2>
+                                <div class="timer" id="timer">
+                                    <div class="field"><span class="value" data-value="days">11</span><span
+                                            class="label">{{timer.days}}</span></div>
+                                    <div class="field"><span class="value" data-value="hours">11</span><span
+                                            class="label">{{timer.hours}}</span></div>
+                                    <div class="field"><span class="value" data-value="mins">11</span><span
+                                            class="label">{{timer.minutes}}</span></div>
+                                    <div class="field"><span class="value" data-value="secs">11</span><span
+                                            class="label">{{timer.seconds}}</span></div>
+                                </div>
+                                <div class="clock">
+                                    <div class="clock__wrapper">
+                                        <div class="clock__table"></div>
+                                    </div>
+                                    <div class="clock__timer" id="timer-clock">
+                                        <div class="clock__arrow"></div>
+                                    </div>
+                                </div>
                             </article>
                         {{/if}}
                     </form>
-
                 {{/each}}
             </div>
         </div>

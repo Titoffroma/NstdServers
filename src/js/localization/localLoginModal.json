@@ -4,8 +4,8 @@
     "register": "Регистрация",
     "loginPlaceholder": "Введите почту",
     "emailPlaceholder": "Введите пароль",
-    "mail-label": "Логин:",
-    "password-label": "Пароль:",
+    "mail-label": "Логин",
+    "password-label": "Пароль",
     "form": [
       {
         "message": "Вход в личный кабинет",
@@ -13,7 +13,13 @@
         "forgot": "Забыли пароль?"
       },
       {
-        "timer": "Регистрация будет доступна через:",
+        "timer": {
+          "title": "Регистрация будет доступна через:",
+          "days": "дней",
+          "hours": "часов",
+          "minutes": "минут",
+          "seconds": "секунд"
+        },
         "message": "Вы с нами впервые?",
         "postMessage": "Присоединяйтесь",
         "button": "Зарегистрироваться"
@@ -25,8 +31,8 @@
     "register": "Registration",
     "loginPlaceholder": "Enter your e-mail",
     "emailPlaceholder": "Enter password",
-    "mail-label": "Login:",
-    "password-label": "Password:",
+    "mail-label": "Login",
+    "password-label": "Password",
     "form": [
       {
         "message": "Log in to your Office",
@@ -34,7 +40,13 @@
         "forgot": "Forgot your password?"
       },
       {
-        "timer": "Registration will be available in:",
+        "timer": {
+          "title": "Registration will be available in:",
+          "days": "days",
+          "hours": "hours",
+          "minutes": "minutes",
+          "seconds": "seconds"
+        },
         "message": "Are you new with us?",
         "postMessage": "Join",
         "button": "Register"

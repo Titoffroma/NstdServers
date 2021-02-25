@@ -1,5 +1,62 @@
 #statistics {
   background: $overlay;
+  padding-top: 140px;
+  @media screen and (min-width: $tablet) {
+    padding-top: 190px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding-top: 240px;
+  }
+  position: relative;
+}
+@keyframes wave {
+  0% {
+    right: 0;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    right: 120%;
+    opacity: 0;
+  }
+}
+.wave {
+  height: 240px;
+  width: 100%;
+  background-image: url('../img/bg-wave.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  @media screen and (min-width: $tablet) {
+    height: 340px;
+  }
+  @media screen and (min-width: $desktop) {
+    height: 440px;
+  }
+  position: absolute;
+  top: 0;
+  transform: translateY(-50%);
+  opacity: 0.99;
+  overflow: hidden;
+
+  &__spark {
+    position: absolute;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    transform-origin: top;
+    height: 1000px;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: opacity(0.9) brightness(2);
+    background-clip: text;
+    transform: rotate(-45deg);
+    animation: wave 8s $transition infinite;
+    &--accent {
+      width: 1px;
+    }
+  }
 }
 .statistics {
   @extend %flex-container;

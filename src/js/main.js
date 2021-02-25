@@ -6,6 +6,7 @@ import listenResize from './events/resizeListener';
 import listenFocusout from './events/focusoutListener';
 import listenFocusin from './events/focusinListener';
 import listenSubmit from './events/submitListener';
+import listenKeyDown from './events/keyDownListener';
 import { movePad } from './events/scrollListener';
 
 var debounce = require('debounce');
@@ -20,4 +21,8 @@ document.addEventListener('change', listenChange);
 document.addEventListener('focusout', listenFocusout);
 document.addEventListener('focusin', listenFocusin);
 document.addEventListener('submit', listenSubmit);
+window.addEventListener('keydown', listenKeyDown);
 window.addEventListener('resize', listenResize);
+document.oncontextmenu = function (e) {
+  return false;
+};

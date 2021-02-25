@@ -2,6 +2,12 @@
   padding: 55px 20px 20px;
   width: 300px;
   height: 440px;
+  @media screen and (min-width: $desktop) {
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    width: 400px;
+  }
 }
 
 .modal {
@@ -100,7 +106,8 @@
     & + .star {
       display: none;
     }
-    &.required + .star {
+    &.required + .star,
+    & .star {
       display: inline-block;
       color: $main-red;
       font-size: 16px;

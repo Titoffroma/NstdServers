@@ -1,3 +1,12 @@
+#hero_slider {
+  padding-bottom: 140px;
+  @media screen and (min-width: $tablet) {
+    padding-bottom: 190px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding-bottom: 240px;
+  }
+}
 .hero-slider {
   position: relative;
   overflow: hidden;
@@ -87,6 +96,7 @@
     }
     &.three {
       background-color: rgb(27, 130, 73);
+      background-image: $slider-bg, url('../img/two.jpg');
       background-size: cover;
       background-position: center;
     }
@@ -236,19 +246,5 @@
       background: $accent;
       height: 20px;
     }
-  }
-}
-.wave {
-  height: 240px;
-  width: 100%;
-  background-image: url('../img/bg-wave.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  @media screen and (min-width: $desktop) {
-    height: 340px;
-  }
-  @media screen and (min-width: $desktop) {
-    height: 440px;
   }
 }

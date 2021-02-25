@@ -1,3 +1,5 @@
+import { lang } from '../history/mainHistory';
+
 export default class CountdownTimer {
   constructor(specs) {
     this.selector = specs.selector;
@@ -7,14 +9,10 @@ export default class CountdownTimer {
   createTimer() {
     return new Promise((resolve, reject) => {
       const timerRef = document.querySelector(this.selector);
-      timerRef && timerRef.children.length === 0
-        ? resolve(timerRef)
-        : reject('The timer cannot be found by ID');
+      timerRef ? resolve(timerRef) : reject('The timer cannot be found by ID');
     });
   }
   parseTimerHTML(timerRef) {
-    timerRef.innerHTML =
-      '<div class="field"><span class="value" data-value="days">11</span><span class="label">Days</span></div><div class="field"><span class="value" data-value="hours">11</span><span class="label">Hours</span></div><div class="field"><span class="value" data-value="mins">11</span><span class="label">Minutes</span></div><div class="field"><span class="value" data-value="secs">11</span><span class="label">Seconds</span></div>';
     const timerObj = {
       timerRef: timerRef,
       titleRef: document.querySelector('.new-year-timer'),
@@ -36,21 +34,59 @@ export default class CountdownTimer {
       );
       valueRef[3].textContent = Math.floor((time % (1000 * 60)) / 1000);
 
-      labelRef[0].textContent = valueRef[0].textContent == 1 ? 'Day' : 'Days';
-      labelRef[1].textContent = valueRef[1].textContent == 1 ? 'Hour' : 'Hours';
-      labelRef[2].textContent =
-        valueRef[2].textContent == 1 ? 'Minute' : 'Minutes';
-      labelRef[3].textContent =
-        valueRef[3].textContent == 1 ? 'Second' : 'Seconds';
+      if (lang.name === 'en') {
+        labelRef[0].textContent = valueRef[0].textContent == 1 ? 'day' : 'days';
+        labelRef[1].textContent =
+          valueRef[1].textContent == 1 ? 'hour' : 'hours';
+        labelRef[2].textContent =
+          valueRef[2].textContent == 1 ? 'minute' : 'minutes';
+        labelRef[3].textContent =
+          valueRef[3].textContent == 1 ? 'second' : 'seconds';
+      }
+      if (lang.name === 'ru') {
+        labelRef[0].textContent = this.getStringValue(
+          0,
+          valueRef[0].textContent,
+        );
+        labelRef[1].textContent = this.getStringValue(
+          1,
+          valueRef[1].textContent,
+        );
+        labelRef[2].textContent = this.getStringValue(
+          2,
+          valueRef[2].textContent,
+        );
+        labelRef[3].textContent = this.getStringValue(
+          3,
+          valueRef[3].textContent,
+        );
+      }
 
       if (time == 0) {
         clearInterval(intervalSet);
-        titleRef.textContent = 'HAPPY NEW YEAR!!!';
+        titleRef.textContent = 'Hooooray!!!';
         titleRef.style.fontSize = '50px';
       }
     }, 1000);
 
-    timerRef.addEventListener('DOMSubtreeModified', this.animateTimer);
+    // timerRef.addEventListener('DOMSubtreeModified', this.animateTimer);
+  }
+  getStringValue(str, val) {
+    const words = [
+      ['день', 'дня', 'дней'],
+      ['час', 'часа', 'часов'],
+      ['минуту', 'минуты', 'минут'],
+      ['секунду', 'секунды', 'секунд'],
+    ];
+    const word = words[str];
+    let result = word[1];
+    if (val.slice(-1) == 1) {
+      result = word[0];
+    }
+    if ((val < 21 && val > 9) || val.slice(-1) > 4 || val.slice(-1) == 0) {
+      result = word[2];
+    }
+    return result;
   }
   animateTimer({ target }) {
     if (target.classList.contains('value')) {

@@ -11,7 +11,7 @@ function renderModal() {
       selector: '#timer',
       targetDate: new Date('Mar 1, 2021'),
     });
-  }, 0);
+  }, 100);
   return markup;
 }
 
@@ -28,6 +28,7 @@ function checkIfValid(event) {
   input.classList.remove('valid', 'invalid');
   if ((errorType === 'checkbox' && !input.checked) || !value.length)
     return addError();
+  if (input.hasAttribute('data-nocheck')) return;
   if (errorType === 'text') {
     if (!/^\p{Lu}/gu.test(value)) index = 1;
   }
