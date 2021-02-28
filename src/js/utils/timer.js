@@ -24,7 +24,7 @@ export default class CountdownTimer {
   startTimer({ timerRef, titleRef, valueRef, labelRef }) {
     const intervalSet = setInterval(() => {
       const time = Date.parse(this.targetDate) - Date.now();
-      const timer = document.getElementById('timer-clock');
+      const clock = document.getElementById('timer-clock');
 
       valueRef[0].textContent = Math.floor(time / (1000 * 60 * 60 * 24));
       valueRef[1].textContent = Math.floor(
@@ -34,8 +34,11 @@ export default class CountdownTimer {
         (time % (1000 * 60 * 60)) / (1000 * 60),
       );
       valueRef[3].textContent = Math.floor((time % (1000 * 60)) / 1000);
-      if (timer)
-        timer.style.transform = `rotate(${valueRef[3].textContent * 6}deg)`;
+      if (clock) {
+        if (valueRef[3].textContent == 0) clock.style.transition = 'none';
+        if (valueRef[3].textContent == 58) clock.style.transition = '';
+        clock.style.transform = `rotate(${valueRef[3].textContent * 6}deg)`;
+      }
 
       if (lang.name === 'en') {
         labelRef[0].textContent = valueRef[0].textContent == 1 ? 'day' : 'days';

@@ -17,6 +17,7 @@ import { drawImages, renderIndicators } from '../pages/home';
 const makeLinks = () => import('../pages/aboutUs');
 import { drawPartnersImages } from '../pages/forPartners';
 import { drawContactsImages } from '../pages/contacts';
+import { renderCalculator } from '../pages/calc';
 
 function updateHeader() {
   document.getElementById('id_nav_list').innerHTML = renderHeader(
@@ -46,6 +47,7 @@ async function fun2() {
 function fun3() {
   updateHeader();
   rootRef.innerHTML = renderCalc(localDataCalc[lang.name]);
+  renderCalculator();
 }
 
 function fun4() {

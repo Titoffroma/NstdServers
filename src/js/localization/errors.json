@@ -26,7 +26,10 @@
       "Пожалуйста, введите УНП",
       "Пожалуйста, введите УНП: 9 символов без пробелов"
     ],
-    "submit": "По указанному логину пользователей не найдено"
+    "submit": "По указанному логину пользователей не найдено",
+    "modal": {
+      "text": "Проверте, все ли данные выбраны"
+    }
   },
   "en": {
     "email": ["Enter your e-mail address", "E-mail address is invalid"],
@@ -52,6 +55,9 @@
       "Please, enter your UNP",
       "Please, enter your UNP: 9 characters without spaces"
     ],
-    "submit": "there is no registered user with given username"
+    "submit": "there is no registered user with given username",
+    "modal": {
+      "text": "Check if all fields are marked"
+    }
   }
 }

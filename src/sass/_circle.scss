@@ -22,7 +22,7 @@
       background: $main-purple;
       transform-origin: left center;
       &.up {
-        transition: transform 250ms ease-out;
+        transition: transform 250ms ease-out 250ms;
       }
       &.down {
         transition: transform 250ms ease-in 250ms;
@@ -49,6 +49,10 @@
     &--dot {
       width: 80px;
       height: 80px;
+      @media screen and (min-width: $tablet) {
+        height: 100px;
+        width: 100px;
+      }
       background: $main-purple;
       border: 2px solid $accent;
       border-radius: 50%;
@@ -56,7 +60,7 @@
     }
   }
 }
-#circle {
+.circle__wrapper {
   position: relative;
   height: 180px;
   width: 180px;
@@ -101,4 +105,16 @@
   width: 70px;
   color: #fff;
   font-size: 20px;
+}
+
+#calc {
+  .inner.up {
+    transition: transform 50ms linear;
+  }
+  .inner.down {
+    transition: transform 50ms linear;
+  }
+  .circle__arrow {
+    transition: transform 50ms linear;
+  }
 }

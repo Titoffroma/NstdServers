@@ -23,7 +23,7 @@
                                     {{/if}}
                                     {{#if textarea}}
                                         <textarea name="{{id}}" id="" cols="30" rows="19" resize="none"
-                                            class="modal__input feedback__textarea {{required}}"></textarea>
+                                            class="modal__input feedback__textarea {{required}}">{{text}}</textarea>
                                     {{/if}}
                                     {{#if input}}
                                         <input type="{{type}}" name="{{id}}" {{#if data}}data-type={{data}}{{/if}}
@@ -45,5 +45,4 @@
             </form>
         </div>
     </div>
-</div>
 </div>
