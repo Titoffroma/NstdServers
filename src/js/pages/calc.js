@@ -65,8 +65,12 @@ export default class RangeInput {
     mainWrapper.appendChild(wrapper);
     mainWrapper.appendChild(circleRef);
     this.parent && this.parent.appendChild(mainWrapper);
-    input.addEventListener('input', this.handleMove);
-    this.handleMove();
+    const circleInput = this.parent.querySelector('.range__result-input');
+    circleInput.setAttribute('data-max', this.max);
+    circleInput.setAttribute('data-min', this.min);
+    circleInput.setAttribute('data-step', this.step);
+    this.parent.addEventListener('input', this.handleMove);
+    this.moveThumb(this.parent);
   }
   static moveThumbInClass() {
     return function (parent) {
@@ -107,7 +111,9 @@ export default class RangeInput {
         marker.classList.remove('shine');
         if (marker.textContent == value) marker.classList.add('shine');
       });
-      result.children[0].textContent = `${value * price} `;
+      result.children[0].setAttribute('data-value', `${value * price} `);
+      result.children[0].value = value;
+      result.children[1].textContent = unit;
       arrow.style.transform = `rotate(${resultValue}deg)`;
       if (resultValue <= 180) {
         innerUp.style.transform = `rotate(0deg)`;
@@ -119,14 +125,37 @@ export default class RangeInput {
       let totalResults = 0;
       document
         .querySelectorAll('.range__result')
-        .forEach(el => (totalResults += Number(el.children[0].textContent)));
+        .forEach(el => (totalResults += Number(el.children[0].dataset.value)));
       document.querySelector(
         '.calc__sum-value',
       ).textContent = `${totalResults} BYN`;
     };
   }
   handleMove(e) {
-    this.moveThumb(this.parent);
+    console.log('Move', e.target);
+    if (e.target.classList.contains('range__input')) {
+      this.moveThumb(this.parent);
+    }
+    if (e.target.classList.contains('range__result-input')) {
+      if (!e.target.value) this.syncResults(0);
+      let result = 0;
+      const value = e.target.value;
+      const numberInput =
+        value.match(/[0-9]/g) &&
+        Number(Array.from(value.match(/[0-9]/g)).join(''));
+      if (numberInput && numberInput <= this.min) result = this.min;
+      else if (numberInput && numberInput >= this.max) result = this.max;
+      else if (numberInput)
+        result = Math.round(numberInput / this.step) * this.step;
+      this.syncResults(result);
+    }
+  }
+  syncResults(result) {
+    this.timer && clearTimeout(this.timer);
+    this.timer = setTimeout(() => {
+      this.parent.querySelector('.range__input').value = result;
+      this.moveThumb(this.parent);
+    }, 1000);
   }
   drawMarkers() {
     const markers = document.createElement('div');

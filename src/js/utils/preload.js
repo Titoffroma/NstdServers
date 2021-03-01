@@ -33,8 +33,8 @@ function preload({ path }) {
   const services = document.querySelector('.services__main');
   services ? serviceObserver.observe(services) : serviceObserver.disconnect();
   container.forEach(el => {
-    aboutObserver.observe(el);
     el.classList.remove('present');
+    aboutObserver.observe(el);
   });
   if (location.hash) {
     const target = document.querySelector(location.hash);
