@@ -174,7 +174,7 @@ export default class RangeInput {
           target.value = '';
         }
       }, 10);
-    }, 700);
+    }, 1000);
   }
   drawMarkers() {
     const markers = document.createElement('div');
