@@ -8,4 +8,7 @@ export default function listenFocusin(event) {
     error.classList.remove('iserror');
     error.textContent = '';
   }
+  if (event.target.classList.contains('range__result-input')) {
+    event.target.value = '';
+  }
 }

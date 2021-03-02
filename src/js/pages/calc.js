@@ -38,6 +38,7 @@ export default class RangeInput {
     input.setAttribute('step', this.step);
     input.dataset.unit = this.units;
     input.dataset.price = this.price;
+    input.dataset.value = 0;
     input.classList.add('range__input');
     const result = document.createElement('div');
     result.innerHTML = `<span>${this.min}</span><span>${this.units}</span>`;
@@ -87,7 +88,6 @@ export default class RangeInput {
       const arrow = parent.querySelector('.circle__arrow');
       const innerUp = parent.querySelector('.inner.up');
       const innerDown = parent.querySelector('.inner.down');
-
       const wrapper = parent.children[1].children[0];
       const value = wrapper.children[0].value;
       const price = wrapper.children[0].dataset.price;
@@ -111,7 +111,8 @@ export default class RangeInput {
         marker.classList.remove('shine');
         if (marker.textContent == value) marker.classList.add('shine');
       });
-      result.children[0].setAttribute('data-value', `${value * price} `);
+      result.children[0].setAttribute('data-cost', `${value * price}`);
+      result.children[0].setAttribute('data-value', `${value}`);
       result.children[0].value = value;
       result.children[1].textContent = unit;
       arrow.style.transform = `rotate(${resultValue}deg)`;
@@ -125,19 +126,23 @@ export default class RangeInput {
       let totalResults = 0;
       document
         .querySelectorAll('.range__result')
-        .forEach(el => (totalResults += Number(el.children[0].dataset.value)));
+        .forEach(el => (totalResults += Number(el.children[0].dataset.cost)));
       document.querySelector(
         '.calc__sum-value',
       ).textContent = `${totalResults} BYN`;
     };
   }
   handleMove(e) {
-    console.log('Move', e.target);
     if (e.target.classList.contains('range__input')) {
       this.moveThumb(this.parent);
     }
     if (e.target.classList.contains('range__result-input')) {
-      if (!e.target.value) this.syncResults(0);
+      // if (!e.target.value) this.syncResults(0);
+      if (!e.target.value) {
+        this.syncResults(0);
+        e.target.value = '';
+        return;
+      }
       let result = 0;
       const value = e.target.value;
       const numberInput =
@@ -146,16 +151,25 @@ export default class RangeInput {
       if (numberInput && numberInput <= this.min) result = this.min;
       else if (numberInput && numberInput >= this.max) result = this.max;
       else if (numberInput)
-        result = Math.round(numberInput / this.step) * this.step;
+        result = Math.ceil(numberInput / this.step) * this.step;
       this.syncResults(result);
     }
   }
   syncResults(result) {
-    this.timer && clearTimeout(this.timer);
-    this.timer = setTimeout(() => {
-      this.parent.querySelector('.range__input').value = result;
-      this.moveThumb(this.parent);
-    }, 1000);
+    clearInterval(this.timeout);
+    clearInterval(this.timer);
+    this.timeout = setTimeout(() => {
+      const input = this.parent.querySelector('.range__input');
+      let value = Number(input.value);
+      if (value === result) return this.moveThumb(this.parent);
+      const index = result > value ? 1 : -1;
+      this.timer = setInterval(() => {
+        value += index * this.step;
+        input.value = value;
+        this.moveThumb(this.parent);
+        if (input.value == result) clearInterval(this.timer);
+      }, 10);
+    }, 700);
   }
   drawMarkers() {
     const markers = document.createElement('div');

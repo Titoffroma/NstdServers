@@ -5,4 +5,8 @@ export default function listenFocusout(event) {
     event.preventDefault();
     checkIfValid(event);
   }
+  if (event.target.classList.contains('range__result-input')) {
+    if (event.target.value === '')
+      event.target.value = event.target.dataset.value;
+  }
 }

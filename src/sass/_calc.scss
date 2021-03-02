@@ -69,7 +69,6 @@
       width: 100%;
       @media screen and (min-width: $phone) {
         flex-wrap: nowrap;
-        justify-content: flex-start;
       }
     }
   }
@@ -86,6 +85,7 @@
     }
   }
   &__input {
+    pointer-events: none;
     width: 100%;
     appearance: none;
     width: 100%;
@@ -115,6 +115,7 @@
       }
     }
     &::-webkit-slider-thumb {
+      pointer-events: auto;
       appearance: none;
       width: 50px;
       height: 25px;
@@ -133,6 +134,7 @@
       cursor: pointer;
     }
     &::-moz-range-thumb {
+      pointer-events: auto;
       border: none;
       width: 50px;
       height: 25px;
