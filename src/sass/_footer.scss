@@ -35,16 +35,15 @@
   @extend %flex-container;
   padding-bottom: 10px;
   &__item {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border-radius: 40%;
     padding: 7px;
-    transition: background $transition, border-radius $transition;
+    transition: transform $transition;
     border-radius: 50%;
-    background-color: $main-purple;
     &:hover,
     &:focus-within {
-      background-color: $accent;
+      transform: scale(1.2);
     }
     &:nth-child(1) a {
       background-image: url('../img/vk.svg');
