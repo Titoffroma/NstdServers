@@ -137,10 +137,8 @@ export default class RangeInput {
       this.moveThumb(this.parent);
     }
     if (e.target.classList.contains('range__result-input')) {
-      // if (!e.target.value) this.syncResults(0);
       if (!e.target.value) {
-        this.syncResults(0);
-        e.target.value = '';
+        this.syncResults(0, e.target);
         return;
       }
       let result = 0;
@@ -155,11 +153,11 @@ export default class RangeInput {
       this.syncResults(result);
     }
   }
-  syncResults(result) {
+  syncResults(result, target) {
     clearInterval(this.timeout);
     clearInterval(this.timer);
+    const input = this.parent.querySelector('.range__input');
     this.timeout = setTimeout(() => {
-      const input = this.parent.querySelector('.range__input');
       let value = Number(input.value);
       if (value === result) return this.moveThumb(this.parent);
       const index = result > value ? 1 : -1;
@@ -168,6 +166,13 @@ export default class RangeInput {
         input.value = value;
         this.moveThumb(this.parent);
         if (input.value == result) clearInterval(this.timer);
+        if (
+          target === document.activeElement &&
+          result == input.dataset.value &&
+          !result
+        ) {
+          target.value = '';
+        }
       }, 10);
     }, 700);
   }
