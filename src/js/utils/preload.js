@@ -40,11 +40,8 @@ function preload({ path }) {
     const target = document.querySelector(location.hash);
     const { y: alt } = target.getBoundingClientRect();
     setTimeout(() => {
-      target &&
-        target.scrollIntoView({
-          behavior: 'smooth',
-        });
-    }, 750);
+      rootEl.scrollTo({ top: Math.round(alt), behavior: 'smooth' });
+    }, 0);
   } else {
     rootEl.scrollTo({
       top: 0,
