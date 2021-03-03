@@ -41,15 +41,15 @@
     "contacts": [
       {
         "icon": "location_on",
-        "title": "Минск, пр-т Независимости, 95-4",
-        "link": "https://goo.gl/maps/FRnaQ5PEyCut2sh38"
+        "title": "Минск, пр-т Победителей, 1",
+        "link": "https://yandex.ru/maps/-/CCUQy4fDtB"
       },
       {
         "icon": "mail",
-        "title": "220043, Республика Беларусь, Минск, пр-т Независимости, 95-4"
+        "title": "220004, Республика Беларусь, Минск, проспект Победителей, 1"
       },
       {
-        "icon": "mail",
+        "icon": "public",
         "title": "www.rockets.by",
         "link": "www.rockets.by"
       }
@@ -97,15 +97,15 @@
     "contacts": [
       {
         "icon": "location_on",
-        "title": "Minsk, Independence Av., 95-4",
-        "link": "https://goo.gl/maps/FRnaQ5PEyCut2sh38"
+        "title": "Minsk, Pobeditelei Av., 1",
+        "link": "https://yandex.ru/maps/-/CCUQy4fDtB"
       },
       {
         "icon": "mail",
-        "title": "220043, Republic of Belarus, Minsk, Independence Avenue, 95-4"
+        "title": "220004, Republic of Belarus, Minsk, Pobeditelei Avenue, 1"
       },
       {
-        "icon": "email",
+        "icon": "public",
         "title": "www.rockets.by",
         "link": "www.rockets.by"
       }
