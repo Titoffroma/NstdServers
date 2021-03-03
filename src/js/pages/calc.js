@@ -142,7 +142,7 @@ export default class RangeInput {
     );
     const result = data + direction * this.step;
     if (result < this.mix || result > this.max) return;
-    this.syncResults(result, null, 10);
+    this.syncResults(result, null, 0);
   }
   handleMove(e) {
     if (e.target.classList.contains('range__input')) {

@@ -209,6 +209,12 @@
   &__file-listitem:not(:last-child) {
     margin-bottom: 30px;
   }
+  &__file-listitem {
+    transition: transform $transition;
+  }
+  &__file-listitem:hover {
+    transform: translate(-10px);
+  }
   &__file-list {
     align-self: flex-end;
   }
