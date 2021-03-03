@@ -19,6 +19,12 @@ class Slider {
   get right() {
     return document.getElementById('slider_right');
   }
+  get left0() {
+    return document.getElementById('slider_left0');
+  }
+  get right0() {
+    return document.getElementById('slider_right0');
+  }
   get indicators() {
     return document.querySelector('.hero-slider__indicators').children;
   }
@@ -74,10 +80,18 @@ class Slider {
     event.preventDefault();
     if (!this.slides.length) return;
     if (this.timer) {
-      if (event.target === this.left || event.detail.dir === 'left') {
+      if (
+        event.target === this.left ||
+        event.target === this.left0 ||
+        event.detail.dir === 'left'
+      ) {
         this.forward = false;
       }
-      if (event.target === this.right || event.detail.dir === 'right') {
+      if (
+        event.target === this.right ||
+        event.target === this.right0 ||
+        event.detail.dir === 'right'
+      ) {
         this.forward = true;
       }
       this.end();

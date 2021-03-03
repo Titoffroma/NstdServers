@@ -9,7 +9,6 @@
 }
 .hero-slider {
   position: relative;
-  overflow: hidden;
   height: 570px;
   margin: 0 auto;
   @media screen and (min-width: $phone) {
@@ -171,47 +170,98 @@
     &-button {
       @extend %flex-container;
       position: relative;
-      background: $accent;
-      height: 40px;
-      width: 40px;
-      border-radius: 50%;
-      cursor: pointer;
-      &:not(:last-child) {
-        margin-right: 20px;
-      }
-      &::before {
-        content: '';
-        position: absolute;
-        height: 42px;
-        width: 42px;
+      &:not(.aside) {
+        background: $accent;
+        height: 40px;
+        width: 40px;
         border-radius: 50%;
-        will-change: opacity, transform;
-        opacity: 1;
-        transform: scale(1);
-        transition: transform $transition, opacity $transition;
-        background: $main-purple;
-      }
-      &:hover {
-        transform: scale(1.1);
-        &::before {
-          transform: scale(0);
-          opacity: 0;
+        cursor: pointer;
+        &:not(:last-child) {
+          margin-right: 20px;
         }
-      }
-      &:active {
-        transform: scale(1.2);
-        &::after {
+        &::before {
           content: '';
           position: absolute;
-          height: 40px;
-          width: 40px;
-          transform: scale(0.9);
+          height: 42px;
+          width: 42px;
           border-radius: 50%;
+          will-change: opacity, transform;
+          opacity: 1;
+          transform: scale(1);
+          transition: transform $transition, opacity $transition;
           background: $main-purple;
         }
+        &:hover {
+          transform: scale(1.1);
+          &::before {
+            transform: scale(0);
+            opacity: 0;
+          }
+        }
+        &:active {
+          transform: scale(1.2);
+          &::after {
+            content: '';
+            position: absolute;
+            height: 40px;
+            width: 40px;
+            transform: scale(0.9);
+            border-radius: 50%;
+            background: $main-purple;
+          }
+        }
+        & .icon {
+          font-size: 34px;
+          color: $white;
+          will-change: opacity, transform;
+          transition: transform $transition, opacity $transition;
+          &:hover {
+            transform: scale(1.5);
+            opacity: 0.8;
+          }
+        }
       }
+      &.aside {
+        position: absolute;
+        top: 60px;
+        justify-self: flex-start;
+        pointer-events: none;
+        @media screen and (min-width: $tablet) {
+          transform: scaleY(6) translateY(20px);
+          pointer-events: auto;
+        }
+        opacity: 0;
+        transition: transform $transition, opacity $transition;
+        &#slider_left0 {
+          left: 40px;
+        }
+        &#slider_right0 {
+          right: 40px;
+        }
+        &:hover {
+          @media screen and (min-width: $tablet) {
+            opacity: 0.5;
+            transform: scale(6) translateY(20px);
+          }
+        }
+        &:active {
+          @media screen and (min-width: $tablet) {
+            filter: brightness(0.8);
+          }
+        }
+      }
+    }
+    &-aside {
+      position: absolute;
+      top: 0;
+      right: -40px;
+      left: -40px;
+      height: 0;
+      @extend %flex-container;
+      justify-content: space-between;
       & .icon {
-        font-size: 34px;
+        pointer-events: none;
+        font-size: 64px;
         color: $white;
         will-change: opacity, transform;
         transition: transform $transition, opacity $transition;
