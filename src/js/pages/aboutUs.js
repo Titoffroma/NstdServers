@@ -19,11 +19,11 @@ function drawAboutUsImages() {
 }
 
 function makeLinks() {
-  const fileLinks = document.querySelectorAll('.about-us__file-link');
-  fileLinks.forEach((link, index) => {
-    link.setAttribute('href', `${links[index]}`);
-    link.setAttribute('download', `${links[index]}`);
-  });
+  // const fileLinks = document.querySelectorAll('.about-us__file-link');
+  // fileLinks.forEach((link, index) => {
+  //   link.setAttribute('href', `${links[index]}`);
+  // link.setAttribute('download', `${links[index]}`);
+  // });
 }
 export default makeLinks;
 export { drawAboutUsImages };

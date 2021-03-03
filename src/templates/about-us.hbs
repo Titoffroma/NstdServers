@@ -50,7 +50,8 @@
                         {{#each QandA}}
                             <dt class="about-us__question-item"><i class="material-icons">info_outlined</i>{{q}}</dt>
                             <dd class="about-us__question-item-answer">{{a1}}
-                                <a href="{{href1}}" {{data1}}={{data1text}} class="about-us__link">{{link1}}</a>
+                                <a href="{{href1}}" {{data1}}={{data1text}} {{#if data2}}{{data2}}={{data2text}}{{/if}}
+                                    class="about-us__link">{{link1}}</a>
                             </dd>
                             {{#if a2}}
                                 <dd class="about-us__question-item-answer">{{a2}}
@@ -60,24 +61,23 @@
 
                         {{/each}}
                     </dl>
+                    <ul class="about-us__file-list">
+                        {{#each files}}
+                            <li class="about-us__file-listitem">
+                                {{!-- <a href="{{path}}" download="{{path}}" class="about-us__file-link"> --}}
+                                <a href="" data-modal="0" class="about-us__file-link">
+                                    <span class="about-us__file-link-flex">
+                                        <i class="material-icons">file_download</i>
+                                        <span class="about-us__file">{{size}}</span>
+                                    </span>
+                                    <span class="about-us__file-title">{{name}}</span>
+
+                                </a>
+                            </li>
+                        {{/each}}
+                    </ul>
                 </div>
             </section>
-            <section class="container present">
-                <ul class="about-us__file-list">
-                    {{#each files}}
-                        <li class="about-us__file-listitem">
-                            <a href="{{path}}" download="{{path}}" class="about-us__file-link"><span
-                                    class="about-us__file-link-flex"><i class="material-icons">file_download</i>
-                                    <span class="about-us__file">{{size}}
-                                    </span></span>
-                                <span>{{name}}</span>
-
-                            </a>
-                        </li>
-                    {{/each}}
-                </ul>
-            </section>
-
         </div>
     {{/each}}
 </main>

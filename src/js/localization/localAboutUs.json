@@ -99,11 +99,13 @@
             "link1": "оставьте заявку",
             "href1": "",
             "data1": "data-modal",
-            "data1text": 0
+            "data1text": 1,
+            "data2": "data-select",
+            "data2text": 1
           },
           {
-            "q": "Сколько стоят услуги Rocket S?",
-            "a1": "Рассчитать стоимость услуг можно при помощи",
+            "q": "Сколько стоит Rocket S?",
+            "a1": "Рассчитать стоимость Rocket S можно при помощи",
             "link1": "online-калькулятора",
             "href1": "/online-calc?lang=ru",
             "data1": "id",

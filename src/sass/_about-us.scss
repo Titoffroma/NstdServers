@@ -90,27 +90,27 @@
       font-size: 22px;
       padding: 40px;
     }
+    &:hover .about-us__goods-image {
+      transform: scale(1.2);
+    }
     &-flex {
       display: flex;
       flex-wrap: wrap;
-      justify-content: stretch;
-      align-items: stretch;
-      background: $overlay;
       border-radius: 16px;
-      border: 1px solid $overlay;
-      @include Cardset-Responsive($phone, 1px, 1px, 1);
-      @include Cardset-Responsive($tablet, 1px, 1px, 2);
-      @include Cardset-Responsive($desktop, 1px, 1px, 3);
+      @include Cardset-Responsive($phone, 10px, 10px, 1);
+      @include Cardset-Responsive($tablet, 10px, 10px, 2);
+      @include Cardset-Responsive($desktop, 10px, 10px, 3);
+
+      & > li:nth-child(2) {
+        @media screen and (max-width: $desktop - 1) {
+          margin-bottom: 10px;
+        }
+      }
 
       & > li:nth-child(3) {
         @media screen and (max-width: $desktop - 1) {
           width: 100%;
           margin: 0;
-        }
-      }
-      & > li:nth-child(2) {
-        @media screen and (max-width: $desktop - 1) {
-          margin-bottom: 1px;
         }
       }
     }
@@ -121,6 +121,7 @@
   &__goods-image {
     display: inline-block;
     height: 40px;
+    filter: drop-shadow(0 0 26px white);
     @media screen and (min-width: $tablet) {
       height: 60px;
     }
@@ -129,12 +130,20 @@
     }
     width: auto;
     object-fit: contain;
+    transition: transform $transition;
   }
   &__goods-listitem {
     list-style-position: inside;
     list-style-image: linear-gradient($accent, $accent);
   }
   &__question {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    @media screen and (min-width: $desktop) {
+      flex-direction: row;
+    }
     background: $overlay;
     border-radius: 16px;
     padding: 20px;
@@ -143,6 +152,13 @@
     }
     @media screen and (min-width: $desktop) {
       padding: 40px;
+    }
+    &-list {
+      margin-bottom: 20px;
+      @media screen and (min-width: $desktop) {
+        margin-bottom: 0;
+        margin-right: 60px;
+      }
     }
     &-item {
       @extend %flex-container;
@@ -193,6 +209,9 @@
   &__file-listitem:not(:last-child) {
     margin-bottom: 30px;
   }
+  &__file-list {
+    align-self: flex-end;
+  }
   &__file-link {
     @extend %anchor;
     @extend %flex-container;
@@ -202,6 +221,7 @@
       margin-bottom: 10px;
     }
     &-flex {
+      pointer-events: none;
       width: 60px;
       flex-shrink: 0;
       display: inline-flex;
@@ -212,6 +232,9 @@
   }
   &__file {
     font-size: 12px;
+    &-title {
+      pointer-events: none;
+    }
   }
 }
 .present .about-us__main {

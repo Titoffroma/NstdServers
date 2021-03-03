@@ -10,7 +10,7 @@
       {
         "message": "Вход в личный кабинет",
         "button": "Войти",
-        "forgot": "Забыли пароль?"
+        "forgot": "*Забыли пароль?"
       },
       {
         "timer": {
@@ -37,7 +37,7 @@
       {
         "message": "Log in to your Office",
         "button": "Login",
-        "forgot": "Forgot your password?"
+        "forgot": "*Forgot your password?"
       },
       {
         "timer": {
