@@ -2,14 +2,14 @@
   "ru": {
     "about-us": [
       {
-        "title": "МТС Cloud",
+        "title": "Rocket S",
         "subTitle": "Лучшие показатели производительности и быстродействия",
         "definitions": [
           {
             "definition": " — это современный сервис аренды вычислительных мощностей и систем хранения данных для создания собственной виртуальной инфраструктуры."
           },
           {
-            "definition": " — это надежный партнер для вашего бизнеса. Как телеком-оператор, компания МТС может организовывать каналы мобильной и фиксированной связи под каждого клиента индивидуально с учетом требований, предъявляемых к скорости и надежности передачи данных, а также заключать сквозной SLA, гарантирующий параметры доступности не только облачной инфраструктуры, но и каналов связи."
+            "definition": " — это надежный партнер для вашего бизнеса. Как телеком-оператор, компания Rocket S может организовывать каналы мобильной и фиксированной связи под каждого клиента индивидуально с учетом требований, предъявляемых к скорости и надежности передачи данных, а также заключать сквозной SLA, гарантирующий параметры доступности не только облачной инфраструктуры, но и каналов связи."
           }
         ],
         "story": [
@@ -20,7 +20,7 @@
           },
           {
             "story-title": "Инфраструктура",
-            "story-text": "Облако МТС Cloud создано с использованием трех платформ виртуализации на базе собственного оборудования Cisco и Huawei, размещенного в надежном ЦОДе класса Tier3.",
+            "story-text": "Облако Rocket S создано с использованием трех платформ виртуализации на базе собственного оборудования Cisco и Huawei, размещенного в надежном ЦОДе класса Tier3.",
             "story-subtext": "Три платформы виртуализации – Huawei, Red Hat, VMware – позволяют каждому клиенту получить решение, наиболее соответствующее заданным требованиям к инфраструктуре."
           }
         ],
@@ -94,15 +94,15 @@
         ],
         "QandA": [
           {
-            "q": "Как подключить или протестировать услуги МТС Cloud?",
-            "a1": "Для получения доступа к услугам МТС Cloud",
+            "q": "Как подключить или протестировать услуги Rocket S?",
+            "a1": "Для получения доступа к услугам Rocket S",
             "link1": "оставьте заявку",
             "href1": "",
             "data1": "data-modal",
             "data1text": 0
           },
           {
-            "q": "Сколько стоят услуги МТС Cloud?",
+            "q": "Сколько стоят услуги Rocket S?",
             "a1": "Рассчитать стоимость услуг можно при помощи",
             "link1": "online-калькулятора",
             "href1": "/online-calc?lang=ru",
@@ -116,7 +116,7 @@
         "files": [
           {
             "path": "/files/terms-clouds.pdf",
-            "name": "Порядок предоставления услуг по тарифному плану «МТС Cloud»",
+            "name": "Порядок предоставления услуг по тарифному плану «Rocket S»",
             "size": "334.2 КБ"
           },
           {
@@ -136,14 +136,14 @@
   "en": {
     "about-us": [
       {
-        "title": "МТS Cloud",
+        "title": "Rocket S",
         "subTitle": "Best performance and speed rates",
         "definitions": [
           {
             "definition": " — is a modern computing power and data storage systems rent service to create your own virtual infrastructure."
           },
           {
-            "definition": " — a reliable partner for your business. As a telecom operator, MTS can organize mobile and fixed communication channels for each client individually, taking into account the requirements for the speed and reliability of data transmission. It can also conclude an end-to-end SLA that guarantees the availability of cloud infrastructure, as well as communication channels."
+            "definition": " — a reliable partner for your business. As a telecom operator, Rocket S can organize mobile and fixed communication channels for each client individually, taking into account the requirements for the speed and reliability of data transmission. It can also conclude an end-to-end SLA that guarantees the availability of cloud infrastructure, as well as communication channels."
           }
         ],
         "story": [
@@ -154,7 +154,7 @@
           },
           {
             "story-title": "Infrastructure",
-            "story-text": "MTS Cloud is created using three virtualization platforms based on Cisco and Huawei's own equipment, located in a reliable Tier3 data center.",
+            "story-text": "Rocket S is created using three virtualization platforms based on Cisco and Huawei's own equipment, located in a reliable Tier3 data center.",
             "story-subtext": "Three virtualization platforms - Huawei, Red Hat, VMware - allow each customer to get the solution that best meets the given infrastructure requirements."
           }
         ],
@@ -228,15 +228,15 @@
         ],
         "QandA": [
           {
-            "q": "How to connect or test MTS Cloud services?",
-            "a1": "To get access to MTS Cloud services",
+            "q": "How to connect or test Rocket S services?",
+            "a1": "To get access to Rocket S services",
             "link1": "leave a request",
             "href1": "",
             "data1": "data-modal",
             "data1text": 0
           },
           {
-            "q": "How much do MTS Cloud services cost?",
+            "q": "How much do Rocket S services cost?",
             "a1": "You can calculate the cost of services using",
             "link1": "online calculator",
             "href1": "/online-calc?lang=ru",
@@ -250,7 +250,7 @@
         "files": [
           {
             "path": "/files/terms-clouds.pdf",
-            "name": "The Procedure for the provision of services under the tariff plan \"MTS Cloud\"",
+            "name": "The Procedure for the provision of services under the tariff plan \"Rocket S\"",
             "size": "334.2 КB"
           },
           {

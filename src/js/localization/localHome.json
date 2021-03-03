@@ -3,8 +3,8 @@
     "heroSlider": [
       {
         "class": "one",
-        "title": "Почему облако МТС?",
-        "subTitle": "С MTC Cloud Вы сможете:",
+        "title": "Почему Rocket S?",
+        "subTitle": "С Rocket S Вы сможете:",
         "list": [
           { "listitem": "снизить затраты на ИТ-инфраструктуру до 60%" },
           {
@@ -14,7 +14,7 @@
             "listitem": "больше не беспокоиться об уязвимостях ваших серверов"
           },
           { "listitem": "получить комплексное решение: IaaS и каналы связи" },
-          { "listitem": "бесплатно протестировать возможности МТС Cloud" }
+          { "listitem": "бесплатно протестировать возможности Rocket S" }
         ],
         "order": [
           {
@@ -29,7 +29,7 @@
         "subTitle": "Не подходит стандартное решение?",
         "list": [
           {
-            "listitem": "Команда экспертов МТС Cloud разработает и реализует проект специально для вашей компании."
+            "listitem": "Команда экспертов Rocket S разработает и реализует проект специально для вашей компании."
           }
         ],
         "order": [
@@ -41,8 +41,8 @@
       },
       {
         "class": "three",
-        "title": "Почему облако МТС?",
-        "subTitle": "С MTC Cloud Вы сможете:",
+        "title": "Почему Rocket S?",
+        "subTitle": "С Rocket S Вы сможете:",
         "list": [
           { "listitem": "" },
           {
@@ -82,7 +82,7 @@
     ],
     "advantages": [
       {
-        "title": "Преимущества МТС Cloud",
+        "title": "Преимущества Rocket S",
         "list": [
           {
             "benefit": "Гарантированный уровень доступности 99,9%",
@@ -121,7 +121,7 @@
     ],
     "services": [
       {
-        "title": "Услуги МТС Cloud",
+        "title": "Услуги Rocket S",
         "button": "Подробнее",
         "tabs": [
           {
@@ -227,8 +227,8 @@
     "heroSlider": [
       {
         "class": "one",
-        "title": "Why MTS Cloud?",
-        "subTitle": "With MTS Cloud you will manage to:",
+        "title": "Why Rocket S?",
+        "subTitle": "With Rocket S you will manage to:",
         "list": [
           { "listitem": "reduce expances on IT-structure up to 60%" },
           {
@@ -240,7 +240,7 @@
           {
             "listitem": "obtain a complex solution: IaaS and conection channels"
           },
-          { "listitem": "test  МТS Cloud facilities for free" }
+          { "listitem": "test  Rocket S facilities for free" }
         ],
         "order": [
           {
@@ -255,7 +255,7 @@
         "subTitle": "Are you not enough with a standart solution?",
         "list": [
           {
-            "listitem": "МТS Cloud experts team will develope and release your Companie's own project."
+            "listitem": "Rocket S experts team will develope and release your Companie's own project."
           }
         ],
         "order": [
@@ -267,8 +267,8 @@
       },
       {
         "class": "three",
-        "title": "Why MTS Cloud?",
-        "subTitle": "With MTS Cloud you will manage to:",
+        "title": "Why Rocket S?",
+        "subTitle": "With Rocket S you will manage to:",
         "list": [
           { "listitem": "" },
           {
@@ -308,7 +308,7 @@
     ],
     "advantages": [
       {
-        "title": "МТS Cloud advantages",
+        "title": "Rocket S advantages",
         "list": [
           {
             "benefit": "Guaranteed availability level 99,9%",
@@ -344,7 +344,7 @@
     ],
     "services": [
       {
-        "title": "Услуги МТС Cloud",
+        "title": "Услуги Rocket S",
         "button": "Подробнее",
         "tabs": [
           {
