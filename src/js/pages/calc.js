@@ -185,7 +185,7 @@ export default class RangeInput {
         ) {
           target.value = '';
         }
-      }, 10);
+      }, 20);
     }, delay);
   }
   drawMarkers() {
