@@ -38,9 +38,11 @@ function preload({ path }) {
   });
   if (location.hash) {
     const target = document.querySelector(location.hash);
-    const { y: alt } = target.getBoundingClientRect();
     setTimeout(() => {
-      rootEl.scrollTo({ top: Math.round(alt), behavior: 'smooth' });
+      rootEl.scrollTo({
+        top: Math.round(target.offsetTop),
+        behavior: 'smooth',
+      });
     }, 0);
   } else {
     rootEl.scrollTo({
