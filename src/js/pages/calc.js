@@ -28,6 +28,7 @@ export default class RangeInput {
     this.price = price;
     this.moveThumb = this.constructor.moveThumbInClass();
     this.handleMove = this.handleMove.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
   }
   renderRangeInput() {
     const input = document.createElement('input');
@@ -71,6 +72,7 @@ export default class RangeInput {
     circleInput.setAttribute('data-min', this.min);
     circleInput.setAttribute('data-step', this.step);
     this.parent.addEventListener('input', this.handleMove);
+    circleRef.addEventListener('wheel', this.handleScroll);
     this.moveThumb(this.parent);
   }
   static moveThumbInClass() {
@@ -132,6 +134,16 @@ export default class RangeInput {
       ).textContent = `${totalResults} BYN`;
     };
   }
+  handleScroll(e) {
+    e.preventDefault();
+    const direction = e.wheelDeltaY > 0 ? 1 : -1;
+    const data = Number(
+      e.currentTarget.querySelector('.range__result-input').dataset.value,
+    );
+    const result = data + direction * this.step;
+    if (result < this.mix || result > this.max) return;
+    this.syncResults(result, null, 10);
+  }
   handleMove(e) {
     if (e.target.classList.contains('range__input')) {
       this.moveThumb(this.parent);
@@ -153,7 +165,7 @@ export default class RangeInput {
       this.syncResults(result);
     }
   }
-  syncResults(result, target) {
+  syncResults(result, target, delay = 1000) {
     clearInterval(this.timeout);
     clearInterval(this.timer);
     const input = this.parent.querySelector('.range__input');
@@ -174,7 +186,7 @@ export default class RangeInput {
           target.value = '';
         }
       }, 10);
-    }, 1000);
+    }, delay);
   }
   drawMarkers() {
     const markers = document.createElement('div');
@@ -233,7 +245,8 @@ function renderCalculator() {
 }
 
 function renderOrder() {
-  const markupRaw = localFeedbackModal[lang.name];
+  const markupRaw = JSON.parse(JSON.stringify(localFeedbackModal[lang.name]));
+
   markupRaw.fields[0].field[0].options[2].selected = 'selected';
   const results = Array.from(document.querySelectorAll('.range'));
 
