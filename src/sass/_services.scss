@@ -151,7 +151,7 @@
       transition: 0.2s width 0.1s ease-out, opacity 0.2s ease-out;
       opacity: 0;
       transform: translateY(-50%);
-      background: #6a62ba;
+      background: $purple-secondary;
     }
     &:hover {
       color: #fff;
@@ -163,7 +163,7 @@
       }
       .services__image {
         transform: translateY(-10px);
-        filter: drop-shadow(2px 14px 4px $main-purple);
+        filter: drop-shadow(2px 14px 4px $accent);
       }
       .services__description {
         color: #fff;

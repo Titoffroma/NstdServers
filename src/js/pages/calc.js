@@ -129,9 +129,9 @@ export default class RangeInput {
       document
         .querySelectorAll('.range__result')
         .forEach(el => (totalResults += Number(el.children[0].dataset.cost)));
-      document.querySelector(
-        '.calc__sum-value',
-      ).textContent = `${totalResults} BYN`;
+      document
+        .querySelectorAll('.calc__sum-value')
+        .forEach(el => (el.textContent = `${totalResults} BYN`));
     };
   }
   handleScroll(e) {
