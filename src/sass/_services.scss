@@ -16,13 +16,14 @@
     justify-content: flex-end;
     align-items: flex-start;
     overflow: hidden;
+    border-radius: 16px;
     margin: 0 auto;
     background: $overlay-light;
   }
   &__aside {
     position: sticky;
     top: 0;
-    margin-bottom: -300px;
+    margin-bottom: -320px;
     width: 30%;
     @media screen and (min-width: $tablet) {
       width: 25%;
@@ -211,5 +212,6 @@
   }
   &__button {
     @extend %button-main;
+    align-self: flex-end;
   }
 }

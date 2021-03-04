@@ -9,6 +9,7 @@
 }
 .hero-slider {
   position: relative;
+
   height: 570px;
   margin: 0 auto;
   @media screen and (min-width: $phone) {
@@ -16,6 +17,7 @@
   }
   @media screen and (min-width: $tablet) {
     height: 530px;
+    padding: 0 80px;
   }
   @media screen and (min-width: $desktop) {
     max-width: 1100px;

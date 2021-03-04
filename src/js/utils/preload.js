@@ -52,7 +52,7 @@ function preload({ path }) {
   }
   setTimeout(
     () => logo.length && logo.forEach(el => el.classList.add('in')),
-    1000,
+    500,
   );
 }
 

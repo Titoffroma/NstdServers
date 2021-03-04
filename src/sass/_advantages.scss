@@ -4,11 +4,13 @@
   width: 300px;
   margin: 0 auto;
   overflow: hidden;
+  margin-bottom: 30px;
   @media screen and (min-width: $tablet) {
     position: static;
     overflow: visible;
     height: auto;
     width: 100%;
+    margin-bottom: 0;
   }
   @media screen and (max-width: $tablet - 1) {
     height: 200px;
@@ -46,10 +48,18 @@
     width: 120px;
     overflow: hidden;
     box-shadow: $text-shade;
+    transition: transform $transition, filter $transition;
+    margin-bottom: 14px;
     @media screen and (max-width: $tablet - 1) {
       margin-right: 0;
       width: 80px;
       height: 80px;
+    }
+    &:hover {
+      transform: scale(1.2);
+      @media screen and (min-width: $tablet) {
+        filter: drop-shadow(2px 2px 16px $accent);
+      }
     }
   }
   &__header {

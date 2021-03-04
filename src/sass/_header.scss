@@ -76,7 +76,7 @@
 .logo__image.in {
   // transform: translate(0, 0) rotate(0deg);
   // transition: transform 1s ease-out 1ms;
-  animation: flyIn 1s ease-in 1s forwards;
+  animation: flyIn 1s ease-in forwards;
 }
 .logo__home {
   background: center / contain no-repeat url('../img/rocket\ logo\ shadow.png');
@@ -240,6 +240,7 @@ ul.navigation__list#id_nav {
 }
 #header {
   padding-bottom: 0px;
+  padding-top: 0px;
   position: relative;
 }
 #id_nav_list {

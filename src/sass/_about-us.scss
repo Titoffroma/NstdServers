@@ -1,6 +1,10 @@
 #about-us {
   background: $overlay-light;
+  .container {
+    padding-top: 0;
+  }
 }
+
 .about-us {
   &__main {
     transform: translateX(-100px);
@@ -69,8 +73,8 @@
       flex-wrap: wrap;
       justify-content: flex-start;
       align-items: stretch;
-      @include Cardset-Responsive($phone, 15px, 15px, 1);
-      @include Cardset-Responsive($tablet, 20px, 20px, 2);
+      @include Cardset-Responsive($phone, 20px, 20px, 1);
+      @include Cardset-Responsive($tablet, 30px, 30px, 2);
     }
   }
   &__goods {
@@ -97,13 +101,13 @@
       display: flex;
       flex-wrap: wrap;
       border-radius: 16px;
-      @include Cardset-Responsive($phone, 10px, 10px, 1);
-      @include Cardset-Responsive($tablet, 10px, 10px, 2);
-      @include Cardset-Responsive($desktop, 10px, 10px, 3);
+      @include Cardset-Responsive($phone, 20px, 20px, 1);
+      @include Cardset-Responsive($tablet, 30px, 30px, 2);
+      @include Cardset-Responsive($desktop, 30px, 10px, 3);
 
       & > li:nth-child(2) {
         @media screen and (max-width: $desktop - 1) {
-          margin-bottom: 10px;
+          margin-bottom: 30px;
         }
       }
 
@@ -122,6 +126,7 @@
     display: inline-block;
     height: 40px;
     filter: drop-shadow(0 0 26px white);
+    margin-right: 20px;
     @media screen and (min-width: $tablet) {
       height: 60px;
     }
@@ -135,6 +140,7 @@
   &__goods-listitem {
     list-style-position: inside;
     list-style-image: linear-gradient($accent, $accent);
+    margin-bottom: 10px;
   }
   &__question {
     display: flex;
@@ -157,7 +163,7 @@
       margin-bottom: 20px;
       @media screen and (min-width: $desktop) {
         margin-bottom: 0;
-        margin-right: 60px;
+        margin-right: 80px;
       }
     }
     &-item {
@@ -217,6 +223,9 @@
   }
   &__file-list {
     align-self: flex-end;
+    @media screen and (min-width: $desktop) {
+      align-self: flex-start;
+    }
   }
   &__file-link {
     @extend %anchor;

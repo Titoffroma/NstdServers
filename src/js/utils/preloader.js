@@ -44,11 +44,13 @@ function delPreloader(newPad, initialPad) {
   const rootEl = document.getElementById('root');
   setTimeout(() => {
     stars.clearStars();
+  }, 500);
+  setTimeout(() => {
     preloader.remove();
     document.body.style.marginRight = `-${newPad}`;
     rootEl.style.overflowY = 'auto';
     rootEl.style.paddingRight = initialPad;
-  }, 2000);
+  }, 1000);
 }
 
 function fixPad(el, width) {

@@ -3,7 +3,19 @@
         <h1 class="main-header">{{title}}</h1>
         <div class="partners-flex">
             <div class="partners__image-wrapper">
-                <img src="{{image}}" alt="{{title}}" class="partners__image" />
+                <canvas class="bdCanvas" id="bdCanvas"></canvas>
+                <div class="preloader-planet">
+                    <div class="globe-container">
+                        <div class="globe">
+                            <div class="globe-sphere"></div>
+                            <div class="globe-worldmap">
+                                <div class="globe-worldmap-back"></div>
+                                <div class="globe-worldmap-front"></div>
+                            </div>
+                            <div class="globe-inner-shadow"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="partners__story">
                 {{#each story}}
@@ -12,7 +24,7 @@
                         {{/if}}
                     </p>
                 {{/each}}
-                <a href="" class="partners__button" data-modal="1">{{button}}</a>
+                <a href="" class="partners__button" data-select="3" data-modal="1">{{button}}</a>
             </div>
         </div>
     </section>

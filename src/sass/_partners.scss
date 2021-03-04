@@ -1,6 +1,5 @@
 .partners {
   &-flex {
-    background: $overlay-light;
     border-radius: 16px;
     box-shadow: $shade;
     @extend %flex-container;
@@ -10,6 +9,7 @@
     }
   }
   &__image-wrapper {
+    @extend %flex-container;
     padding: 20px;
     width: 100%;
     @media screen and (min-width: $tablet) {

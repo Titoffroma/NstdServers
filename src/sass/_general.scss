@@ -291,7 +291,7 @@ section.container {
   &:focus,
   &.coloured {
     color: $white;
-    font-weight: bold;
+    text-shadow: $text-shade;
     border: none;
     outline: none;
     & ~ span {

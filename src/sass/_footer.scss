@@ -47,46 +47,68 @@
       transform: scale(0.8);
       transition: transform $transition 150ms;
     }
+    filter: saturate(0.3);
     &:hover,
     &:focus-within {
-      transform: scale(1.5);
-      & a {
-        transform: scale(1);
+      &:nth-child(1) {
+        filter: hue-rotate(300deg);
+        transform: scale(1.5) rotate(10deg);
+      }
+      &:nth-child(2) {
+        filter: hue-rotate(10deg) saturate(1.2);
+        transform: scale(1.5) rotate(40deg);
+      }
+      &:nth-child(3) {
+        filter: hue-rotate(280deg) saturate(1.5);
+        transform: scale(1.5) rotate(130deg);
+      }
+      &:nth-child(4) {
+        filter: hue-rotate(80deg) saturate(1.5);
+        transform: scale(1.5) rotate(70deg);
+      }
+      &:nth-child(5) {
+        filter: hue-rotate(310deg) saturate(1.5);
+        transform: scale(1.5) rotate(180deg);
       }
     }
     &:nth-child(1) {
-      filter: hue-rotate(300deg);
+      transform: rotate(10deg);
       & a {
         background-image: url('../img/vk.svg');
         background-size: cover;
+        transform: rotate(-10deg);
       }
     }
     &:nth-child(2) {
-      filter: hue-rotate(10deg) saturate(1.2);
+      transform: rotate(40deg);
       & a {
         background-image: url('../img/inst.svg');
         background-size: cover;
+        transform: rotate(-40deg);
       }
     }
     &:nth-child(3) {
-      filter: hue-rotate(280deg) saturate(1.5);
+      transform: rotate(130deg);
       & a {
         background-image: url('../img/tw.svg');
         background-size: cover;
+        transform: rotate(-130deg);
       }
     }
     &:nth-child(4) {
-      filter: hue-rotate(80deg) saturate(1.5);
+      transform: rotate(70deg);
       & a {
         background-image: url('../img/ok.svg');
         background-size: cover;
+        transform: rotate(-70deg);
       }
     }
     &:nth-child(5) {
-      filter: hue-rotate(310deg) saturate(1.5);
+      transform: rotate(180deg);
       & a {
         background-image: url('../img/fb.svg');
         background-size: cover;
+        transform: rotate(-180deg);
       }
     }
     &:not(:last-child) {
@@ -101,18 +123,6 @@
   }
 }
 .nav-contacts {
-  background: $overlay-light;
-  border-radius: 10px;
-  height: 30px;
-  @media screen and (min-width: $tablet) {
-    height: 50px;
-  }
-  &__wrapper {
-    padding: 5px 20px 10px;
-    @media screen and (min-width: $tablet) {
-      padding-top: 15px;
-    }
-  }
   &__list {
     display: flex;
     flex-wrap: wrap;
