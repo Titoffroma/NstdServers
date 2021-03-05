@@ -18,7 +18,6 @@ const makeLinks = () => import('../pages/aboutUs');
 import { drawPartnersImages } from '../pages/forPartners';
 import { drawContactsImages } from '../pages/contacts';
 import { renderCalculator } from '../pages/calc';
-import { stars, starsResize } from '../utils/stars';
 
 function updateHeader() {
   document.getElementById('id_nav_list').innerHTML = renderHeader(
@@ -54,11 +53,6 @@ function fun3() {
 function fun4() {
   updateHeader();
   rootRef.innerHTML = renderPartners(localDataPartners[lang.name]);
-  setTimeout(() => {
-    stars.clearStars();
-    stars.setup();
-  }, 1200);
-
   // drawPartnersImages();
 }
 

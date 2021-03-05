@@ -16,6 +16,27 @@
       order: 2;
       width: calc((100% - 20px) / 2);
     }
+    .globe-container {
+      transform: scale(0.3);
+      transition: transform 2s $transition;
+    }
+  }
+  &__rocket {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    background: url('../img/rocket logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: ourRocket 4s linear infinite;
+    &-wrapper {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
   }
   &__image {
     width: 100%;
@@ -58,5 +79,19 @@
     @media screen and (min-width: $desktop) {
       font-size: 22px;
     }
+  }
+}
+.present {
+  .globe-container {
+    transform: scale(0.9);
+  }
+}
+
+@keyframes ourRocket {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1turn);
   }
 }

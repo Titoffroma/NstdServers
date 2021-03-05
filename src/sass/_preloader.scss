@@ -205,10 +205,16 @@
 .globe-worldmap-front {
   background-position: 0px 0px;
   animation: textureSpinreverse 8s linear infinite;
+  &.static {
+    animation: textureSpinreverse 2s ease-out forwards;
+  }
 }
 .globe-worldmap-back {
   background-position: 0px -220px;
   animation: textureSpin 8s linear infinite;
+  &.static {
+    animation: textureSpin 2s ease-out forwards;
+  }
 }
 
 @keyframes textureSpin {

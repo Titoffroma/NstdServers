@@ -92,7 +92,7 @@
     height: 2px;
     background: #d3d3d31d;
     outline: none;
-    opacity: 0.7;
+    opacity: 1;
     transition: opacity 0.2s;
     overflow: visible;
     margin-bottom: 15px;
@@ -104,7 +104,6 @@
     }
     &:hover,
     &:focus {
-      opacity: 1;
       cursor: pointer;
       & ~ .range__output {
         opacity: 1;
@@ -117,18 +116,18 @@
     &::-webkit-slider-thumb {
       pointer-events: auto;
       appearance: none;
-      width: 50px;
-      height: 25px;
+      width: 80px;
+      height: 40px;
       @media screen and (min-width: $tablet) {
-        width: 80px;
-        height: 40px;
-      }
-      @media screen and (min-width: $desktop) {
         width: 100px;
         height: 50px;
       }
-      background: url('../img/rocket\ logo.png');
-      background-size: contain;
+      @media screen and (min-width: $desktop) {
+        width: 120px;
+        height: 60px;
+      }
+      background: url('../img/rocket-thumb.svg');
+      background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
       cursor: pointer;
@@ -136,18 +135,18 @@
     &::-moz-range-thumb {
       pointer-events: auto;
       border: none;
-      width: 50px;
-      height: 25px;
+      width: 80px;
+      height: 40px;
       @media screen and (min-width: $tablet) {
-        width: 80px;
-        height: 40px;
-      }
-      @media screen and (min-width: $desktop) {
         width: 100px;
         height: 50px;
       }
-      background: url('../img/rocket\ logo.png');
-      background-size: contain;
+      @media screen and (min-width: $desktop) {
+        width: 120px;
+        height: 60px;
+      }
+      background: url('../img/rocket-thumb.svg');
+      background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
       cursor: pointer;
@@ -273,6 +272,38 @@
       }
     }
   }
+}
+#id_cpu .range__input::-webkit-slider-thumb {
+  filter: drop-shadow(-2px 0 2px $accent) hue-rotate(0deg);
+  opacity: 1;
+}
+#id_ram .range__input::-webkit-slider-thumb {
+  filter: drop-shadow(-2px 0 2px $accent) hue-rotate(50deg);
+}
+#id_sas .range__input::-webkit-slider-thumb {
+  filter: drop-shadow(-2px 0 2px $accent) hue-rotate(100deg);
+}
+#id_ssd .range__input::-webkit-slider-thumb {
+  filter: drop-shadow(-2px 0 2px $accent) hue-rotate(150deg);
+}
+#id_nl-sas .range__input::-webkit-slider-thumb {
+  filter: drop-shadow(-2px 0 2px $accent) hue-rotate(200deg);
+}
+#id_cpu .range__input::-moz-range-thumb {
+  filter: drop-shadow(-2px 0 2px $accent) hue-rotate(0deg);
+  opacity: 1;
+}
+#id_ram .range__input::-moz-range-thumb {
+  filter: drop-shadow(-2px 0 2px $accent) hue-rotate(50deg);
+}
+#id_sas .range__input::-moz-range-thumb {
+  filter: drop-shadow(-2px 0 2px $accent) hue-rotate(100deg);
+}
+#id_ssd .range__input::-moz-range-thumb {
+  filter: drop-shadow(-2px 0 2px $accent) hue-rotate(150deg);
+}
+#id_nl-sas .range__input::-moz-range-thumb {
+  filter: drop-shadow(-2px 0 2px $accent) hue-rotate(200deg);
 }
 @keyframes smoke {
   from {

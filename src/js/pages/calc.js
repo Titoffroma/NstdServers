@@ -83,9 +83,9 @@ export default class RangeInput {
         document.documentElement.clientWidth,
         document.body.clientWidth,
       );
-      if (deviceWidth >= 1280) thumbWidth = 100;
-      else if (deviceWidth >= 768) thumbWidth = 80;
-      else thumbWidth = 50;
+      if (deviceWidth >= 1280) thumbWidth = 116;
+      else if (deviceWidth >= 768) thumbWidth = 94;
+      else thumbWidth = 76;
       const result = parent.querySelector('.range__result');
       const arrow = parent.querySelector('.circle__arrow');
       const innerUp = parent.querySelector('.inner.up');

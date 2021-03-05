@@ -3,10 +3,10 @@
 }
 @keyframes travel {
   0% {
-    transform: translate(-1000px, 400px) rotate(0deg) scale(1.5);
+    transform: translate(-1800px, 400px) rotate(0deg) scale(1.5);
   }
-  60% {
-    transform: translate(-500px, 250px) rotate(0deg) scale(1.5);
+  20% {
+    transform: translate(-800px, 250px) rotate(0deg) scale(1.5);
   }
   78% {
     filter: invert(0) brightness(1);
