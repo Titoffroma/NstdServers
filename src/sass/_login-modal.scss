@@ -135,7 +135,7 @@
     padding-bottom: 20px;
   }
   &__button {
-    @extend %button-purple;
+    @extend %button-main;
     font-size: 22px;
   }
 }
@@ -174,7 +174,7 @@
     display: flex;
     justify-content: center;
     padding-top: 8px;
-    transition: transform 250ms cubic-bezier(.4,2.08,.55,.44);
+    transition: transform 250ms cubic-bezier(0.4, 2.08, 0.55, 0.44);
   }
   &__arrow {
     width: 10px;

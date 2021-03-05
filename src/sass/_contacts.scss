@@ -1,5 +1,4 @@
 #contacts {
-  padding-bottom: 40px;
 }
 @keyframes travel {
   0% {
@@ -31,7 +30,7 @@
   flex-wrap: wrap;
   background: $overlay;
   border-radius: 16px;
-  padding: 60px 20px;
+  padding: 60px 40px;
   color: #fff;
   &__wrapper {
     width: 100%;
@@ -107,7 +106,8 @@
     }
   }
   &__question-button {
-    @extend %button-purple;
+    @extend %button-main;
+    align-self: flex-end;
     font-size: 18px;
     @media screen and (min-width: $tablet) {
       font-size: 20px;
@@ -117,7 +117,6 @@
     }
   }
   &__contacts {
-    margin-bottom: 40px;
     @extend %flex-container;
     flex-direction: column;
     @media screen and (min-width: $tablet) {
@@ -128,10 +127,9 @@
     position: relative;
     padding: 20px;
     width: 100%;
-    margin-right: 40px;
-    // @media screen and (min-width: $tablet) {
-    //   width: calc((100% - 20px) / 2);
-    // }
+    @media screen and (min-width: $tablet) {
+      margin-right: 40px;
+    }
   }
   &__rocket {
     position: absolute;
@@ -152,16 +150,18 @@
     object-position: center;
   }
   &__list {
+    padding: 0 20px 40px;
     margin-right: auto;
+    width: 100%;
   }
   &__list-item {
     color: #fff;
-    font-size: 18px;
+    font-size: 14px;
     @media screen and (min-width: $tablet) {
-      font-size: 20px;
+      font-size: 16px;
     }
     @media screen and (min-width: $desktop) {
-      font-size: 22px;
+      font-size: 18px;
     }
     &:not(:last-child) {
       margin-bottom: 20px;

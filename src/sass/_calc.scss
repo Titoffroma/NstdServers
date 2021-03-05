@@ -1,6 +1,6 @@
 .calc {
   &__button {
-    @extend %button-purple;
+    @extend %button-main;
     margin-top: 20px;
     @media screen and (min-width: $phone) {
       margin-left: 40px;
