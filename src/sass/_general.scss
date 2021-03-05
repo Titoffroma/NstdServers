@@ -108,6 +108,7 @@ section.container {
   z-index: 21;
   width: 100%;
   height: 100%;
+  padding: 60px 6px;
   overflow-y: auto;
   background: $overlay;
   opacity: 0;
@@ -162,7 +163,6 @@ section.container {
   transition: transform $transition, background-color $transition;
   &:hover,
   &:focus {
-    background-color: $accent;
     transform: scale(1.1);
   }
 }
@@ -261,7 +261,6 @@ section.container {
     font-weight: bold;
     border: 1px solid $accent;
     outline: none;
-    padding: 4px 10px;
   }
   &:active {
     background: $overlay;
@@ -308,12 +307,8 @@ section.container {
   width: 100%;
   height: 40px;
   border: 1px solid $main-purple-bg;
-  border-bottom-color: $main-purple-gr;
   border-radius: 10px;
   padding-left: 15px;
-  &:hover {
-    border-bottom-color: $main-purple;
-  }
   &:focus {
     border-color: $main-purple-gr;
     border-bottom-color: $main-purple;

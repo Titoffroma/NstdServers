@@ -78,6 +78,11 @@
 #advantages {
   background: $overlay-light;
   position: relative;
+  .container {
+    @media screen and (min-width: $tablet) {
+      padding-bottom: 0px;
+    }
+  }
 }
 .cardset__list > .cardset__list-item:nth-child(n) {
   @media screen and (max-width: $tablet - 1) {

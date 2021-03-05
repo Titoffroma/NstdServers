@@ -28,12 +28,10 @@
 }
 .contacts {
   @extend %flex-container;
-  align-items: stretch;
   flex-wrap: wrap;
   background: $overlay;
   border-radius: 16px;
-  padding: 20px;
-  padding-top: 60px;
+  padding: 60px 20px;
   color: #fff;
   &__wrapper {
     width: 100%;

@@ -82,7 +82,7 @@
     ],
     "advantages": [
       {
-        "title": "Преимущества Rocket S",
+        "title": "Преимущества",
         "list": [
           {
             "benefit": "Гарантированный уровень доступности 99,9%",
@@ -121,7 +121,7 @@
     ],
     "services": [
       {
-        "title": "Услуги Rocket S",
+        "title": "Услуги",
         "button": "Подробнее",
         "tabs": [
           {
@@ -308,7 +308,7 @@
     ],
     "advantages": [
       {
-        "title": "Rocket S advantages",
+        "title": "Advantages",
         "list": [
           {
             "benefit": "Guaranteed availability level 99,9%",
@@ -344,7 +344,7 @@
     ],
     "services": [
       {
-        "title": "Услуги Rocket S",
+        "title": "Services",
         "button": "Подробнее",
         "tabs": [
           {

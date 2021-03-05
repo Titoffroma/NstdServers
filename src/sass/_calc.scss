@@ -91,6 +91,8 @@
     width: 100%;
     height: 2px;
     background: #d3d3d31d;
+    border-color: transparent;
+    color: transparent;
     outline: none;
     opacity: 1;
     transition: opacity 0.2s;
@@ -104,6 +106,10 @@
     }
     &:hover,
     &:focus {
+      appearance: none;
+      border-color: transparent;
+      color: transparent;
+      outline: none;
       cursor: pointer;
       & ~ .range__output {
         opacity: 1;
@@ -130,6 +136,9 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
+      clip-path: inset(8px 8px 8px 4px);
+      background-size: 80%;
+      transform: scale(1.2);
       cursor: pointer;
     }
     &::-moz-range-thumb {
@@ -273,25 +282,54 @@
     }
   }
 }
-#id_cpu .range__input::-webkit-slider-thumb {
-  filter: drop-shadow(-2px 0 2px $accent) hue-rotate(0deg);
-  opacity: 1;
+// @supports not (overflow: overlay) {
+//   .range__input::-webkit-slider-thumb {
+//     clip-path: inset(8px 8px 8px 4px);
+//     background-size: 80%;
+//   }
+// }
+#id_cpu {
+  .circle__wrapper {
+    filter: hue-rotate(210deg);
+  }
+  .range__input::-webkit-slider-thumb {
+    filter: drop-shadow(-2px 0 2px $accent) hue-rotate(0deg);
+  }
 }
-#id_ram .range__input::-webkit-slider-thumb {
-  filter: drop-shadow(-2px 0 2px $accent) hue-rotate(50deg);
+#id_ram {
+  .circle__wrapper {
+    filter: hue-rotate(260deg);
+  }
+  .range__input::-webkit-slider-thumb {
+    filter: drop-shadow(-2px 0 2px $accent) hue-rotate(50deg);
+  }
 }
-#id_sas .range__input::-webkit-slider-thumb {
-  filter: drop-shadow(-2px 0 2px $accent) hue-rotate(100deg);
+#id_sas {
+  .circle__wrapper {
+    filter: hue-rotate(310deg);
+  }
+  .range__input::-webkit-slider-thumb {
+    filter: drop-shadow(-2px 0 2px $accent) hue-rotate(100deg);
+  }
 }
-#id_ssd .range__input::-webkit-slider-thumb {
-  filter: drop-shadow(-2px 0 2px $accent) hue-rotate(150deg);
+#id_ssd {
+  .circle__wrapper {
+    filter: hue-rotate(360deg);
+  }
+  .range__input::-webkit-slider-thumb {
+    filter: drop-shadow(-2px 0 2px $accent) hue-rotate(150deg);
+  }
 }
-#id_nl-sas .range__input::-webkit-slider-thumb {
-  filter: drop-shadow(-2px 0 2px $accent) hue-rotate(200deg);
+#id_nl-sas {
+  .circle__wrapper {
+    filter: hue-rotate(50deg);
+  }
+  .range__input::-webkit-slider-thumb {
+    filter: drop-shadow(-2px 0 2px $accent) hue-rotate(200deg);
+  }
 }
 #id_cpu .range__input::-moz-range-thumb {
   filter: drop-shadow(-2px 0 2px $accent) hue-rotate(0deg);
-  opacity: 1;
 }
 #id_ram .range__input::-moz-range-thumb {
   filter: drop-shadow(-2px 0 2px $accent) hue-rotate(50deg);

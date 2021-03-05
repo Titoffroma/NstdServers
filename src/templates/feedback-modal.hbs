@@ -22,7 +22,7 @@
                                         </select>
                                     {{/if}}
                                     {{#if textarea}}
-                                        <textarea name="{{id}}" id="" cols="30" rows="19" resize="none"
+                                        <textarea name="{{id}}" id="" cols="30" rows="18" resize="none"
                                             class="modal__input feedback__textarea {{required}}">{{text}}</textarea>
                                     {{/if}}
                                     {{#if input}}
@@ -35,14 +35,15 @@
                             </div>
                         {{/each}}
                     </div>
-                    <label for="feedback-check" class="modal__label feedback__check-label required"><input
-                            type="checkbox" name="feedback-check" class="modal__input feedback__check required"
-                            id="feedback-check" checked>{{label}}
-                        <div class="error-wrapper"><span class="modal__message"></span>
-                    </label>
+                    <div class="feedback__check-wrapper">
+                        <label for="feedback-check" class="modal__label feedback__check-label required"><input
+                                type="checkbox" name="feedback-check" class="modal__input feedback__check required"
+                                id="feedback-check" checked>{{label}}
+                            <div class="error-wrapper"><span class="modal__message"></span></div>
+                        </label>
+                        <button type="submit" class="feedback__button">{{button}}</button>
+                    </div>
+                </form>
             </div>
-            <button type="submit" class="feedback__button">{{button}}</button>
-            </form>
         </div>
     </div>
-</div>

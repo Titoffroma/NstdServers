@@ -137,10 +137,10 @@
     @extend %anchor;
     line-height: 1.4em;
     font-style: normal;
-    font-size: 12px;
+    font-size: 14px;
     transition: color $transition;
     @media screen and (min-width: $tablet) {
-      font-size: 14px;
+      font-size: 16px;
     }
     &:hover {
       color: $accent;

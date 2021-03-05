@@ -6,31 +6,37 @@
   @media screen and (min-width: $desktop) {
     padding-bottom: 240px;
   }
+  & > .container.present {
+    width: 100%;
+    padding: 0 0 40px;
+    max-width: initial;
+  }
 }
 .hero-slider {
   position: relative;
-
   height: 570px;
   margin: 0 auto;
+  padding-bottom: 60px;
   @media screen and (min-width: $phone) {
     height: 510px;
   }
   @media screen and (min-width: $tablet) {
     height: 530px;
-    padding: 0 80px;
   }
-  @media screen and (min-width: $desktop) {
-    max-width: 1100px;
-  }
+  @extend %flex-container;
   &__content {
+    flex-shrink: 0;
     position: relative;
     height: 520px;
+    width: 300px;
     border-radius: 16px;
     @media screen and (min-width: $phone) {
       height: 460px;
+      width: 700px;
     }
     @media screen and (min-width: $tablet) {
       height: 480px;
+      width: 900px;
     }
   }
   .order {
@@ -160,8 +166,9 @@
   }
   &__controls {
     position: absolute;
-    bottom: 0px;
-    right: 0px;
+    z-index: 2;
+    bottom: -60px;
+    right: 0;
     padding: 6px;
     border-radius: 28px;
     background: $overlay-light;
@@ -224,28 +231,14 @@
         }
       }
       &.aside {
-        position: absolute;
-        top: 60px;
-        justify-self: flex-start;
         pointer-events: none;
-        @media screen and (min-width: $tablet) {
-          transform: scaleY(6) translateY(20px);
+        @media screen and (min-width: $desktop) {
+          transform: scaleY(8);
           pointer-events: auto;
+          cursor: pointer;
         }
         opacity: 0;
         transition: transform $transition, opacity $transition;
-        &#slider_left0 {
-          left: 40px;
-        }
-        &#slider_right0 {
-          right: 40px;
-        }
-        &:hover {
-          @media screen and (min-width: $tablet) {
-            opacity: 0.5;
-            transform: scale(6) translateY(20px);
-          }
-        }
         &:active {
           @media screen and (min-width: $tablet) {
             filter: brightness(0.8);
@@ -254,20 +247,26 @@
       }
     }
     &-aside {
-      position: absolute;
-      top: 0;
-      right: -40px;
-      left: -40px;
-      height: 0;
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      width: 100%;
       @extend %flex-container;
-      justify-content: space-between;
       & .icon {
         pointer-events: none;
         font-size: 64px;
         color: $white;
         will-change: opacity, transform;
         transition: transform $transition, opacity $transition;
-        &:hover {
+      }
+      &:hover {
+        @media screen and (min-width: $desktop) {
+          .aside {
+            opacity: 0.5;
+            transform: scale(3, 8);
+          }
+        }
+        .icon {
           transform: scale(1.5);
           opacity: 0.8;
         }
