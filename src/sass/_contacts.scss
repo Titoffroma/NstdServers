@@ -10,16 +10,19 @@
     transform: translate(-30px, 30px) rotate(-20deg) scale(1);
   }
   85% {
+    filter: brightness(1);
     transform: translate(-30px, 30px) rotate(-20deg) scaleX(0.8);
   }
   90% {
+    filter: brightness(3);
     transform: translate(-30px, 30px) rotate(-20deg) scaleX(1.1);
   }
   92% {
     opacity: 1;
+    transform: translate(-30px, 30px) rotate(-20deg) scale(1, 0.5);
   }
   100% {
-    transform: translate(1000px, -300px) rotate(-20deg) scale(10, 0.1);
+    transform: translate(1000px, -300px) rotate(-20deg) scale(20, 0.1);
     opacity: 0;
   }
 }
