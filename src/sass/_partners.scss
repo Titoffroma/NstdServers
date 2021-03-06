@@ -104,6 +104,13 @@
 .present {
   .partners__image-wrapper {
     transform: scale(1);
+    height: 300px;
+    @media screen and (min-width: $phone) {
+      height: 400px;
+    }
+    @media screen and (min-width: $tablet) {
+      height: auto;
+    }
   }
   .globe {
     &-container {
@@ -150,10 +157,6 @@
     transform: scale(1) translate(0, -18px);
     filter: none;
   }
-  // 79% {
-  //   transform: scale(1) translate(0, -20px);
-  //   filter: none;
-  // }
   80% {
     transform: scale(1.4) translate(0, -20px);
     filter: drop-shadow(0 0 8px $accent) brightness(1.5);
