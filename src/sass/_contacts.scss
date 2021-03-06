@@ -189,10 +189,10 @@
     left: 50%;
     width: 60px;
     height: 60px;
+    animation: travel 6s ease-in-out infinite;
     @media screen and (min-width: $tablet) {
       width: 80px;
       height: 80px;
-      animation: travel 6s ease-in-out infinite;
     }
     &--port {
       width: 100%;
