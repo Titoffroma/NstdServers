@@ -23,7 +23,7 @@
   &__aside {
     position: sticky;
     top: 0;
-    margin-bottom: -320px;
+    margin-bottom: -280px;
     width: 30%;
     @media screen and (min-width: $tablet) {
       width: 25%;
@@ -203,6 +203,7 @@
     font-size: 18px;
     margin-bottom: 10px;
     cursor: default;
+    text-align: center;
   }
   &__description {
     color: $dark-grey;

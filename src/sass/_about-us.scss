@@ -18,6 +18,9 @@
 
 .about-us {
   &__main {
+    background: $overlay;
+    border-radius: 16px;
+    padding: 40px;
     transform: translateX(-100px);
     opacity: 0;
     color: #fff;
@@ -38,7 +41,6 @@
   &__paragraf {
     font-size: 18px;
     line-height: 1.3em;
-    max-width: 900px;
     @media screen and (min-width: $tablet) {
       font-size: 20px;
     }

@@ -21,8 +21,9 @@ const lang = {
 const { newPad, initialPad } = addPreloader(null);
 
 window.addEventListener('DOMContentLoaded', () => {
-  const path = location.pathname + location.search;
-  decideRout(path, true);
+  const path = location.pathname + location.search + location.hash;
+  console.log(location.hash);
+  decideRout(path, location.hash, true);
 });
 
 window.onload = () => {
@@ -34,18 +35,17 @@ window.onpopstate = () => {
   const url = new URL(location.href);
   url.searchParams.set('lang', previousLang);
   const path = url.pathname + url.search;
-  decideRout(path, true);
+  decideRout(path, url.hash, true);
 };
 
-function decideRout(path, replace = false) {
-  if (path.includes('server') || path === '/') path = `/?lang=${lang.name}`;
+function decideRout(path, hash, replace = false) {
   let rout = routers.find(el => el.path === path);
   if (!rout) rout = routers[0];
   replace
     ? history.replaceState({ page: rout.page }, rout.title, path)
     : history.pushState({ page: rout.page }, rout.title, path);
   rout.component();
-  preload(rout);
+  preload(rout, hash);
   rout && makeAccent(rout);
   startState = false;
 

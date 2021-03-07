@@ -84,8 +84,48 @@
     filter: hue-rotate(0deg);
   }
 }
+
+@keyframes lights {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  19% {
+    filter: hue-rotate(0deg);
+  }
+  20% {
+    filter: hue-rotate(250deg);
+  }
+  39% {
+    filter: hue-rotate(250deg);
+  }
+  40% {
+    filter: hue-rotate(150deg);
+  }
+  59% {
+    filter: hue-rotate(150deg);
+  }
+  60% {
+    filter: hue-rotate(300deg);
+  }
+  79% {
+    filter: hue-rotate(300deg);
+  }
+  80% {
+    filter: hue-rotate(50deg);
+  }
+  99% {
+    filter: hue-rotate(50deg);
+  }
+  100% {
+    filter: hue-rotate(0deg);
+  }
+}
+
 #contacts {
   overflow: hidden;
+  .main-header {
+    margin-bottom: 60px;
+  }
 }
 .contacts {
   @extend %flex-container;
@@ -94,6 +134,7 @@
   border-radius: 16px;
   padding: 60px 40px;
   color: #fff;
+  justify-content: space-between;
   &__wrapper {
     width: 100%;
     @extend %flex-container;
@@ -103,9 +144,11 @@
       flex-direction: row;
     }
     @media screen and (min-width: $tablet) {
-      width: calc(70% - 20px);
-      margin-right: 40px;
+      width: calc(70% - 60px);
     }
+    // @media screen and (min-width: $desktop) {
+    //   width: calc(70% - 100px);
+    // }
   }
   &__center {
     width: 100%;
@@ -201,6 +244,9 @@
     @media screen and (min-width: $tablet) {
       width: 40%;
     }
+    @media screen and (min-width: $tablet) {
+      width: 47%;
+    }
   }
   &__rocket {
     position: absolute;
@@ -222,7 +268,7 @@
       background-size: contain;
       background-repeat: no-repeat;
       background-position: right, 120px;
-      animation: newRocket 30s linear infinite;
+      animation: lights 30s linear infinite;
     }
   }
   &__image {
@@ -237,6 +283,16 @@
       width: calc(100% - 40px);
       z-index: 1;
     }
+    &.lights {
+      animation: newRocket 30s linear infinite;
+    }
+  }
+  &__lights-wrapper {
+    position: absolute;
+    top: 20px;
+    width: calc(100% - 40px);
+    z-index: 2;
+    animation: portal 6s ease-in-out infinite;
   }
   &__list {
     padding: 0 20px 40px;

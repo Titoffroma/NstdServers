@@ -22,7 +22,8 @@ const aboutObserver = new IntersectionObserver(
   },
 );
 
-function preload({ path }) {
+function preload({ path }, hash) {
+  console.log('preload', hash);
   const container = document.querySelectorAll('.container');
   const logo = document.querySelectorAll('.logo__image');
   slider.end();
@@ -36,12 +37,13 @@ function preload({ path }) {
     el.classList.remove('present');
     aboutObserver.observe(el);
   });
-  if (location.hash) {
-    const target = document.querySelector(location.hash);
+  if (hash) {
+    rootEl.style.opacity = '0';
+    const target = document.querySelector(hash);
     setTimeout(() => {
+      rootEl.style.opacity = '1';
       rootEl.scrollTo({
         top: Math.round(target.offsetTop),
-        behavior: 'smooth',
       });
     }, 1000);
   } else {

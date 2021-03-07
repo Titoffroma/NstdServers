@@ -7,9 +7,6 @@
         "definitions": [
           {
             "definition": " — это современный сервис аренды вычислительных мощностей и систем хранения данных для создания собственной виртуальной инфраструктуры."
-          },
-          {
-            "definition": " — это надежный партнер для вашего бизнеса. Как телеком-оператор, компания Rocket S может организовывать каналы мобильной и фиксированной связи под каждого клиента индивидуально с учетом требований, предъявляемых к скорости и надежности передачи данных, а также заключать сквозной SLA, гарантирующий параметры доступности не только облачной инфраструктуры, но и каналов связи."
           }
         ],
         "story": [
@@ -143,9 +140,6 @@
         "definitions": [
           {
             "definition": " — is a modern computing power and data storage systems rent service to create your own virtual infrastructure."
-          },
-          {
-            "definition": " — a reliable partner for your business. As a telecom operator, Rocket S can organize mobile and fixed communication channels for each client individually, taking into account the requirements for the speed and reliability of data transmission. It can also conclude an end-to-end SLA that guarantees the availability of cloud infrastructure, as well as communication channels."
           }
         ],
         "story": [

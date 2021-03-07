@@ -36,6 +36,15 @@ $dim-bg: rgba(202, 218, 255, 0.8);
 $dim-bg-light: rgba(202, 218, 255, 0.2);
 $slider-bg: linear-gradient($dim-bg-light, $dim-bg);
 $root-bg: linear-gradient(rgba(0, 7, 52, 0.9), rgba(0, 7, 52, 1));
+$slider-bg-one: linear-gradient(
+  rgba(147, 157, 221, 0.6),
+  rgba(121, 17, 128, 0.5)
+);
+$slider-bg-two: linear-gradient(rgba(147, 220, 221, 0.6), rgba(14, 9, 74, 0.5));
+$slider-bg-three: linear-gradient(
+  rgba(147, 184, 221, 0.6),
+  rgba(40, 6, 42, 0.5)
+);
 $color: #000734;
 /* shadows */
 
