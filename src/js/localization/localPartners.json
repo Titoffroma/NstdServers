@@ -2,6 +2,16 @@
   "ru": {
     "title": "Партнерам",
     "image": "../img/partners.png",
+    "indicators": [
+      {
+        "title": "Топливо",
+        "image": "fuel"
+      },
+      {
+        "title": "Энергия",
+        "image": "energy"
+      }
+    ],
     "story": [
       {
         "text": "Мы уверены в том, что ВМЕСТЕ - быстрее, надежнее, выше!"
@@ -19,6 +29,16 @@
   "en": {
     "title": "For Partners",
     "image": "../img/partners.png",
+    "indicators": [
+      {
+        "title": "Fuel",
+        "image": "fuel"
+      },
+      {
+        "title": "Energy",
+        "image": "energy"
+      }
+    ],
     "story": [
       {
         "text": "We are confident that TOGATHER is faster, more reliable and higher!"

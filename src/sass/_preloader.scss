@@ -227,6 +227,11 @@
     animation: textureSpin 2s ease-out forwards;
   }
 }
+.partners__image-wrapper {
+  .globe-worldmap-front.static {
+    animation: textureSpinreversePartners 8s ease-out infinite;
+  }
+}
 
 @keyframes textureSpin {
   from {
@@ -241,6 +246,14 @@
     transform: translateX(-47.5%);
   }
   to {
+    transform: translateX(0);
+  }
+}
+@keyframes textureSpinreversePartners {
+  0% {
+    transform: translateX(-47.5%);
+  }
+  20% {
     transform: translateX(0);
   }
 }

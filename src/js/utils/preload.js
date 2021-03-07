@@ -43,7 +43,7 @@ function preload({ path }) {
         top: Math.round(target.offsetTop),
         behavior: 'smooth',
       });
-    }, 0);
+    }, 1000);
   } else {
     rootEl.scrollTo({
       top: 0,

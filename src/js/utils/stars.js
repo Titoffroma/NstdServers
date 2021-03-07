@@ -94,7 +94,6 @@ class Stars {
     resizeCanvas();
     for (let i = 0; i < (w / 40) * (h / 40); i++) {
       this.draw();
-      console.log('stars', i);
     }
     this.loop();
   }
