@@ -20,7 +20,7 @@ function changeLangPath(previousLang, newLang) {
   if (newLang !== previousLang) {
     url.searchParams.set('lang', newLang);
   }
-  return url.pathname + url.search;
+  return url.pathname + url.search + url.hash;
 }
 
 export { changeLangPath };

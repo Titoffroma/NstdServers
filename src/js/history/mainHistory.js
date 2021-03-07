@@ -22,7 +22,6 @@ const { newPad, initialPad } = addPreloader(null);
 
 window.addEventListener('DOMContentLoaded', () => {
   const path = location.pathname + location.search + location.hash;
-  console.log(location.hash);
   decideRout(path, location.hash, true);
 });
 

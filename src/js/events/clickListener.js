@@ -30,7 +30,10 @@ export default function listenClicks(event) {
     save('Lang', event.target.dataset.lang);
     const newLang = event.target.dataset.lang;
     const path = changeLangPath(previousLang, newLang);
-    decideRout(path, true);
+    const index = path.indexOf('#');
+    let href = null;
+    if (index >= 0) href = path.slice(index);
+    decideRout(path, href, true);
   }
   if (event.target.hasAttribute('data-service')) {
     let ind = 0;

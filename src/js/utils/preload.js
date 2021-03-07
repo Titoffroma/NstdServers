@@ -23,7 +23,6 @@ const aboutObserver = new IntersectionObserver(
 );
 
 function preload({ path }, hash) {
-  console.log('preload', hash);
   const container = document.querySelectorAll('.container');
   const logo = document.querySelectorAll('.logo__image');
   slider.end();
