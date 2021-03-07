@@ -34,7 +34,7 @@ window.onpopstate = () => {
   const previousLang = lang.name;
   const url = new URL(location.href);
   url.searchParams.set('lang', previousLang);
-  const path = url.pathname + url.search;
+  const path = url.pathname + url.search + location.hash;
   decideRout(path, url.hash, true);
 };
 
