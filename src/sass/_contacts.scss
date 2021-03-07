@@ -84,6 +84,9 @@
     filter: hue-rotate(0deg);
   }
 }
+#contacts {
+  overflow: hidden;
+}
 .contacts {
   @extend %flex-container;
   flex-wrap: wrap;
