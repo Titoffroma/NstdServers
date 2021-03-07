@@ -79,6 +79,7 @@
     width: 100%;
     @media screen and (min-width: $tablet) {
       width: calc((100% - 20px) / 2);
+      margin-right: 80px;
     }
   }
   &__text {
