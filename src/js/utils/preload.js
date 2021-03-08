@@ -91,7 +91,7 @@ function resizeServices() {
   const services = document.querySelector('.services__main');
   const active = document.querySelector('.services__tab-list.active');
   setTimeout(() => {
-    services.style.height = active.scrollHeight + 'px';
+    services.style.height = Number(active.scrollHeight) + 40 + 'px';
   }, 250);
 }
 export { resizeServices };

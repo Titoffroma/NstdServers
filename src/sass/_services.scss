@@ -1,3 +1,16 @@
+#timer2 {
+  flex-wrap: wrap;
+  @media screen and (min-width: $phone) {
+    flex-wrap: nowrap;
+  }
+  .field {
+    margin-bottom: 10px;
+  }
+  .label {
+    background: none;
+    color: rgb(171, 178, 199);
+  }
+}
 #services {
   color: #fff;
   background: $overlay;
@@ -23,7 +36,7 @@
   &__aside {
     position: sticky;
     top: 0;
-    margin-bottom: -280px;
+    margin-bottom: -370px;
     width: 30%;
     @media screen and (min-width: $tablet) {
       width: 25%;

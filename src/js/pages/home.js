@@ -1,5 +1,7 @@
 import indicators from '../../templates/swipe-indicators.hbs';
 
+import CountdownTimer from '../utils/timer';
+
 import img1 from '../../img/advantage1.svg';
 import img2 from '../../img/advantage2.svg';
 import img3 from '../../img/advantage3.svg';
@@ -23,20 +25,15 @@ const imgs = [img1, img2, img3, img4, img5, img6, img7, img8];
 const svgs = [
   [svg1, svg2, svg3, svg4, svg5, svg6, svg7, svg8],
   [svg1],
+  [svg1, svg2, svg3, svg4, svg5, svg6, svg7, svg8, svg1],
+  [svg1, svg2, svg3, svg4, svg5, svg6, svg7],
   [svg1],
-  [svg1],
-  [svg1],
-  [svg1],
+  [svg1, svg2, svg3, svg4, svg5, svg6],
   [svg1],
   [svg1],
 ];
 
 function drawImages() {
-  let fix =
-    location.href.includes('github') && !location.href.includes('NstdServers')
-      ? 'NstdServers/'
-      : '';
-
   let images = document.querySelectorAll('#advantages .cardset__image');
   images.forEach((image, index) => {
     image.src = `${imgs[index]}`;
@@ -46,8 +43,12 @@ function drawImages() {
     const srcs = svgs[index];
     const img = service.querySelectorAll('.services__image');
     img.forEach((image, index) => {
-      image.src = `${fix + srcs[index]}`;
+      image.src = `${srcs[index]}`;
     });
+  });
+  const superTimer2 = new CountdownTimer({
+    selector: '#timer2',
+    targetDate: new Date('Jun 1, 2021'),
   });
 }
 

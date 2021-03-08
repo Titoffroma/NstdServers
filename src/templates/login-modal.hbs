@@ -30,29 +30,7 @@
                             <button type="submit" class="modal__button">{{button}}</button>
                         {{/unless}}
                         {{#if timer}}
-                            <article class="new-year-timer">
-                                <h2 style="white-space: nowrap; color: rgb(171, 178, 199);">{{timer.title}}</h2>
-                                <div class="timer" id="timer">
-                                    <div class="field"><span class="value" data-value="days">11</span><span
-                                            class="label">{{timer.days}}</span></div>
-                                    <div class="field"><span class="value" data-value="hours">11</span><span
-                                            class="label">{{timer.hours}}</span></div>
-                                    <div class="field"><span class="value" data-value="mins">11</span><span
-                                            class="label">{{timer.minutes}}</span></div>
-                                    <div class="field"><span class="value" data-value="secs">11</span><span
-                                            class="label">{{timer.seconds}}</span></div>
-                                </div>
-                                <div class="clock">
-                                    <div class="clock__wrapper">
-                                        <div class="clock__table">
-                                            <div class="clock__timer" id="timer-clock">
-                                                <div class="clock__arrow"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </article>
+                            {{> ./timer}}
                         {{/if}}
                     </form>
                 {{/each}}
