@@ -125,6 +125,9 @@
   overflow: hidden;
   .main-header {
     margin-bottom: 60px;
+    &.contacts__header {
+      padding-left: 0;
+    }
   }
 }
 .contacts {
@@ -209,7 +212,6 @@
   &__header {
     transform: translateX(0);
     text-align: left;
-    padding-left: 0;
     align-self: flex-start;
   }
   &__answer {

@@ -6,9 +6,9 @@ const observer = new IntersectionObserver(startCircle, {
   threshold: 0.1,
 });
 
-const serviceObserver = new IntersectionObserver(getHeight, {
-  threshold: 0.1,
-});
+// const serviceObserver = new IntersectionObserver(getHeight, {
+//   threshold: 0.1,
+// });
 
 const aboutObserver = new IntersectionObserver(
   entries =>
@@ -31,7 +31,7 @@ function preload({ path }, hash) {
   const circle = document.querySelector('#statistics');
   circle ? observer.observe(circle) : observer.disconnect();
   const services = document.querySelector('.services__main');
-  services ? serviceObserver.observe(services) : serviceObserver.disconnect();
+  services && resizeServices();
   container.forEach(el => {
     el.classList.remove('present');
     aboutObserver.observe(el);
@@ -81,18 +81,53 @@ function startCircle(entries) {
   });
 }
 
-function getHeight(entries) {
-  entries.forEach(entry => {
-    resizeServices();
-  });
-}
+// function getHeight(entries) {
+//   entries.forEach(entry => {
+//     resizeServices();
+//   });
+// }
 
 function resizeServices() {
+  let timerOne;
+  clearTimeout(timerOne);
+
+  let acc = 1;
+  const deviceWidth = window.innerWidth;
+  if (deviceWidth >= 1280) {
+    acc = 3;
+  } else if (deviceWidth >= 768) {
+    acc = 2;
+  }
+
   const services = document.querySelector('.services__main');
   const active = document.querySelector('.services__tab-list.active');
-  setTimeout(() => {
-    services.style.height = Number(active.scrollHeight) + 40 + 'px';
-  }, 250);
+  const table = document.querySelector('.services__table');
+  const tabs = document.querySelector('.services__tabs');
+  const child = active.children[0];
+  const childrenAmount = active.children.length;
+  table.style.width = '100%';
+
+  timerOne = setTimeout(() => {
+    services.style.height =
+      active.scrollHeight <= 350
+        ? Number(active.scrollHeight) + 40 + 'px'
+        : Number(active.scrollHeight) + 'px';
+    if (childrenAmount < acc) {
+      Array.from(active.children).map(
+        el => (el.style.width = el.scrollWidth + 'px'),
+      );
+      // active.scrollWidth / childrenAmount - 10 * childrenAmount - 10 + 'px';
+      table.style.width =
+        child.scrollWidth * childrenAmount +
+        tabs.scrollWidth +
+        40 +
+        childrenAmount * 10 -
+        10 +
+        'px';
+      // services.style.width =
+      //   childWidth * childrenAmount + 40 + childrenAmount * 10 - 10 + 'px';
+    }
+  }, 500);
 }
 export { resizeServices };
 export default preload;
