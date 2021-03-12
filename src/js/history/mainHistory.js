@@ -38,11 +38,13 @@ window.onpopstate = () => {
 };
 
 function decideRout(path, hash, replace = false) {
-  let rout = routers.find(el => el.path === path);
+  let rout = routers.find(el => el.path.includes(path));
+  let hashName = '';
   if (!rout) rout = routers[0];
+  if (hash) hashName = hash;
   replace
-    ? history.replaceState({ page: rout.page }, rout.title, path)
-    : history.pushState({ page: rout.page }, rout.title, path);
+    ? history.replaceState({ page: rout.page }, rout.title, rout.path + hashName)
+    : history.pushState({ page: rout.page }, rout.title, rout.path + hashName);
   rout.component();
   preload(rout, hash);
   rout && makeAccent(rout);

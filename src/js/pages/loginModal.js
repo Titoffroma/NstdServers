@@ -28,7 +28,7 @@ function checkIfValid(event) {
   input.classList.remove('valid', 'invalid');
   if ((errorType === 'checkbox' && !input.checked) || !value.length)
     return addError();
-  if (input.hasAttribute('data-nocheck')) return;
+  if (input.hasAttribute('data-nocheck')) return input.classList.add('valid');
   if (errorType === 'text') {
     if (!/^\p{Lu}/gu.test(value)) index = 1;
   }

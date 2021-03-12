@@ -26,7 +26,7 @@ class Slider {
     return document.getElementById('slider_right0');
   }
   get indicators() {
-    return document.querySelector('.hero-slider__indicators').children;
+    return document.querySelector('.hero-slider__indicators');
   }
   start() {
     if (this.timer) return;
@@ -51,11 +51,11 @@ class Slider {
     this.set = true;
     const direction = this.forward ? 'right' : 'left';
     const other = this.forward ? 'left' : 'right';
-    if (!this.indicators || !this.slides.length) return;
+    if (!this.indicators.children.length || !this.slides.length) return;
     this.slides.forEach((slide, index) => {
       slide.classList.remove('active', 'left', 'right');
       slide.classList.add(direction);
-      this.indicators[index].classList.remove('active');
+      this.indicators.children[index].classList.remove('active');
     });
     if (this.forward) {
       this.active++;
@@ -71,7 +71,7 @@ class Slider {
     this.slides[this.next].classList.add(other);
     this.slides[this.next].classList.remove(direction);
     this.slides[this.active].classList.add('active');
-    this.indicators[this.active].classList.add('active');
+    this.indicators.children[this.active].classList.add('active');
     this.forward = true;
     this.next = this.active + 1;
     if (this.next === this.slides.length) this.next = 0;

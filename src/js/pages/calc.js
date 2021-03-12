@@ -248,6 +248,9 @@ function renderOrder() {
   const markupRaw = JSON.parse(JSON.stringify(localFeedbackModal[lang.name]));
 
   markupRaw.fields[0].field[0].options[2].selected = 'selected';
+  markupRaw.fields[0].field[0].disabled = 'disabled';
+  markupRaw.fields[0].field[1].disabled = 'disabled';
+  markupRaw.fields[0].field[1].required = '';
   const results = Array.from(document.querySelectorAll('.range'));
 
   let complited = true;

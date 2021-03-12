@@ -1,4 +1,4 @@
-import { fun1, fun2, fun3, fun4, fun5, fun6 } from './updatePageHistory';
+import { fun1, fun2, fun3, fun4, fun5, fun6, fun7 } from './updatePageHistory';
 import { lang } from './mainHistory';
 
 const routers = [
@@ -49,11 +49,20 @@ const routers = [
   },
   {
     get path() {
+      return `/belgie?lang=${lang.name}`;
+    },
+    page: 6,
+    title: 'Belgie',
+    component: fun6,
+    meta: { auth: false },
+  },
+  {
+    get path() {
       return `/cabinet?lang=${lang.name}`;
     },
-    page: 3,
+    page: 7,
     title: 'My Cabinet',
-    component: fun6,
+    component: fun7,
     meta: { auth: true },
   },
 ];

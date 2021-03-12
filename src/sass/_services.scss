@@ -1,8 +1,8 @@
 #timer2 {
   flex-wrap: wrap;
-  @media screen and (min-width: $phone) {
-    flex-wrap: nowrap;
-  }
+  // @media screen and (min-width: $phone) {
+  //   flex-wrap: nowrap;
+  // }
   .field {
     margin-bottom: 10px;
   }
@@ -103,12 +103,13 @@
     position: relative;
     overflow: hidden;
     border-radius: 0 16px 16px 0;
-    transition: height $transition;
+    transition: height .7s ease-out;
     background: $stroke-grey;
   }
   &__tab-list {
     position: absolute;
-    opacity: 1;
+    z-index: 0;
+    opacity: 0;
     top: 0;
     left: 0;
     width: 100%;
@@ -117,7 +118,7 @@
       padding: 20px;
     }
     min-height: 350px;
-    background: $stroke-grey;
+    // background: $stroke-grey;
     color: $overlay;
     display: flex;
     flex-wrap: wrap;
@@ -126,12 +127,13 @@
     @include Cardset-Responsive($tablet, 10px, 10px, 2);
     @include Cardset-Responsive($desktop, 10px, 10px, 3);
     transform: translateX(-1400px);
-    transition: opacity $transition, transform $transition;
+    transition: opacity .7s ease-out, transform .7s ease-out;
     &.active {
+      z-index: 1;
       width: 100%;
       opacity: 1;
       transform: translateX(0);
-      transition: opacity $transition, transform $transition;
+      transition: opacity .7s ease-out, transform .7s ease-out;
     }
   }
   &__card {

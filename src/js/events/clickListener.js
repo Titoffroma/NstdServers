@@ -60,25 +60,6 @@ export default function listenClicks(event) {
     });
 
     resizeServices();
-    // let timer = null;
-    // clearInterval(timer);
-    // const service = document.querySelector('.services__main');
-    // const active = document.querySelector('.services__tab-list.active');
-    // const { height } = window.getComputedStyle(service);
-    // const oldHeight = Number(Array.from(height.matchAll(/[0-9]/g)).join(''));
-    // const newHeight = active.scrollHeight;
-    // if (oldHeight === newHeight) return;
-    // const step = (oldHeight - newHeight) / 5;
-    // let acc = oldHeight;
-    // let count = 0;
-    // setTimeout(() => {
-    //   timer = setInterval(() => {
-    //     acc -= step;
-    //     service.style.height = acc + 'px';
-    //     count++;
-    //     if (count === 5) clearInterval(timer);
-    //   }, 50);
-    // }, 50);
   }
   if (event.target.hasAttribute('data-form')) {
     event.preventDefault();

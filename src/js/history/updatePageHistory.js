@@ -1,23 +1,35 @@
-import renderHeader from '../../templates/header.hbs';
 import localDataHeader from '../localization/localHeader.json';
 import localDataHome from '../localization/localHome.json';
 import localDataAboutUs from '../localization/localAboutUs.json';
 import localDataPartners from '../localization/localPartners.json';
 import localDataContacts from '../localization/localContacts.json';
 import localDataCalc from '../localization/localCalc.json';
+
 import { lang } from './mainHistory';
+
+import renderHeader from '../../templates/header.hbs';
 import renderHome from '../../templates/Home.hbs';
 import renderAboutUs from '../../templates/about-us.hbs';
 import renderPartners from '../../templates/for-partners.hbs';
 import renderContacts from '../../templates/contacts.hbs';
 import renderCalc from '../../templates/calc.hbs';
+
 import { slider } from '../utils/slider';
 import { swiper } from '../utils/swiper';
-import { drawImages, renderIndicators } from '../pages/home';
+
+// import { drawImages, renderIndicators } from '../pages/home';
+// import { drawPartnersImages } from '../pages/forPartners';
+// import { drawContactsImages } from '../pages/contacts';
+// import { renderCalculator } from '../pages/calc';
+
+const drawHome = () => import('../pages/home');
+const drawContactsImages = () => import('../pages/contacts');
+const renderCalculator = () => import('../pages/calc');
+
 const makeLinks = () => import('../pages/aboutUs');
-import { drawPartnersImages } from '../pages/forPartners';
-import { drawContactsImages } from '../pages/contacts';
-import { renderCalculator } from '../pages/calc';
+
+
+
 
 function updateHeader() {
   document.getElementById('id_nav_list').innerHTML = renderHeader(
@@ -27,11 +39,12 @@ function updateHeader() {
 
 const rootRef = document.getElementById('root-content');
 
-function fun1() {
+async function fun1() {
   updateHeader();
   rootRef.innerHTML = renderHome(localDataHome[lang.name]);
-  renderIndicators();
-  drawImages();
+  const module = await drawHome();
+  module.renderIndicators();
+  module.drawImages();
   slider.start();
   swiper.start();
 }
@@ -44,27 +57,34 @@ async function fun2() {
   module.drawAboutUsImages();
 }
 
-function fun3() {
+async function fun3() {
   updateHeader();
   rootRef.innerHTML = renderCalc(localDataCalc[lang.name]);
-  renderCalculator();
+  const module = await renderCalculator();
+  module.renderCalculator();
 }
 
 function fun4() {
   updateHeader();
   rootRef.innerHTML = renderPartners(localDataPartners[lang.name]);
-  // drawPartnersImages();
 }
 
-function fun5() {
+async function fun5() {
   updateHeader();
   rootRef.innerHTML = renderContacts(localDataContacts[lang.name]);
-  drawContactsImages();
+  const module = await drawContactsImages();
+  module.drawContactsImages();
+  
 }
 
 function fun6() {
   updateHeader();
+  rootRef.innerHTML = '<h1> HELLO WORLD </h1>';
+}
+
+function fun7() {
+  updateHeader();
   rootRef.innerHTML = '';
 }
 
-export { fun1, fun2, fun3, fun4, fun5, fun6 };
+export { fun1, fun2, fun3, fun4, fun5, fun6, fun7 };

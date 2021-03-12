@@ -51,6 +51,9 @@
         &:nth-last-child(-n + #{$Columns}) {
           margin-bottom: 0px;
         }
+         &:last-child {
+        margin-right: 0px;
+      }
       }
     }
   }

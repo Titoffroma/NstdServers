@@ -1,14 +1,11 @@
 import slider from '../utils/slider';
 import routers from '../history/routers';
 const rootEl = document.getElementById('root');
+const rootCont = document.getElementById('root-content');
 
 const observer = new IntersectionObserver(startCircle, {
   threshold: 0.1,
 });
-
-// const serviceObserver = new IntersectionObserver(getHeight, {
-//   threshold: 0.1,
-// });
 
 const aboutObserver = new IntersectionObserver(
   entries =>
@@ -25,26 +22,25 @@ const aboutObserver = new IntersectionObserver(
 function preload({ path }, hash) {
   const container = document.querySelectorAll('.container');
   const logo = document.querySelectorAll('.logo__image');
-  slider.end();
-  if (path === routers[0].path) slider.start();
+  if (slider.timer) slider.end();
   logo.forEach(el => el.classList.remove('in'));
   const circle = document.querySelector('#statistics');
   circle ? observer.observe(circle) : observer.disconnect();
   const services = document.querySelector('.services__main');
-  services && resizeServices();
+  services && resizeServices(true);
   container.forEach(el => {
     el.classList.remove('present');
     aboutObserver.observe(el);
   });
   if (hash) {
-    rootEl.style.opacity = '0';
+    rootCont.style.opacity = '0';
     const target = document.querySelector(hash);
     setTimeout(() => {
-      rootEl.style.opacity = '1';
+      rootCont.style.opacity = '1';
       rootEl.scrollTo({
         top: Math.round(target.offsetTop),
       });
-    }, 1000);
+    }, 500);
   } else {
     rootEl.scrollTo({
       top: 0,
@@ -81,14 +77,9 @@ function startCircle(entries) {
   });
 }
 
-// function getHeight(entries) {
-//   entries.forEach(entry => {
-//     resizeServices();
-//   });
-// }
+let timerOne;
 
-function resizeServices() {
-  let timerOne;
+function resizeServices(onPageLoad) {
   clearTimeout(timerOne);
 
   let acc = 1;
@@ -107,6 +98,8 @@ function resizeServices() {
   const childrenAmount = active.children.length;
   table.style.width = '100%';
 
+  Array.from(active.children).map(el => (el.style.width = ''));
+
   timerOne = setTimeout(() => {
     services.style.height =
       active.scrollHeight <= 350
@@ -116,18 +109,20 @@ function resizeServices() {
       Array.from(active.children).map(
         el => (el.style.width = el.scrollWidth + 'px'),
       );
-      // active.scrollWidth / childrenAmount - 10 * childrenAmount - 10 + 'px';
       table.style.width =
-        child.scrollWidth * childrenAmount +
+        (child.scrollWidth + 10) * childrenAmount +
         tabs.scrollWidth +
-        40 +
-        childrenAmount * 10 -
-        10 +
+        30 +
         'px';
-      // services.style.width =
-      //   childWidth * childrenAmount + 40 + childrenAmount * 10 - 10 + 'px';
     }
-  }, 500);
+    if (onPageLoad) return;
+    const a = services.getBoundingClientRect().y;
+    const b = document.getElementById('root-content').getBoundingClientRect().y;
+    root.scrollTo({
+      top: -(b - a),
+      behavoir: 'smooth',
+    });
+  }, 200);
 }
 export { resizeServices };
 export default preload;
