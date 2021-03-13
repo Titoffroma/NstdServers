@@ -10,6 +10,7 @@ const observer = new IntersectionObserver(startCircle, {
 const aboutObserver = new IntersectionObserver(
   entries =>
     entries.forEach(entry => {
+      console.dir(entry);
       if (entry.isIntersecting) {
         setTimeout(() => entry.target.classList.add('present'), 250);
       }
@@ -27,7 +28,8 @@ function preload({ path }, hash) {
   const circle = document.querySelector('#statistics');
   circle ? observer.observe(circle) : observer.disconnect();
   const services = document.querySelector('.services__main');
-  services && resizeServices(true);
+  services && resizeServices();
+  aboutObserver.disconnect();
   container.forEach(el => {
     el.classList.remove('present');
     aboutObserver.observe(el);
@@ -49,7 +51,7 @@ function preload({ path }, hash) {
   }
   setTimeout(
     () => logo.length && logo.forEach(el => el.classList.add('in')),
-    500,
+    200,
   );
 }
 
@@ -79,7 +81,7 @@ function startCircle(entries) {
 
 let timerOne;
 
-function resizeServices(onPageLoad) {
+function resizeServices() {
   clearTimeout(timerOne);
 
   let acc = 1;
@@ -115,13 +117,6 @@ function resizeServices(onPageLoad) {
         30 +
         'px';
     }
-    if (onPageLoad) return;
-    const a = services.getBoundingClientRect().y;
-    const b = document.getElementById('root-content').getBoundingClientRect().y;
-    root.scrollTo({
-      top: -(b - a),
-      behavoir: 'smooth',
-    });
   }, 200);
 }
 export { resizeServices };

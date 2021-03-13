@@ -42,11 +42,12 @@ main {
   width: 100%;
   padding: 5px;
   margin: 0 auto;
+  transform-origin: top left;
   &:not(#header) {
-    transform: scale(0.9) translateY(20px);
-    opacity: 0.5;
+    transform: scale(0.5) translate(-100px, 50px);
+    opacity: 0;
   }
-  transition: transform $transition, opacity $transition;
+  transition: transform $slider, opacity $slider;
   @media screen and (min-width: $phone) {
     max-width: 600px;
   }
@@ -79,8 +80,8 @@ section.container {
   }
 
   &:not(#header).present {
-    transition: transform $transition, opacity $transition 50ms;
-    transform: scaleX(1) translateY(0);
+    transition: transform $slider, opacity $slider;
+    transform: scale(1) translate(0);
     opacity: 1;
     .main-header {
       opacity: 1;
@@ -220,7 +221,7 @@ section.container {
   font-size: 22px;
   opacity: 0.5;
   transform: translateX(100px);
-  transition: transform $transition 500ms, opacity $transition 500ms;
+  transition: transform $slider 250ms, opacity $slider 500ms;
   @media screen and (min-width: $tablet) {
     font-size: 32px;
   }

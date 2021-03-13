@@ -60,6 +60,13 @@ export default function listenClicks(event) {
     });
 
     resizeServices();
+    const a = document.querySelector('.services__main').getBoundingClientRect()
+      .y;
+    const b = document.getElementById('root-content').getBoundingClientRect().y;
+    root.scrollTo({
+      top: -(b - a),
+      behavoir: 'smooth',
+    });
   }
   if (event.target.hasAttribute('data-form')) {
     event.preventDefault();
