@@ -130,42 +130,50 @@
               {
                 "title": "Облачный хостинг",
                 "image": "/img/service1.svg",
-                "description": "Самый гибкий и современный способ размещения сайтов"
+                "description": "Самый гибкий и современный способ размещения сайтов",
+                "href": "/"
               },
               {
                 "title": "Облачный VPS",
                 "image": "/img/service2.svg",
-                "description": "Ваш собственный облачный сервер без капитальных затрат"
+                "description": "Ваш собственный облачный сервер без капитальных затрат",
+                "href": "/"
               },
               {
                 "title": "1С:Бухгалтерия в облаке",
                 "image": "/img/service3.svg",
-                "description": "Лучший способ оптимизировать бухгалтерию и повысить безопасность данных"
+                "description": "Лучший способ оптимизировать бухгалтерию и повысить безопасность данных",
+                "href": "/"
               },
               {
                 "title": "Битрикс в облаке",
                 "image": "/img/service4.svg",
-                "description": "Оптимизированный хостинг для работы «1С-Битрикс: Управление сайтом»"
+                "description": "Оптимизированный хостинг для работы «1С-Битрикс: Управление сайтом»",
+                "href": "/"
               },
               {
                 "title": "Битрикс24 в облаке",
                 "image": "/img/service5.svg",
-                "description": "На наш взгляд, одна из лучших CRM-систем. Все для управления бизнес-процессами и продажами в одном окне"
+                "description": "На наш взгляд, одна из лучших CRM-систем. Все для управления бизнес-процессами и продажами в одном окне",
+                "href": "/"
               },
               {
                 "title": "Облачный диск",
                 "image": "/img/service6.svg",
-                "description": "Хранение важных файлов и совместная работа над документами уровня «Pro». Безопаснее, чем Dropbox и Google Drive. Надежнее, чем собственный сервер"
+                "description": "Хранение важных файлов и совместная работа над документами уровня «Pro». Безопаснее, чем Dropbox и Google Drive. Надежнее, чем собственный сервер",
+                "href": "/"
               },
               {
                 "title": "Почта в облаке",
                 "image": "/img/service7.svg",
-                "description": "Почта, которая летает бизнес-классом. Полный контроль над почтовым сервером в вашем собственном облаке"
+                "description": "Почта, которая летает бизнес-классом. Полный контроль над почтовым сервером в вашем собственном облаке",
+                "href": "/"
               },
               {
                 "title": "Облачный офис",
                 "image": "/img/service8.svg",
-                "description": "Где ты — там твой офис. Все для совместной работы с документами. Безопаснее, чем Google.Docs. Дешевле, чем Microsoft Office"
+                "description": "Где ты — там твой офис. Все для совместной работы с документами. Безопаснее, чем Google.Docs. Дешевле, чем Microsoft Office",
+                "href": "/"
               }
             ]
           },
@@ -187,47 +195,56 @@
               {
                 "title": "Резервное копирование Veeam Backup & Replication (VM)",
                 "image": "/img/service1.svg",
-                "description": "Резервное копирование Veeam Backup & Replication (VM)"
+                "description": "Резервное копирование Veeam Backup & Replication (VM)",
+                "href": "/"
               },
               {
                 "title": "Резервное копирование Veeam Cloud Connect (Workstation)",
                 "image": "/img/service1.svg",
-                "description": "Резервное копирование Veeam Cloud Connect (Workstation)"
+                "description": "Резервное копирование Veeam Cloud Connect (Workstation)",
+                "href": "/"
               },
               {
                 "title": "Резервное копирование Veeam Cloud Connect (Server)",
                 "image": "/img/service1.svg",
-                "description": "Резервное копирование Veeam Cloud Connect (Server)"
+                "description": "Резервное копирование Veeam Cloud Connect (Server)",
+                "href": "/"
               },
               {
                 "title": "Резервное копирование Veeam Cloud Connect (VM)",
                 "image": "/img/service1.svg",
-                "description": "Резервное копирование Veeam Cloud Connect (VM)"
+                "description": "Резервное копирование Veeam Cloud Connect (VM)",
+                "href": "/"
               },
               {
                 "title": "Репликация Veeam Cloud Connect (VM)",
                 "image": "/img/service1.svg",
-                "description": "Репликация Veeam Cloud Connect (VM)"
+                "description": "Репликация Veeam Cloud Connect (VM)",
+                "href": "/"
               },
               {
                 "title": "Резервное копирование Veeam Agent (Workstation)",
                 "image": "/img/service1.svg",
-                "description": "Резервное копирование Veeam Cloud Agent (Workstation)"
+                "description": "Резервное копирование Veeam Cloud Agent (Workstation)",
+                "href": "/"
               },
               {
                 "title": "Резервное копирование Veeam Agent (Server)",
                 "image": "/img/service1.svg",
-                "description": "Резервное копирование Veeam Cloud Agent (Server)"
+                "description": "Резервное копирование Veeam Cloud Agent (Server)",
+                "href": "/"
               },
               {
                 "title": "DRaaS CPU",
                 "image": "/img/service1.svg",
-                "description": "DRaaS CPU"
+                "description": "DRaaS CPU",
+                "href": "/"
               },
               {
                 "title": "DRaaS RAM",
                 "image": "/img/service1.svg",
-                "description": "DRaaS RAM"
+                "description": "DRaaS RAM",
+                "href": "/"
               }
             ]
           },
@@ -237,37 +254,44 @@
               {
                 "title": "Microsoft Exchange Standart SAL",
                 "image": "/img/service1.svg",
-                "description": "Microsoft Exchange Standart SAL"
+                "description": "Microsoft Exchange Standart SAL",
+                "href": "/"
               },
               {
                 "title": "Microsoft Remote Desctop Services SAL",
                 "image": "/img/service1.svg",
-                "description": "Microsoft Remote Desctop Services SAL"
+                "description": "Microsoft Remote Desctop Services SAL",
+                "href": "/"
               },
               {
                 "title": "Microsoft Windows SQL Standard SAL",
                 "image": "/img/service1.svg",
-                "description": "Microsoft Windows SQL Standard SAL"
+                "description": "Microsoft Windows SQL Standard SAL",
+                "href": "/"
               },
               {
                 "title": "Microsoft Windows SQL Web Edition",
                 "image": "/img/service1.svg",
-                "description": "Microsoft Windows SQL Web Edition"
+                "description": "Microsoft Windows SQL Web Edition",
+                "href": "/"
               },
               {
                 "title": "Microsoft Windows Server",
                 "image": "/img/service1.svg",
-                "description": "Microsoft Windows Server"
+                "description": "Microsoft Windows Server",
+                "href": "/"
               },
               {
                 "title": "Microsoft Windows SQL Standard",
                 "image": "/img/service1.svg",
-                "description": "Microsoft Windows SQL Standard"
+                "description": "Microsoft Windows SQL Standard",
+                "href": "/"
               },
               {
                 "title": "Microsoft Windows SQL Enterprise",
                 "image": "/img/service1.svg",
-                "description": "Microsoft Windows SQL Enterprise"
+                "description": "Microsoft Windows SQL Enterprise",
+                "href": "/"
               }
             ]
           },
@@ -291,32 +315,38 @@
               {
                 "title": "Почта 10 ГБ",
                 "image": "/img/service1.svg",
-                "description": "10,00 руб/мес"
+                "description": "10,00 руб/мес",
+                "href": "/"
               },
               {
                 "title": "Почта 10 ГБ (При оплате на 1 год)",
                 "image": "/img/service1.svg",
-                "description": "-17% 100,00 руб/год"
+                "description": "-17% 100,00 руб/год",
+                "href": "/"
               },
               {
                 "title": "Почта 50 ГБ",
                 "image": "/img/service1.svg",
-                "description": "45,00 руб/мес"
+                "description": "45,00 руб/мес",
+                "href": "/"
               },
               {
                 "title": "Почта 50 ГБ (При оплате на 1 год)",
                 "image": "/img/service1.svg",
-                "description": "-17% 450,00 руб/год"
+                "description": "-17% 450,00 руб/год",
+                "href": "/"
               },
               {
                 "title": "Почта 100 ГБ",
                 "image": "/img/service1.svg",
-                "description": "80,00 руб/мес"
+                "description": "80,00 руб/мес",
+                "href": "/"
               },
               {
                 "title": "Почта 100 ГБ (При оплате на 1 год)",
                 "image": "/img/service1.svg",
-                "description": "-17% 800,00 руб/годс"
+                "description": "-17% 800,00 руб/годс",
+                "href": "/"
               }
             ]
           },
@@ -466,42 +496,50 @@
               {
                 "title": "Облачный хостинг",
                 "image": "/img/service1.svg",
-                "description": "Самый гибкий и современный способ размещения сайтов"
+                "description": "Самый гибкий и современный способ размещения сайтов",
+                "href": "/"
               },
               {
                 "title": "Облачный VPS",
                 "image": "/img/service2.svg",
-                "description": "Ваш собственный облачный сервер без капитальных затрат"
+                "description": "Ваш собственный облачный сервер без капитальных затрат",
+                "href": "/"
               },
               {
                 "title": "1С:Бухгалтерия в облаке",
                 "image": "/img/service3.svg",
-                "description": "Лучший способ оптимизировать бухгалтерию и повысить безопасность данных"
+                "description": "Лучший способ оптимизировать бухгалтерию и повысить безопасность данных",
+                "href": "/"
               },
               {
                 "title": "Битрикс в облаке",
                 "image": "/img/service4.svg",
-                "description": "Оптимизированный хостинг для работы «1С-Битрикс: Управление сайтом»"
+                "description": "Оптимизированный хостинг для работы «1С-Битрикс: Управление сайтом»",
+                "href": "/"
               },
               {
                 "title": "Битрикс24 в облаке",
                 "image": "/img/service5.svg",
-                "description": "На наш взгляд, одна из лучших CRM-систем. Все для управления бизнес-процессами и продажами в одном окне"
+                "description": "На наш взгляд, одна из лучших CRM-систем. Все для управления бизнес-процессами и продажами в одном окне",
+                "href": "/"
               },
               {
                 "title": "Облачный диск",
                 "image": "/img/service6.svg",
-                "description": "Хранение важных файлов и совместная работа над документами уровня «Pro». Безопаснее, чем Dropbox и Google Drive. Надежнее, чем собственный сервер"
+                "description": "Хранение важных файлов и совместная работа над документами уровня «Pro». Безопаснее, чем Dropbox и Google Drive. Надежнее, чем собственный сервер",
+                "href": "/"
               },
               {
                 "title": "Почта в облаке",
                 "image": "/img/service7.svg",
-                "description": "Почта, которая летает бизнес-классом. Полный контроль над почтовым сервером в вашем собственном облаке"
+                "description": "Почта, которая летает бизнес-классом. Полный контроль над почтовым сервером в вашем собственном облаке",
+                "href": "/"
               },
               {
                 "title": "Облачный офис",
                 "image": "/img/service8.svg",
-                "description": "Где ты — там твой офис. Все для совместной работы с документами. Безопаснее, чем Google.Docs. Дешевле, чем Microsoft Office"
+                "description": "Где ты — там твой офис. Все для совместной работы с документами. Безопаснее, чем Google.Docs. Дешевле, чем Microsoft Office",
+                "href": "/"
               }
             ]
           },
@@ -523,47 +561,56 @@
               {
                 "title": "Резервное копирование Veeam Backup & Replication (VM)",
                 "image": "/img/service1.svg",
-                "description": "Резервное копирование Veeam Backup & Replication (VM)"
+                "description": "Резервное копирование Veeam Backup & Replication (VM)",
+                "href": "/"
               },
               {
                 "title": "Резервное копирование Veeam Cloud Connect (Workstation)",
                 "image": "/img/service1.svg",
-                "description": "Резервное копирование Veeam Cloud Connect (Workstation)"
+                "description": "Резервное копирование Veeam Cloud Connect (Workstation)",
+                "href": "/"
               },
               {
                 "title": "Резервное копирование Veeam Cloud Connect (Server)",
                 "image": "/img/service1.svg",
-                "description": "Резервное копирование Veeam Cloud Connect (Server)"
+                "description": "Резервное копирование Veeam Cloud Connect (Server)",
+                "href": "/"
               },
               {
                 "title": "Резервное копирование Veeam Cloud Connect (VM)",
                 "image": "/img/service1.svg",
-                "description": "Резервное копирование Veeam Cloud Connect (VM)"
+                "description": "Резервное копирование Veeam Cloud Connect (VM)",
+                "href": "/"
               },
               {
                 "title": "Репликация Veeam Cloud Connect (VM)",
                 "image": "/img/service1.svg",
-                "description": "Репликация Veeam Cloud Connect (VM)"
+                "description": "Репликация Veeam Cloud Connect (VM)",
+                "href": "/"
               },
               {
                 "title": "Резервное копирование Veeam Agent (Workstation)",
                 "image": "/img/service1.svg",
-                "description": "Резервное копирование Veeam Cloud Agent (Workstation)"
+                "description": "Резервное копирование Veeam Cloud Agent (Workstation)",
+                "href": "/"
               },
               {
                 "title": "Резервное копирование Veeam Agent (Server)",
                 "image": "/img/service1.svg",
-                "description": "Резервное копирование Veeam Cloud Agent (Server)"
+                "description": "Резервное копирование Veeam Cloud Agent (Server)",
+                "href": "/"
               },
               {
                 "title": "DRaaS CPU",
                 "image": "/img/service1.svg",
-                "description": "DRaaS CPU"
+                "description": "DRaaS CPU",
+                "href": "/"
               },
               {
                 "title": "DRaaS RAM",
                 "image": "/img/service1.svg",
-                "description": "DRaaS RAM"
+                "description": "DRaaS RAM",
+                "href": "/"
               }
             ]
           },
@@ -573,37 +620,44 @@
               {
                 "title": "Microsoft Exchange Standart SAL",
                 "image": "/img/service1.svg",
-                "description": "Microsoft Exchange Standart SAL"
+                "description": "Microsoft Exchange Standart SAL",
+                "href": "/"
               },
               {
                 "title": "Microsoft Remote Desctop Services SAL",
                 "image": "/img/service1.svg",
-                "description": "Microsoft Remote Desctop Services SAL"
+                "description": "Microsoft Remote Desctop Services SAL",
+                "href": "/"
               },
               {
                 "title": "Microsoft Windows SQL Standard SAL",
                 "image": "/img/service1.svg",
-                "description": "Microsoft Windows SQL Standard SAL"
+                "description": "Microsoft Windows SQL Standard SAL",
+                "href": "/"
               },
               {
                 "title": "Microsoft Windows SQL Web Edition",
                 "image": "/img/service1.svg",
-                "description": "Microsoft Windows SQL Web Edition"
+                "description": "Microsoft Windows SQL Web Edition",
+                "href": "/"
               },
               {
                 "title": "Microsoft Windows Server",
                 "image": "/img/service1.svg",
-                "description": "Microsoft Windows Server"
+                "description": "Microsoft Windows Server",
+                "href": "/"
               },
               {
                 "title": "Microsoft Windows SQL Standard",
                 "image": "/img/service1.svg",
-                "description": "Microsoft Windows SQL Standard"
+                "description": "Microsoft Windows SQL Standard",
+                "href": "/"
               },
               {
                 "title": "Microsoft Windows SQL Enterprise",
                 "image": "/img/service1.svg",
-                "description": "Microsoft Windows SQL Enterprise"
+                "description": "Microsoft Windows SQL Enterprise",
+                "href": "/"
               }
             ]
           },
@@ -627,32 +681,38 @@
               {
                 "title": "Почта 10 ГБ",
                 "image": "/img/service1.svg",
-                "description": "10,00 руб/мес"
+                "description": "10,00 руб/мес",
+                "href": "/"
               },
               {
                 "title": "Почта 10 ГБ (При оплате на 1 год)",
                 "image": "/img/service1.svg",
-                "description": "-17% 100,00 руб/год"
+                "description": "-17% 100,00 руб/год",
+                "href": "/"
               },
               {
                 "title": "Почта 50 ГБ",
                 "image": "/img/service1.svg",
-                "description": "45,00 руб/мес"
+                "description": "45,00 руб/мес",
+                "href": "/"
               },
               {
                 "title": "Почта 50 ГБ (При оплате на 1 год)",
                 "image": "/img/service1.svg",
-                "description": "-17% 450,00 руб/год"
+                "description": "-17% 450,00 руб/год",
+                "href": "/"
               },
               {
                 "title": "Почта 100 ГБ",
                 "image": "/img/service1.svg",
-                "description": "80,00 руб/мес"
+                "description": "80,00 руб/мес",
+                "href": "/"
               },
               {
                 "title": "Почта 100 ГБ (При оплате на 1 год)",
                 "image": "/img/service1.svg",
-                "description": "-17% 800,00 руб/годс"
+                "description": "-17% 800,00 руб/годс",
+                "href": "/"
               }
             ]
           },
@@ -662,7 +722,9 @@
               {
                 "title": "Услуга по государственной регистрации сайта в БелГИЭ",
                 "image": "/img/service1.svg",
-                "description": "Возможность проверить сайт онлайн. Хостинг-провайдер rockets.by - услуги хостинга и регистрации доменов."
+                "description": "Возможность проверить сайт онлайн. Хостинг-провайдер rockets.by - услуги хостинга и регистрации доменов.",
+                "id": "id_rout_6",
+                "href": "/belgie"
               }
             ]
           }
