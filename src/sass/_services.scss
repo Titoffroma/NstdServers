@@ -36,12 +36,15 @@
   }
   &__aside {
     position: sticky;
-    top: 0;
+    top: 40px;
     width: 100px;
     height: fit-content;
     padding-top: 20px;
     @media screen and (min-width: $phone) {
       width: 200px;
+    }
+    @media screen and (min-width: $tablet) {
+      top: 100px;
     }
     @media screen and (min-width: $desktop) {
       width: 300px;

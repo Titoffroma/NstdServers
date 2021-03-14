@@ -7,7 +7,7 @@ import CountdownTimer from '../utils/timer';
 function renderModal() {
   const markup = loginModal(localModal[lang.name]);
   setTimeout(() => {
-    const superTimer = new CountdownTimer({
+    const newTimer = new CountdownTimer({
       selector: '#timer',
       targetDate: new Date('Mar 31, 2021'),
     });

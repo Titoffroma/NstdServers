@@ -14,17 +14,17 @@ export default class CountdownTimer {
   }
   parseTimerHTML(timerRef) {
     const timerObj = {
-      timerRef: timerRef,
-      titleRef: document.querySelector('.new-year-timer'),
-      valueRef: document.querySelectorAll('.value'),
-      labelRef: document.querySelectorAll('.label'),
+      timerRef,
+      titleRef: timerRef.closest('.new-year-timer'),
+      valueRef: timerRef.querySelectorAll('.value'),
+      labelRef: timerRef.querySelectorAll('.label'),
     };
     return timerObj;
   }
   startTimer({ timerRef, titleRef, valueRef, labelRef }) {
     const intervalSet = setInterval(() => {
       const time = Date.parse(this.targetDate) - Date.now();
-      const clock = document.getElementById('timer-clock');
+      const clock = document.querySelector(`${this.selector}-clock`);
 
       valueRef[0].textContent = Math.floor(time / (1000 * 60 * 60 * 24));
       valueRef[1].textContent = Math.floor(
@@ -109,6 +109,7 @@ export default class CountdownTimer {
     }
   }
   startCountdown() {
+    console.log('hi');
     return this.createTimer()
       .then(this.parseTimerHTML)
       .then(this.startTimer.bind(this))

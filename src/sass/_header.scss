@@ -122,6 +122,9 @@
       }
     }
   }
+  &__opts {
+    @extend %flex-container;
+  }
 }
 .coloured ~ .accent {
   background: $accent;
@@ -182,6 +185,7 @@
 
 .burger {
   margin-right: 15px;
+  margin-left: 30px;
   &__menu {
     height: 40px;
     width: 40px;
@@ -209,21 +213,25 @@ ul.navigation__list#id_nav {
   @media screen and (max-width: $tablet - 1) {
     flex-direction: column;
     align-items: flex-end;
-    height: 300px;
     width: 100vw;
-    position: absolute;
-    top: 46px;
+    height: 100vh;
+    position: fixed;
+    top: 40px;
     left: 0;
     background-image: $header-gr;
-    backdrop-filter: blur(50px);
     background-size: cover;
     z-index: 10;
     opacity: 0;
-    transform: translateY(-150px) scaleY(0);
-    transition: opacity $transition, transform $transition;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: opacity $slider, transform $slider, padding-top $slider 500ms;
     &.open {
-      opacity: 1;
-      transform: translateY(0) scaleY(1);
+      padding-top: 50px;
+      opacity: 0.95;
+      transform: scaleY(1);
+      .navigation__rout {
+        text-shadow: 0 0 8px rgba(0, 0, 0, 0.8)
+      }
     }
     #id_nav-group {
       flex-direction: column;

@@ -20,6 +20,7 @@
           "minutes": "минут",
           "seconds": "секунд"
         },
+        "timerid": "timer",
         "message": "Вы с нами впервые?",
         "postMessage": "Присоединяйтесь",
         "button": "Зарегистрироваться"

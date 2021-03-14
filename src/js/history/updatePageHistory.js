@@ -8,6 +8,7 @@ import localDataCalc from '../localization/localCalc.json';
 import { lang } from './mainHistory';
 
 import renderHeader from '../../templates/header.hbs';
+import renderHeaderOpts from '../../templates/header-opts.hbs';
 import renderHome from '../../templates/Home.hbs';
 import renderAboutUs from '../../templates/about-us.hbs';
 import renderPartners from '../../templates/for-partners.hbs';
@@ -23,16 +24,16 @@ import { swiper } from '../utils/swiper';
 // import { renderCalculator } from '../pages/calc';
 
 const drawHome = () => import('../pages/home');
-const drawContactsImages = () => import('../pages/contacts');
+const drawContacts = () => import('../pages/contacts');
 const renderCalculator = () => import('../pages/calc');
 
 const makeLinks = () => import('../pages/aboutUs');
 
-
-
-
 function updateHeader() {
   document.getElementById('id_nav_list').innerHTML = renderHeader(
+    localDataHeader[lang.name],
+  );
+  document.getElementById('id_nav_opts').innerHTML = renderHeaderOpts(
     localDataHeader[lang.name],
   );
 }
@@ -72,9 +73,8 @@ function fun4() {
 async function fun5() {
   updateHeader();
   rootRef.innerHTML = renderContacts(localDataContacts[lang.name]);
-  const module = await drawContactsImages();
+  const module = await drawContacts();
   module.drawContactsImages();
-  
 }
 
 function fun6() {

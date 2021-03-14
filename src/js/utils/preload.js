@@ -10,7 +10,6 @@ const observer = new IntersectionObserver(startCircle, {
 const aboutObserver = new IntersectionObserver(
   entries =>
     entries.forEach(entry => {
-      console.dir(entry);
       if (entry.isIntersecting) {
         setTimeout(() => entry.target.classList.add('present'), 250);
       }

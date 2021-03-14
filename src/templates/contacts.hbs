@@ -5,7 +5,7 @@
             <ul class="contacts__wrapper">
                 {{#each contacts-center}}
                     <li class="contacts__center">
-                        <img src="{{image}}" alt="{{title}}" class="cardset__image contacts__center-image">
+                        <img alt="{{title}}" class="cardset__image contacts__center-image" src="">
                         <p class="contacts__center-title">{{title}}</p>
                         {{#if mail}}<a href="mailto:{{mail}}" class="contacts__center-contact">{{mail}}</a>{{/if}}
                         {{#if tel}}<a href="tel:{{tel}}" class="contacts__center-contact">{{tel}}</a>{{/if}}

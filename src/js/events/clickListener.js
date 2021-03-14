@@ -36,6 +36,13 @@ export default function listenClicks(event) {
     decideRout(path, href, true);
   }
   if (event.target.hasAttribute('data-service')) {
+    let wd = -50;
+    const deviceWidth = Math.max(
+      window.innerWidth,
+      document.documentElement.clientWidth,
+      document.body.clientWidth,
+    );
+    if (deviceWidth >= 768) wd = -110;
     let ind = 0;
     const serviceLists = Array.from(
       document.querySelector('.services__main').children,
@@ -60,11 +67,12 @@ export default function listenClicks(event) {
     });
 
     resizeServices();
+
     const a = document.querySelector('.services__main').getBoundingClientRect()
       .y;
     const b = document.getElementById('root-content').getBoundingClientRect().y;
     root.scrollTo({
-      top: -(b - a),
+      top: wd - (b - a),
       behavoir: 'smooth',
     });
   }

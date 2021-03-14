@@ -195,9 +195,11 @@ section.container {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  padding-top: 40px;
   width: 100%;
   overflow-x: hidden;
+}
+#root-content {
+  padding-top: 40px;
   @media screen and (min-width: $tablet) {
     padding-top: 100px;
   }
