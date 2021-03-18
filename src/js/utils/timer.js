@@ -109,7 +109,6 @@ export default class CountdownTimer {
     }
   }
   startCountdown() {
-    console.log('hi');
     return this.createTimer()
       .then(this.parseTimerHTML)
       .then(this.startTimer.bind(this))

@@ -131,7 +131,7 @@ export default class RangeInput {
         .forEach(el => (totalResults += Number(el.children[0].dataset.cost)));
       document
         .querySelectorAll('.calc__sum-value')
-        .forEach(el => (el.textContent = `${totalResults} BYN`));
+        .forEach(el => (el.textContent = `${totalResults.toFixed(2)} BYN`));
     };
   }
   handleScroll(e) {
@@ -157,11 +157,12 @@ export default class RangeInput {
       const value = e.target.value;
       const numberInput =
         value.match(/[0-9]/g) &&
-        Number(Array.from(value.match(/[0-9]/g)).join(''));
+        Math.round(Number(Array.from(value.match(/[0-9]/g)).join('')));
       if (numberInput && numberInput <= this.min) result = this.min;
       else if (numberInput && numberInput >= this.max) result = this.max;
       else if (numberInput)
         result = Math.ceil(numberInput / this.step) * this.step;
+      console.log(result);
       this.syncResults(result);
     }
   }
@@ -210,31 +211,37 @@ function renderCalculator() {
       max: 50,
       units: 'Ghz',
       markers: [0, 10, 20, 30, 40, 50],
+      price: 9.7,
     },
     {
       parent: document.getElementById('id_ram'),
       units: 'Gb',
+      step: 2,
+      price: 13.5,
     },
     {
       parent: document.getElementById('id_sas'),
-      max: 492,
+      max: 500,
       units: 'Gb',
-      markers: [0, 120, 240, 360, 492],
-      step: 12,
+      markers: [0, 100, 200, 300, 400, 500],
+      step: 10,
+      price: 0.2,
     },
     {
       parent: document.getElementById('id_ssd'),
-      max: 492,
+      max: 500,
       units: 'Gb',
-      markers: [0, 120, 240, 360, 492],
-      step: 12,
+      markers: [0, 100, 200, 300, 400, 500],
+      step: 10,
+      price: 0.7,
     },
     {
       parent: document.getElementById('id_nl-sas'),
-      max: 984,
+      max: 1000,
       units: 'Gb',
-      markers: [0, 240, 480, 720, 984],
-      step: 24,
+      markers: [0, 200, 400, 600, 800, 1000],
+      step: 20,
+      price: 0.45,
     },
   ];
 
